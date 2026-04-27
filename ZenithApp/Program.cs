@@ -13,7 +13,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection(); -> Comentei só para testes
 app.UseRouting();
 
 app.UseAuthorization();

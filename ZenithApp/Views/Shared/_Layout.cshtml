@@ -3,21 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Zenith</title>
+    <title>Zenith</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ZenithApp.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body style="background: url('/img/image.png') no-repeat center center / cover;">
     <header>
         <nav>
             <a class="zenith" asp-area="" asp-controller="Home" asp-action="Index">Zenith</a>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Conteúdo</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Login</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Conteudos" asp-action="Index">Conteúdos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Treinos" asp-action="Index">Treinos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Performance" asp-action="Index">Performance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Sobre" asp-action="Index">Sobre Nós</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -32,6 +44,7 @@
             &copy; 2026 - ZenithApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
