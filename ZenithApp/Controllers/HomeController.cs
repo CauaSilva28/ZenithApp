@@ -23,6 +23,26 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Conteudo()
+    {
+        return View();
+    }
+
+    public IActionResult Treino()
+    {
+        return View();
+    }
+
+    public IActionResult Performance()
+    {
+        return View();
+    }
+
+    public IActionResult Sobre()
+    {
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
