@@ -12,9 +12,10 @@
 </head>
 <body style="background: url('/img/image.png') no-repeat center center / cover;">
     <header>
-        <nav>
+        <nav class="navbar-custom">
             <a class="zenith" asp-area="" asp-controller="Home" asp-action="Index">Zenith</a>
-            <ul>
+            
+            <ul class="nav-links">
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Home" asp-action="Index">Início</a>
                 </li>
@@ -31,6 +32,11 @@
                     <a class="nav-link" asp-controller="Home" asp-action="Sobre">Sobre Nós</a>
                 </li>
             </ul>
+
+            <div class="nav-buttons">
+                <a href="#" class="btn btn-outline">Entrar</a>
+                <a href="#" class="btn btn-green">Começar agora</a>
+            </div>
         </nav>
     </header>
     <div class="container">

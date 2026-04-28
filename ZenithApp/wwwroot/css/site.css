@@ -45,9 +45,97 @@ header nav a{
 
 header nav ul{
   display:flex;
-  gap:50px;
+  gap: 60px;
 }
 
 header nav ul li{
   list-style:none;
+}
+
+.navbar-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.zenith {
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
+}
+
+.zenith:hover {
+    color: #6be000;
+    transition: 1s;
+    transform: translateY(-2px);
+}
+
+.zenith:not(:hover) {
+    color: white;
+    transition: 1s;
+    transform: translateY(0px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: color 1 ease;
+}
+
+.nav-link:hover {
+    color: #6be000;
+    transition: 1s;
+    transform: translateY(-2px);
+}
+
+.nav-link:not(:hover) {
+    color: white;
+    transition: 1s;
+    transform: translateY(0px);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 1s;
+}
+
+.btn-green {
+    background-color: #6A7C0A;
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+.btn-green:hover {
+    background-color: #6be000;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: black;
 }
