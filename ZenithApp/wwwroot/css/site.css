@@ -1,62 +1,74 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
-  background-color: #151515;
-  margin-bottom: 60px;
+    background-color: #000000;
+    margin-bottom: 60px;
 }
 
-h1, h2, h3, h4, h5, h6, p{
-  color:#fff;
+h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
 }
 
-/* Header */
-header{
-  width:100%;
-  padding:5px 50px;
+header {
+    width: 100%;
+    padding: 5px 50px;
 }
 
-header nav{
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-heaer nav .zenith{
-  font-size:25px;
+header nav a {
+    color: #fff;
+    text-decoration: none;
 }
 
-header nav a{
-  color:#fff;
-  text-decoration: none;
+header nav ul {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-header nav ul{
-  display:flex;
-  gap: 60px;
-}
-
-header nav ul li{
-  list-style:none;
-}
-
+/* NAVBAR PRINCIPAL */
 .navbar-custom {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
     padding: 20px 30px;
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    z-index: 10;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .zenith {
@@ -64,24 +76,19 @@ header nav ul li{
     color: white;
     text-decoration: none;
     font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
+
+    transition: color 0.3s ease;
 }
 
 .zenith:hover {
     color: #6be000;
-    transition: 1s;
-    transform: translateY(-2px);
-}
-
-.zenith:not(:hover) {
-    color: white;
-    transition: 1s;
-    transform: translateY(0px);
 }
 
 .nav-links {
     display: flex;
     gap: 30px;
     list-style: none;
+
     margin: 0;
     padding: 0;
     font-size: 1em;
@@ -90,20 +97,12 @@ header nav ul li{
 .nav-link {
     color: white;
     text-decoration: none;
-    position: relative;
-    transition: color 1 ease;
+
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
     color: #6be000;
-    transition: 1s;
-    transform: translateY(-2px);
-}
-
-.nav-link:not(:hover) {
-    color: white;
-    transition: 1s;
-    transform: translateY(0px);
 }
 
 .nav-buttons {
@@ -116,7 +115,8 @@ header nav ul li{
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
-    transition: 1s;
+
+    transition: all 0.3s ease;
 }
 
 .btn-green {
@@ -132,7 +132,6 @@ header nav ul li{
 
 .btn-green:hover {
     background-color: #6be000;
-    color: white;
 }
 
 .btn-outline:hover {

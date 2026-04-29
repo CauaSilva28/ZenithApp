@@ -1,8 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Seja sua melhor versão. Todo dia.</h1>
-    <p>Conteúdo, treinos e estratégias para atletas que buscam excelência e treinadores que constroem resultados extraordinários.</p>
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+}
+
+<div class="home-hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <div class="hero-left">
+            <h1>Transforme seu treino</h1>
+            <p>Plataforma completa para performance</p>
+        </div>
+
+        <div class="hero-right">
+            <h1>Outro conteúdo</h1>
+        </div>
+    </div>
 </div>
