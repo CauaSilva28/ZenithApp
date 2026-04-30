@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 14px;
     position: relative;
@@ -49,7 +53,6 @@ header nav ul {
     padding: 0;
 }
 
-/* NAVBAR PRINCIPAL */
 .navbar-custom {
     display: flex;
     align-items: center;
@@ -59,16 +62,10 @@ header nav ul {
     right: 0;
     box-sizing: border-box;
     padding: 20px 30px;
-
     position: absolute;
     top: 0;
     width: 100%;
-
     z-index: 10;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 .zenith {
@@ -76,19 +73,17 @@ header nav ul {
     color: white;
     text-decoration: none;
     font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
-
     transition: color 0.3s ease;
 }
 
 .zenith:hover {
-    color: #6be000;
+    color: #c8f135;
 }
 
 .nav-links {
     display: flex;
     gap: 30px;
     list-style: none;
-
     margin: 0;
     padding: 0;
     font-size: 1em;
@@ -97,12 +92,11 @@ header nav ul {
 .nav-link {
     color: white;
     text-decoration: none;
-
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #6be000;
+    color: #c8f135;
 }
 
 .nav-buttons {
@@ -115,7 +109,6 @@ header nav ul {
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
-
     transition: all 0.3s ease;
 }
 
@@ -131,7 +124,7 @@ header nav ul {
 }
 
 .btn-green:hover {
-    background-color: #6be000;
+    background-color: #c8f135;
 }
 
 .btn-outline:hover {

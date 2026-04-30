@@ -192,5 +192,6 @@ C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithApp
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\ref\ZenithApp.dll
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\mpzgw3wkf2-{0}-gt3orj3qgj-gt3orj3qgj.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\7yur3kjabw-{0}-gt3orj3qgj-gt3orj3qgj.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-8x1lq3p52i-8x1lq3p52i.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-tfjuaqgeil-tfjuaqgeil.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-fv1iz7bltk-fv1iz7bltk.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-5031j9nnwx-5031j9nnwx.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-lad7sem1q3-lad7sem1q3.gz

@@ -1,0 +1,175 @@
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Criar conta";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro — @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/auth.css" />
+</head>
+<body>
+
+<div class="auth-wrapper">
+
+    <div class="auth-left">
+        <div class="auth-left__bg"></div>
+        <div class="auth-left__overlay"></div>
+
+        <a href="/" class="auth-logo">
+            <div class="auth-logo__mark">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <span class="auth-logo__name">Zenith</span>
+        </a>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-form-box">
+
+            <div class="auth-form-box__header">
+                <h1 class="auth-form-box__title">Criar sua conta</h1>
+                <p class="auth-form-box__subtitle">Preencha os dados abaixo para começar.</p>
+            </div>
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="field-error" style="margin-bottom:16px;">
+                    <svg viewBox="0 0 16 16" width="14" fill="currentColor">
+                        <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm-.75 3.75a.75.75 0 011.5 0v3.5a.75.75 0 01-1.5 0v-3.5zm.75 7a1 1 0 110-2 1 1 0 010 2z"/>
+                    </svg>
+                    @Html.ValidationSummary(true)
+                </div>
+            }
+
+            <form asp-action="Register" asp-controller="Account" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="FirstName">Nome</label>
+                        <div class="field-wrap">
+                            <input asp-for="FirstName" type="text" placeholder="João" autocomplete="given-name" />
+                        </div>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName">Sobrenome</label>
+                        <div class="field-wrap">
+                            <input asp-for="LastName" type="text" placeholder="Silva" autocomplete="family-name" />
+                        </div>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email">E-mail</label>
+                    <div class="field-wrap">
+                        <input asp-for="Email"
+                               type="email"
+                               placeholder="voce@exemplo.com"
+                               autocomplete="email" />
+                        <svg class="field-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M2.5 6.5l7.5 5 7.5-5M3 5h14a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1z"/>
+                        </svg>
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password">Senha</label>
+                    <div class="field-wrap">
+                        <input asp-for="Password"
+                               type="password"
+                               id="passwordInput"
+                               placeholder="Mínimo 8 caracteres"
+                               autocomplete="new-password"
+                               oninput="checkStrength(this.value)" />
+                        <svg class="field-icon"
+                             viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"
+                             style="pointer-events:auto; cursor:pointer;"
+                             onclick="togglePassword('passwordInput')">
+                            <path d="M1 10s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/>
+                            <circle cx="10" cy="10" r="2.5"/>
+                        </svg>
+                    </div>
+
+                    <div class="password-strength" id="strengthBars">
+                        <div class="password-strength__bar" id="bar1"></div>
+                        <div class="password-strength__bar" id="bar2"></div>
+                        <div class="password-strength__bar" id="bar3"></div>
+                        <div class="password-strength__bar" id="bar4"></div>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="termsCheck" asp-for="AcceptTerms" required />
+                    <label for="termsCheck">
+                        Li e aceito os <a href="/termos">Termos de Uso</a> e a <a href="/privacidade">Política de Privacidade</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Criar conta
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M8 2v12M2 8h12" stroke-linecap="round"/>
+                    </svg>
+                </button>
+
+                <!-- Divisória -->
+                <div class="auth-divider">
+                    <span>já tem uma conta?</span>
+                </div>
+
+                <div class="auth-alt-link">
+                    <a asp-action="Login" asp-controller="Home">Entrar na minha conta</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function togglePassword(id) {
+        const input = document.getElementById(id);
+        input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    function checkStrength(val) {
+        const bars = [
+            document.getElementById('bar1'),
+            document.getElementById('bar2'),
+            document.getElementById('bar3'),
+            document.getElementById('bar4'),
+        ];
+
+        bars.forEach(b => b.className = 'password-strength__bar');
+
+        if (!val) return;
+
+        let score = 0;
+        if (val.length >= 8)  score++;
+        if (/[A-Z]/.test(val)) score++;
+        if (/[0-9]/.test(val)) score++;
+        if (/[^A-Za-z0-9]/.test(val)) score++;
+
+        const cls = score <= 1 ? 'active-weak' : score <= 2 ? 'active-medium' : 'active-strong';
+        for (let i = 0; i < score; i++) {
+            bars[i].classList.add(cls);
+        }
+    }
+</script>
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+
+</body>
+</html>
