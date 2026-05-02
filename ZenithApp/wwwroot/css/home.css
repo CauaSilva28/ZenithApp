@@ -31,15 +31,101 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+    padding:0 50px;
+    max-width: 1500px;
 }
 
 .hero-left,
 .hero-right {
     flex: 1;
     color: white;
+}
+
+.hero-left{
+    padding-right:250px;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+}
+.hero-left h3{
+    font-size:18px !important; 
+}
+.hero-left h1{
+    font-size:60px !important;
+    font-weight: bolder;
+}
+.hero-left p{
+    font-size:20px !important;
+}
+
+.hero-right{
+    display:flex;
+    align-items: center;
+    justify-content: right;
+}
+.hero-right img{
+    width:350px;
+}
+
+.hero-btns{
+    display:flex;
+    align-items: center;
+    gap:30px;
+}
+.hero-btns a{
+    text-decoration: none;
+}
+.hero-btns .hero-btn1, .hero-btns .hero-btn2{
+    display:flex;
+    gap:15px;
+    font-size:18px;
+    border-radius:4px;
+    transition: all 0.3s ease;
+}
+.hero-btns .hero-btn1{
+    padding:8px 20px;
+    border:none;
+    background-color:#6A7C0A;
+    color:#fff;
+}
+.hero-btns .hero-btn1:hover{
+    background-color: #c8f135;
+    color:#000;
+}
+.hero-btns .hero-btn2{
+    padding:8px 20px;
+    border:solid 1px #fff;
+    background-color:transparent;
+    color:#fff;
+}
+.hero-btns .hero-btn2:hover{
+    background-color: #fff;
+    color:#000;
+}
+
+.hero-topicos{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:80px;
+}
+.hero-topicos .topico{
+    width:300px;
+    display:flex;
+    align-items: center;
+    gap:30px;
+    color:#fff;
+    font-size:20px;
+    padding:0 10px;
+}
+.hero-topicos .topico i{
+    width:55px;
+    height:45px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#6A7C0A;
+    border-radius:100%;
 }
