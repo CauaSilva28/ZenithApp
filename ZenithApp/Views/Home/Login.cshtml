@@ -47,7 +47,7 @@
                 </div>
             }
 
-            <form asp-action="Login" asp-controller="Account" method="post">
+            <form asp-action="#" asp-controller="#" method="post">
                 @Html.AntiForgeryToken()
 
                 <div class="form-group">
@@ -99,13 +99,9 @@
                     <span>ou</span>
                 </div>
 
-                <div class="auth-alt-link">
-                    Esqueceu a senha?
-                    <a asp-action="#" asp-controller="#">Redefinir agora</a>
-                </div>
                 <div class="auth-alt-link" style="margin-top:10px;">
                     Não tem uma conta?
-                    <a asp-action="Register" asp-controller="Home">Criar conta gratuita</a>
+                    <a asp-action="Register" asp-controller="Home"> Criar conta gratuitamente</a>
                 </div>
 
             </form>
