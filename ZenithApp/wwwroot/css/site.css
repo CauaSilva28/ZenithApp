@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+
+:root {
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --accent: #c8f135;
+    --border-focus: rgba(200, 241, 53, 0.5);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -30,7 +40,7 @@ h1, h2, h4, h5, h6, p {
 }
 
 h3{
-    color:#c8f135;
+    color:var(--accent);
 }
 
 header {
@@ -61,15 +71,36 @@ header nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    left: 0;
-    right: 0;
+    left: 5.5em;
+    right: 3em;
     box-sizing: border-box;
     padding: 20px 30px;
     position: absolute;
-    top: 0;
-    width: 100%;
+    top: 1em;
+    width: 90%;
     z-index: 10;
+}
+
+.nav-logo {
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+.nav-logo-background {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    background: var(--accent);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo svg {
+    width: 18px;
+    height: 18px;
+    fill: #151515;
 }
 
 .zenith {
@@ -77,47 +108,50 @@ header nav ul {
     color: white;
     text-decoration: none;
     font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
-    transition: color 0.3s ease;
+    transition: color 1s ease;
 }
 
 .zenith:hover {
-    color: #c8f135;
+    color: var(--accent);
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 35px;
     list-style: none;
     margin: 0;
     padding: 0;
     font-size: 1em;
+    font-family: var(--font-body);
+    font-weight: 500;
 }
 
 .nav-link {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 1s ease;
 }
 
 .nav-link:hover {
-    color: #c8f135;
+    color: var(--accent);
 }
 
 .nav-buttons {
     display: flex;
     gap: 15px;
+    font-family: var(--font-body);
+    font-weight: 500;
 }
 
 .btn {
     padding: 10px 20px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .btn-green {
-    background-color: #6A7C0A;
+    background-color: var(--border-focus);
     color: white;
 }
 
@@ -128,7 +162,7 @@ header nav ul {
 }
 
 .btn-green:hover {
-    background-color: #c8f135;
+    background-color: var(--accent);
 }
 
 .btn-outline:hover {

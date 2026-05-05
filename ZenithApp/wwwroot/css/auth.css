@@ -95,8 +95,9 @@ body {
 }
 
 .auth-logo__name {
+    font-size: 35px;
+    text-decoration: none;
     font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
-    font-size: 25px;
     color: #fff;
 }
 

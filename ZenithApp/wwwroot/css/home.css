@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+
+:root {
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --accent: #c8f135;
+    --border-focus: rgba(200, 241, 53, 0.5);
+}
+
 .home-hero {
     position: relative;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-            url('/img/image.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/image.png') center/cover no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -32,7 +41,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding:0 50px;
+    margin-left: 1em;
+    padding:0 100px;
     max-width: 1500px;
 }
 
@@ -42,90 +52,108 @@
     color: white;
 }
 
-.hero-left{
-    padding-right:250px;
-    display:flex;
+.hero-left {
+    padding-right: 250px;
+    display: flex;
     flex-direction: column;
-    gap:15px;
-}
-.hero-left h3{
-    font-size:18px !important; 
-}
-.hero-left h1{
-    font-size:60px !important;
-    font-weight: bolder;
-}
-.hero-left p{
-    font-size:20px !important;
+    gap: 15px;
 }
 
-.hero-right{
-    display:flex;
+.hero-left h3 {
+    font-size: 18px !important; 
+    font-family: var(--font-body);
+    font-weight: 500;
+
+}
+
+.hero-left h1 {
+    font-size: 60px !important;
+    font-weight: bolder;
+}
+
+.hero-left p {
+    font-size: 20px !important;
+}
+
+.hero-right {
+    display: flex;
     align-items: center;
     justify-content: right;
 }
-.hero-right img{
-    width:350px;
+
+.hero-right img {
+    width: 350px;
 }
 
-.hero-btns{
-    display:flex;
+.hero-btns {
+    display: flex;
     align-items: center;
-    gap:30px;
+    gap: 30px;
+    font-family: var(--font-body);
+    font-weight: 500;
 }
-.hero-btns a{
+
+.hero-btns a {
     text-decoration: none;
 }
-.hero-btns .hero-btn1, .hero-btns .hero-btn2{
-    display:flex;
-    gap:15px;
-    font-size:18px;
-    border-radius:4px;
-    transition: all 0.3s ease;
-}
-.hero-btns .hero-btn1{
-    padding:8px 20px;
-    border:none;
-    background-color:#6A7C0A;
-    color:#fff;
-}
-.hero-btns .hero-btn1:hover{
-    background-color: #c8f135;
-    color:#000;
-}
-.hero-btns .hero-btn2{
-    padding:8px 20px;
-    border:solid 1px #fff;
-    background-color:transparent;
-    color:#fff;
-}
-.hero-btns .hero-btn2:hover{
-    background-color: #fff;
-    color:#000;
+
+.hero-btns .hero-btn1,
+.hero-btns .hero-btn2 {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: all 1s ease;
 }
 
-.hero-topicos{
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    gap:80px;
+.hero-btns .hero-btn1{
+    padding: 8px 20px;
+    border: none;
+    background-color: var(--border-focus);
+    color: #fff;
 }
-.hero-topicos .topico{
-    width:300px;
-    display:flex;
-    align-items: center;
-    gap:30px;
-    color:#fff;
-    font-size:20px;
-    padding:0 10px;
+
+.hero-btns .hero-btn1:hover {
+    background-color: var(--accent);
+    color: #000;
 }
-.hero-topicos .topico i{
-    width:55px;
-    height:45px;
-    display:flex;
+
+.hero-btns .hero-btn2 {
+    padding: 8px 20px;
+    border: solid 1px #fff;
+    background-color: transparent;
+    color: #fff;
+}
+
+.hero-btns .hero-btn2:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.hero-topicos {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#6A7C0A;
-    border-radius:100%;
+    gap: 80px;
+}
+
+.hero-topicos .topico {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.hero-topicos .topico i {
+    width: 55px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--border-focus);
+    border-radius: 100%;
 }
