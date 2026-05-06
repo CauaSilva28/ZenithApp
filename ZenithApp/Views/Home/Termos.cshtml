@@ -12,25 +12,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="~/css/term.css"/>
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
 
 </head>
 <body>
-
-  <header>
-    <nav class="navbar-custom">
-      <div class="nav-logo">
-        <div class="nav-logo-background">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <a class="zenith" asp-area="" asp-controller="Home" asp-action="Index">Zenith</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- HERO -->
+  
   <section class="hero">
     <h1>Termos de <em>Uso</em></h1>
     <div class="hero-meta">
@@ -40,10 +27,8 @@
     </div>
   </section>
 
-  <!-- LAYOUT -->
   <div class="layout">
 
-    <!-- SIDEBAR -->
     <aside>
       <p class="aside-label">Navegação</p>
       <ul>
@@ -60,7 +45,6 @@
       </ul>
     </aside>
 
-    <!-- CONTEÚDO -->
     <main>
 
       <div class="box box-lime">
@@ -191,17 +175,8 @@
           <p><strong>Ao continuar usando a plataforma, você confirma que leu e aceita estes termos.</strong></p>
           <p>Última revisão: 1º de maio de 2026 — Versão 3.2</p>
         </div>
-        <a href="https://exemplo.com" class="btn" style="text-decoration: none;">Aceitar Termos</a>
+        <a href="javascript:history.back()" class="btn"> Aceitar termos</a>
       </div>
-
-      <footer>
-        <span>© 2026 Zenith Tecnologia Ltda. — CNPJ 00.000.000/0001-00</span>
-        <span>
-          <a href="#">Política de Privacidade</a> ·
-          <a href="#">Suporte</a> ·
-          <a href="#">Contato</a>
-        </span>
-      </footer>
 
     </main>
   </div>

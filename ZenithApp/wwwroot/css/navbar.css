@@ -1,0 +1,81 @@
+.nav_complete-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    left: 2em;
+    right: 3em;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    position: absolute;
+    width: 100%;
+    top: 1em;
+    width: 90%;
+    z-index: 10;
+}
+
+.navbar-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    left: 5.5em;
+    right: 3em;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    position: absolute;
+    width: 100%;
+    top: 1em;
+    width: 90%;
+    z-index: 10;
+}
+
+.nav-logo {
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    z-index: 10;
+}
+
+.nav-logo-background {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.nav-logo-background:hover {
+    background: var(--text-primary);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 1s ease;
+}
+
+.nav-logo-background:not(:hover) {
+    background: var(--accent);
+    transition: all 1s ease;
+}
+
+.nav-logo svg {
+    width: 18px;
+    height: 18px;
+    fill: #151515;
+    z-index: 10;
+}
+
+.zenith {
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
+    transition: color 1s ease;
+    z-index: 10;
+}
+
+.zenith:hover {
+    color: var(--accent);
+}

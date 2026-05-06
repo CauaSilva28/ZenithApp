@@ -120,7 +120,6 @@ C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\scopedcss
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\scopedcss\bundle\ZenithApp.styles.css
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\scopedcss\projectbundle\ZenithApp.bundle.scp.css
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\tivsmihk4i-{0}-61n19gt1b8-61n19gt1b8.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\u3e45d8a8c-{0}-t1cqhe9u97-t1cqhe9u97.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\wzj6cki47g-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\06wjiwumhc-{0}-sejl45xvog-sejl45xvog.gz
@@ -392,7 +391,9 @@ C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithAp
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\ref\ZenithApp.dll
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-lj0dbalret.gz
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-pmsmfn30g2.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-pmsmfn30g2-pmsmfn30g2.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-q3969ow457-q3969ow457.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-zpjjqeybc4-zpjjqeybc4.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-adbwyde7rk-adbwyde7rk.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-89och35zm2-89och35zm2.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-a8vby2vlds-a8vby2vlds.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-rycaqk5755-rycaqk5755.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-y2dcxvciql-y2dcxvciql.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-5jito3w99n-5jito3w99n.gz
