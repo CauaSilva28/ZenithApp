@@ -33,6 +33,7 @@ html, body {
 body {
     background-color: #000000;
     margin-bottom: 60px;
+    scroll-behavior: smooth;
 }
 
 h1, h2, h4, h5, h6, p {

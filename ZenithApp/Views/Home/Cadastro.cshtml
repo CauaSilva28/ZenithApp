@@ -3,12 +3,13 @@
     ViewData["Title"] = "Criar conta";
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro — @ViewData["Title"]</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="~/css/auth.css" />
 </head>
 <body>
@@ -111,7 +112,7 @@
                 <div class="form-check">
                     <input type="checkbox" id="termsCheck" asp-for="AcceptTerms" required />
                     <label for="termsCheck">
-                        Li e aceito os <a href="/ZenithApp/Views/Home/termos.html">Termos de Uso</a> e a <a href="../privacidade.html">Política de Privacidade</a>
+                        Li e aceito os <a asp-action="Termos" asp-controller="Home">Termos de Uso</a> e a <a asp-action="Privacy" asp-controller="Home">Política de Privacidade</a>
                     </label>
                 </div>
 
