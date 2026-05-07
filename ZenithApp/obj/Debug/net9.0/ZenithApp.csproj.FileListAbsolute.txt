@@ -391,10 +391,6 @@ C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithAp
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\ref\ZenithApp.dll
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-lj0dbalret.gz
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-pmsmfn30g2.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-89och35zm2-89och35zm2.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-a8vby2vlds-a8vby2vlds.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-rycaqk5755-rycaqk5755.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-y2dcxvciql-y2dcxvciql.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.json
@@ -498,4 +494,8 @@ C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\refint\ZenithA
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithApp.pdb
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithApp.genruntimeconfig.cache
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\ref\ZenithApp.dll
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-g3rtmrikoi-g3rtmrikoi.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-3j5h7qe5yo-3j5h7qe5yo.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-oidnw7g31y-oidnw7g31y.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-5kr0imlop9-5kr0imlop9.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-l7m93h67an-l7m93h67an.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-ibweop7jfz-ibweop7jfz.gz
