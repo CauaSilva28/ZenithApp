@@ -104,7 +104,7 @@
 }
 
 .hero-btns .hero-btn1:hover {
-    background-color: var(--accent);
+    background-color: var(--lime);
     color: #000;
 }
 

@@ -156,7 +156,7 @@ html, body {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
-    accent-color: var(--accent);
+    accent-color: var(--lime);
     cursor: pointer;
 }
 
@@ -167,7 +167,7 @@ html, body {
 }
 
 .form-check a {
-    color: var(--accent);
+    color: var(--lime);
     text-decoration: none;
 }
 
@@ -178,7 +178,7 @@ html, body {
     gap: 8px;
     width: 100%;
     height: 50px;
-    background: var(--accent);
+    background: var(--lime);
     color: #151515;
     border: none;
     border-radius: var(--radius-sm);
@@ -237,7 +237,7 @@ html, body {
 }
 
 .auth-alt-link a {
-    color: var(--accent);
+    color: var(--lime);
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.15s;
@@ -279,7 +279,7 @@ html, body {
 
 .password-strength__bar.active-weak   { background: #ff6b6b; }
 .password-strength__bar.active-medium { background: #ffd166; }
-.password-strength__bar.active-strong { background: var(--accent); }
+.password-strength__bar.active-strong { background: var(--lime); }
 
 /* Animação de entrada */
 @keyframes slideUp {

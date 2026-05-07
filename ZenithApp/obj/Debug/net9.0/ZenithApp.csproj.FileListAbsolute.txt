@@ -396,7 +396,6 @@ C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compresse
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-rycaqk5755-rycaqk5755.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-y2dcxvciql-y2dcxvciql.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-5jito3w99n-5jito3w99n.gz
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.json
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\ZenithApp.staticwebassets.runtime.json
@@ -499,3 +498,4 @@ C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\refint\ZenithA
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithApp.pdb
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithApp.genruntimeconfig.cache
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\ref\ZenithApp.dll
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-g3rtmrikoi-g3rtmrikoi.gz

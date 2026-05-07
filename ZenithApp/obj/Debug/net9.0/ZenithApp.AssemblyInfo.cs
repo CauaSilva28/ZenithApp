@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZenithApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fcd25016d38abbd16df322e8600b85eb4c8a20e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca8e0c990d5c65f551dda45ee8b2a7a229eb5ea1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZenithApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZenithApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

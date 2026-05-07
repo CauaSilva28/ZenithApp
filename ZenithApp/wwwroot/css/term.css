@@ -1,6 +1,6 @@
 .hero {
     background: var(--bg-panel);
-    border-bottom: 1px solid var(--accent-border);
+    border-bottom: 1px solid var(--border);
     padding: 3rem 2.5rem 2.5rem;
     position: relative;
     overflow: hidden;
@@ -11,7 +11,7 @@
     position: absolute;
     left: 0; top: 0;
     width: 4px; height: 100%;
-    background: var(--accent);
+    background: var(--lime);
 }
 
 .hero::after {
@@ -36,7 +36,7 @@ h1 {
 }
 
 h1 em { 
-    color: var(--accent); font-style: normal;
+    color: var(--lime); font-style: normal;
 }
 
 .hero-meta {
@@ -58,7 +58,7 @@ h1 em {
 
 aside {
     padding: 2rem 1.25rem;
-    border-right: 1px solid var(--accent-border);
+    border-right: 1px solid var(--border);
     position: sticky;
     top: 60px;
     height: calc(100vh - 60px);
@@ -95,16 +95,16 @@ aside ul a {
 }
 
 aside ul a:hover {
-    color: var(--accent);
-    background: var(--accent-faint);
-    border-left-color: var(--accent);
+    color: var(--lime);
+    background: var(--clean);
+    border-left-color: var(--lime);
 }
 
 aside ul a .n {
     font-family: var(--font-body);
     font-size: 11px;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--lime);
     min-width: 18px;
 }
 
@@ -124,7 +124,7 @@ main {
     align-items: baseline;
     gap: 10px;
     padding-bottom: 0.65rem;
-    border-bottom: 1px solid var(--accent-border);
+    border-bottom: 1px solid var(--border);
     margin-bottom: 1.1rem;
     flex-wrap: wrap;
 }
@@ -133,10 +133,10 @@ main {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 12px;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--lime);
     letter-spacing: 1px;
-    background: var(--accent-faint);
-    border: 1px solid var(--accent-border);
+    background: var(--clean);
+    border: 1px solid var(--border);
     padding: 2px 7px;
     border-radius: 3px;
 }
@@ -192,7 +192,7 @@ h2 {
 .list li::before {
     content: '';
     width: 6px; height: 6px;
-    background: var(--accent);
+    background: var(--lime);
     border-radius: 1px;
     flex-shrink: 0;
     margin-top: 8px;
@@ -208,12 +208,12 @@ h2 {
 }
 
 .box-ccent--accent {
-    background: var(--accent-faint);
-    border: 1px solid var(--accent-border);
-    border-left: 3px solid var(--accent);
+    background: var(--clean);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--lime);
 }
 
-.box-ccent--accent strong { color: var(--accent); }
+.box-ccent--accent strong { color: var(--lime); }
 
 .box-warn {
     background: var(--warn-bg);
@@ -225,7 +225,7 @@ h2 {
 
 .cta {
     background: var(--bg-panel);
-    border-top: 1px solid var(--accent-border);
+    border-top: 1px solid var(--border);
     padding: 1.75rem 3rem;
     display: flex;
     align-items: center;
@@ -240,7 +240,7 @@ h2 {
 .cta p strong { color: #ccc; font-weight: 500; }
 
 .btn {
-    background: var(--accent);
+    background: var(--lime);
     color: var(--bg-dark);
     border: none;
     padding: 10px 26px;
@@ -259,7 +259,7 @@ h2 {
 
 footer {
     padding: 1.2rem 3rem;
-    border-top: 1px solid var(--accent-border);
+    border-top: 1px solid var(--border);
     margin: 1.5rem -3rem -2.5rem;
     display: flex;
     justify-content: space-between;
@@ -277,7 +277,7 @@ footer {
     position: static;
     height: auto;
     border-right: none;
-    border-bottom: 1px solid var(--accent-border);
+    border-bottom: 1px solid var(--border);
     padding: 1.25rem 1.5rem;
     }
 
@@ -293,7 +293,7 @@ footer {
 
     aside ul a:hover {
     border-left: none;
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--lime);
     }
 
     main { padding: 1.5rem; }
