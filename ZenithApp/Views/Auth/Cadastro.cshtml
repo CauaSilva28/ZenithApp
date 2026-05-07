@@ -1,4 +1,5 @@
-@model RegisterViewModel
+@model ZenithApp.Models.RegisterViewModel
+
 @{
     ViewData["Title"] = "Criar conta";
     Layout = null;
@@ -52,7 +53,7 @@
                 </div>
             }
 
-            <form asp-action="#" asp-controller="#" method="post">
+            <form asp-action="Cadastro" asp-controller="Auth" method="post">
                 @Html.AntiForgeryToken()
 
                 <div class="form-row">
@@ -133,7 +134,7 @@
                 </div>
 
                 <div class="auth-alt-link">
-                    <a asp-action="Login" asp-controller="Home">Entrar na minha conta</a>
+                    <a asp-action="Login" asp-controller="Auth">Entrar na minha conta</a>
                 </div>
 
             </form>
