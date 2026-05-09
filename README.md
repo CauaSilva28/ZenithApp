@@ -5,7 +5,7 @@ A Zenith é uma plataforma esportiva que conecta atletas, treinadores e nutricio
 
 O projeto contempla **i)** uma landing page institucional; **ii)** fluxo de login por perfil; **iii)** dashboards por tipo de usuário e **iv)** telas de métricas, treinos e dieta.
 
-# Desenvolvimento até o momento:
+# Desenvolvimento até o momento (clique na imagem para abrir vídeo):
 [![Assista ao vídeo](screenshot.png)](https://mkevin2.github.io/ZenithApp-Video/)
 
 ---------------------
