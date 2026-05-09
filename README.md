@@ -1,9 +1,12 @@
-# Zenith - Plataforma Esportiva
+# Zenith | Plataforma Esportiva
 Projeto de design de plataforma fitness completa, desenvolvido no Figma, com foco em atletas, treinadores e nutricionistas.
 
 A Zenith é uma plataforma esportiva que conecta atletas, treinadores e nutricionistas em um único ambiente. Nela, atletas acompanham seus treinos e métricas corporais, treinadores gerenciam suas equipes e nutricionistas monitoram as dietas dos atletas de forma individualizada.
 
 O projeto contempla **i)** uma landing page institucional; **ii)** fluxo de login por perfil; **iii)** dashboards por tipo de usuário e **iv)** telas de métricas, treinos e dieta.
+
+# Desenvolvimento até o momento:
+[![Assista ao vídeo](screenshot.png)](https://mkevin2.github.io/ZenithApp-Video/)
 
 ---------------------
 
