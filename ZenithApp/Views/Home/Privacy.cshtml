@@ -1,7 +1,304 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+@{
+    Layout = null;
 }
 
-<h1>@ViewData["Title"]</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Políticas de Privacidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="~/css/term.css"/>
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/pricavy.css" asp-apeend-version="true" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Política de <em>Privacidade</em></h1>
+    <div class="hero-meta">
+      <div><strong>Versão:</strong> 2.1</div>
+      <div><strong>Última atualização:</strong> 1º de maio de 2026</div>
+      <div><strong>Vigência:</strong> imediata</div>
+      <div><strong>Base legal:</strong> LGPD — Lei nº 13.709/2018</div>
+    </div>
+  </section>
 
-<p>Use this page to detail your site's privacy policy.</p>
+  <!-- LAYOUT -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside>
+      <p class="aside-label">Navegação</p>
+      <ul>
+        <li><a href="#s1"><span class="n">01</span>Introdução</a></li>
+        <li><a href="#s2"><span class="n">02</span>Dados Coletados</a></li>
+        <li><a href="#s3"><span class="n">03</span>Como Usamos</a></li>
+        <li><a href="#s4"><span class="n">04</span>Base Legal</a></li>
+        <li><a href="#s5"><span class="n">05</span>Compartilhamento</a></li>
+        <li><a href="#s6"><span class="n">06</span>Seus Direitos</a></li>
+        <li><a href="#s7"><span class="n">07</span>Cookies</a></li>
+        <li><a href="#s8"><span class="n">08</span>Retenção</a></li>
+        <li><a href="#s9"><span class="n">09</span>Segurança</a></li>
+        <li><a href="#s10"><span class="n">10</span>Contato — DPO</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main>
+
+      <div class="box box-lime">
+        <strong>Seu dado, sua escolha.</strong> A APEX Performance respeita sua privacidade e está em conformidade com a LGPD. Esta política explica quais dados coletamos, por que e como você pode exercer seus direitos.
+      </div>
+
+      <!-- 01 -->
+      <article class="section" id="s1">
+        <div class="section-head">
+          <span class="num">01</span>
+          <h2>Introdução</h2>
+        </div>
+        <p>A APEX Performance Tecnologia Ltda. ("APEX", "nós" ou "nosso"), inscrita no CNPJ 00.000.000/0001-00, com sede em São Paulo/SP, é a controladora responsável pelo tratamento dos dados pessoais coletados por meio de seus serviços digitais — incluindo aplicativo móvel, plataforma web e demais canais associados.</p>
+        <p>Esta Política de Privacidade descreve de forma transparente como tratamos seus dados, fundamentada nos princípios da necessidade, finalidade, transparência e segurança previstos na Lei Geral de Proteção de Dados (LGPD).</p>
+      </article>
+
+      <!-- 02 -->
+      <article class="section" id="s2">
+        <div class="section-head">
+          <span class="num">02</span>
+          <h2>Dados Coletados</h2>
+        </div>
+        <p>Coletamos apenas os dados necessários para a prestação dos nossos serviços, organizados nas categorias abaixo:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Exemplos</th>
+              <th>Obrigatório</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Identificação</td>
+              <td>Nome completo, e-mail, CPF</td>
+              <td>Sim</td>
+            </tr>
+            <tr>
+              <td>Contato</td>
+              <td>Telefone, endereço de entrega</td>
+              <td>Opcional</td>
+            </tr>
+            <tr>
+              <td>Saúde e biometria</td>
+              <td>Peso, altura, frequência cardíaca, histórico de lesões</td>
+              <td>Opcional</td>
+            </tr>
+            <tr>
+              <td>Performance</td>
+              <td>Cargas, séries, tempo de treino, recordes pessoais</td>
+              <td>Gerado pelo uso</td>
+            </tr>
+            <tr>
+              <td>Pagamento</td>
+              <td>Últimos 4 dígitos do cartão, bandeira, histórico de cobranças</td>
+              <td>Sim (planos pagos)</td>
+            </tr>
+            <tr>
+              <td>Uso da plataforma</td>
+              <td>Logs de acesso, IP, dispositivo, páginas visitadas</td>
+              <td>Automático</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="box box-warn">
+          <strong>Dados sensíveis:</strong> Informações de saúde e biometria são classificadas como dados sensíveis pela LGPD e recebem tratamento diferenciado, com criptografia em repouso e acesso restrito a equipes autorizadas.
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="section" id="s3">
+        <div class="section-head">
+          <span class="num">03</span>
+          <h2>Como Usamos os Dados</h2>
+        </div>
+        <p>Utilizamos suas informações exclusivamente para as finalidades descritas abaixo:</p>
+        <ul class="list">
+          <li>Criação e gerenciamento da sua conta na plataforma.</li>
+          <li>Personalização de planos de treino e recomendações de performance.</li>
+          <li>Processamento de pagamentos e emissão de faturas e recibos.</li>
+          <li>Envio de comunicações transacionais (confirmações, alertas de conta).</li>
+          <li>Envio de comunicações de marketing, mediante consentimento prévio.</li>
+          <li>Análise agregada e anonimizada para melhoria dos algoritmos da plataforma.</li>
+          <li>Cumprimento de obrigações legais e regulatórias.</li>
+          <li>Prevenção a fraudes e proteção da segurança da plataforma.</li>
+        </ul>
+      </article>
+
+      <!-- 04 -->
+      <article class="section" id="s4">
+        <div class="section-head">
+          <span class="num">04</span>
+          <h2>Base Legal do Tratamento</h2>
+        </div>
+        <p>Todo tratamento de dados realizado pela APEX está fundamentado em ao menos uma das bases legais previstas no Art. 7º ou Art. 11 da LGPD:</p>
+        <ul class="list">
+          <li><strong style="color:#ccc">Execução de contrato</strong> — dados necessários para prestar o serviço contratado.</li>
+          <li><strong style="color:#ccc">Consentimento</strong> — dados de saúde, marketing e cookies não essenciais, revogável a qualquer momento.</li>
+          <li><strong style="color:#ccc">Legítimo interesse</strong> — prevenção a fraudes, segurança da plataforma e análises internas.</li>
+          <li><strong style="color:#ccc">Obrigação legal</strong> — retenção de dados fiscais e atendimento a requisições judiciais.</li>
+        </ul>
+      </article>
+
+      <!-- 05 -->
+      <article class="section" id="s5">
+        <div class="section-head">
+          <span class="num">05</span>
+          <h2>Compartilhamento de Dados</h2>
+        </div>
+        <p>A APEX não vende seus dados pessoais. O compartilhamento ocorre apenas nas seguintes situações e com as categorias de destinatários abaixo:</p>
+        <ul class="list">
+          <li><strong style="color:#ccc">Processadores de pagamento</strong> — para realizar cobranças com segurança (ex.: Stripe, PagSeguro). Recebem apenas dados estritamente necessários à transação.</li>
+          <li><strong style="color:#ccc">Infraestrutura de nuvem</strong> — servidores que hospedam a plataforma, sob contrato de processamento de dados com cláusulas de confidencialidade.</li>
+          <li><strong style="color:#ccc">Ferramentas de análise</strong> — dados anonimizados ou agregados para métricas de desempenho da plataforma.</li>
+          <li><strong style="color:#ccc">Autoridades competentes</strong> — mediante requisição legal, judicial ou regulatória devidamente fundamentada.</li>
+        </ul>
+        <div class="box box-lime">
+          <strong>Transferência internacional:</strong> Caso algum fornecedor esteja localizado fora do Brasil, exigimos contratualmente nível de proteção equivalente ao da LGPD, em conformidade com o Art. 33 da lei.
+        </div>
+      </article>
+
+      <!-- 06 -->
+      <article class="section" id="s6">
+        <div class="section-head">
+          <span class="num">06</span>
+          <h2>Seus Direitos</h2>
+        </div>
+        <p>Como titular de dados, você possui os seguintes direitos garantidos pela LGPD, exercíveis a qualquer momento pelo painel da sua conta ou pelo e-mail do DPO:</p>
+
+        <div class="rights-grid">
+          <div class="right-card">
+            <strong>Acesso</strong>
+            <p>Solicite uma cópia completa dos dados que temos sobre você.</p>
+          </div>
+          <div class="right-card">
+            <strong>Correção</strong>
+            <p>Atualize dados incompletos, inexatos ou desatualizados.</p>
+          </div>
+          <div class="right-card">
+            <strong>Eliminação</strong>
+            <p>Solicite a exclusão de dados tratados com base no consentimento.</p>
+          </div>
+          <div class="right-card">
+            <strong>Portabilidade</strong>
+            <p>Receba seus dados em formato estruturado e legível por máquina.</p>
+          </div>
+          <div class="right-card">
+            <strong>Revogação</strong>
+            <p>Retire o consentimento para tratamentos baseados nessa base legal.</p>
+          </div>
+          <div class="right-card">
+            <strong>Oposição</strong>
+            <p>Oponha-se a tratamentos realizados por legítimo interesse.</p>
+          </div>
+        </div>
+
+        <p>Respondemos a todas as solicitações em até <strong style="color:#ccc">15 dias úteis</strong>. Em casos complexos, esse prazo pode ser estendido por mais 15 dias, com comunicação prévia.</p>
+      </article>
+
+      <!-- 07 -->
+      <article class="section" id="s7">
+        <div class="section-head">
+          <span class="num">07</span>
+          <h2>Cookies e Rastreamento</h2>
+        </div>
+        <p>Utilizamos cookies e tecnologias similares para garantir o funcionamento da plataforma, personalizar a experiência e analisar o desempenho. As categorias de cookies que utilizamos são:</p>
+        <ul class="list">
+          <li><strong style="color:#ccc">Essenciais</strong> — necessários para o funcionamento básico da plataforma. Não podem ser desativados.</li>
+          <li><strong style="color:#ccc">Funcionais</strong> — armazenam preferências como idioma e layout. Podem ser desativados sem impacto nas funções principais.</li>
+          <li><strong style="color:#ccc">Analíticos</strong> — coletam dados agregados de uso para melhoria da plataforma. Requerem consentimento.</li>
+          <li><strong style="color:#ccc">Marketing</strong> — utilizados para personalização de comunicações. Requerem consentimento e podem ser revogados a qualquer momento.</li>
+        </ul>
+        <p>Você pode gerenciar suas preferências de cookies a qualquer momento nas configurações da conta ou pelo banner de consentimento exibido no primeiro acesso.</p>
+      </article>
+
+      <!-- 08 -->
+      <article class="section" id="s8">
+        <div class="section-head">
+          <span class="num">08</span>
+          <h2>Retenção de Dados</h2>
+        </div>
+        <p>Retemos seus dados pelo tempo necessário para as finalidades descritas nesta política ou para cumprimento de obrigações legais. Os prazos gerais são:</p>
+        <ul class="list">
+          <li>Dados de conta ativa — enquanto a conta estiver ativa na plataforma.</li>
+          <li>Dados de performance e treino — 5 anos após o encerramento da conta.</li>
+          <li>Dados fiscais e de pagamento — 5 anos, conforme legislação tributária.</li>
+          <li>Logs de acesso — 6 meses, conforme Marco Civil da Internet (Lei nº 12.965/2014).</li>
+          <li>Dados tratados por consentimento — até a revogação ou encerramento da conta.</li>
+        </ul>
+        <p>Após o prazo aplicável, os dados são eliminados de forma segura ou anonimizados de maneira irreversível.</p>
+      </article>
+
+      <!-- 09 -->
+      <article class="section" id="s9">
+        <div class="section-head">
+          <span class="num">09</span>
+          <h2>Segurança <span class="tag">Crítico</span></h2>
+        </div>
+        <div class="box box-warn">
+          <strong>Incidente de segurança:</strong> Em caso de vazamento ou acesso não autorizado que possa gerar risco relevante, a APEX notificará a ANPD e os titulares afetados no prazo legalmente estabelecido.
+        </div>
+        <p>Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, perda, destruição ou divulgação indevida:</p>
+        <ul class="list">
+          <li>Criptografia em trânsito (TLS 1.2+) e em repouso para dados sensíveis.</li>
+          <li>Controle de acesso baseado em função (RBAC) com princípio do menor privilégio.</li>
+          <li>Autenticação multifator obrigatória para acessos administrativos.</li>
+          <li>Monitoramento contínuo de atividades suspeitas e logs de auditoria.</li>
+          <li>Testes de penetração e avaliações de vulnerabilidade periódicos.</li>
+          <li>Política interna de resposta a incidentes com plano de comunicação estruturado.</li>
+        </ul>
+      </article>
+
+      <!-- 10 -->
+      <article class="section" id="s10">
+        <div class="section-head">
+          <span class="num">10</span>
+          <h2>Contato — DPO</h2>
+        </div>
+        <p>A APEX designou um Encarregado de Proteção de Dados (DPO) para atuar como canal de comunicação entre a empresa, os titulares e a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+        <ul class="list">
+          <li><strong style="color:#ccc">Nome:</strong> Maria Oliveira</li>
+          <li><strong style="color:#ccc">E-mail:</strong> <a href="mailto:dpo@apexperformance.com.br">dpo@apexperformance.com.br</a></li>
+          <li><strong style="color:#ccc">Endereço:</strong> Av. Paulista, 1000 — Bela Vista, São Paulo/SP — CEP 01310-100</li>
+          <li><strong style="color:#ccc">Horário de atendimento:</strong> Segunda a sexta, das 9h às 18h</li>
+        </ul>
+        <p>Para exercer seus direitos ou tirar dúvidas sobre esta política, entre em contato diretamente com o DPO. Você também pode registrar reclamação junto à <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">ANPD</a> caso entenda que seus direitos não foram atendidos.</p>
+      </article>
+
+      <!-- CTA -->
+      <div class="cta">
+        <div>
+          <p><strong>Ao utilizar a plataforma, você confirma que leu e compreendeu esta política.</strong></p>
+          <p>Última revisão: 1º de maio de 2026 — Versão 2.1</p>
+        </div>
+        <button class="btn">Entendi</button>
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <span>© 2026 APEX Performance Tecnologia Ltda. — CNPJ 00.000.000/0001-00</span>
+        <span>
+          <a href="termos.html">Termos de Uso</a> ·
+          <a href="#">Suporte</a> ·
+          <a href="#">Contato</a>
+        </span>
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>
