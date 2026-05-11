@@ -1,15 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
 
-
 :root {
     --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
-    --accent: #c8f135;
     --border-focus: rgba(200, 241, 53, 0.5);
+    --bg-dark: #151515;
+    --bg-panel: #1c1c1c;
+    --lime: #c8f135;
+    --clean:  rgba(197,241,53,0.06);
+    --border: rgba(197,241,53,0.18);
+    --text-primary: #f0ede8;
+    --text-muted: #7a7a74;
+    --text-hint: #4a4a46;
+    --input-bg: rgba(255,255,255,0.04);
+    --input-hover: rgba(255,255,255,0.07);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --text:#d8d8d8;
+    --muted: #888;
+    --warn-bg:rgba(255,80,80,0.06);
+    --warn-border:rgba(255,80,80,0.22);
+    --warn-color:#ff6b6b;
 }
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -31,8 +48,11 @@ html, body {
 }
 
 body {
-    background-color: #000000;
-    margin-bottom: 60px;
+    font-family: var(--font-body);
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+
 }
 
 h1, h2, h4, h5, h6, p {
@@ -40,7 +60,7 @@ h1, h2, h4, h5, h6, p {
 }
 
 h3{
-    color:var(--accent);
+    color:var(--lime);
 }
 
 header {
@@ -67,54 +87,6 @@ header nav ul {
     padding: 0;
 }
 
-.navbar-custom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    left: 5.5em;
-    right: 3em;
-    box-sizing: border-box;
-    padding: 20px 30px;
-    position: absolute;
-    top: 1em;
-    width: 90%;
-    z-index: 10;
-}
-
-.nav-logo {
-    align-items: center;
-    gap: 10px;
-    display: flex;
-}
-
-.nav-logo-background {
-    display: inline-flex;
-    width: 34px;
-    height: 34px;
-    background: var(--accent);
-    border-radius: 8px;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-logo svg {
-    width: 18px;
-    height: 18px;
-    fill: #151515;
-}
-
-.zenith {
-    font-size: 35px;
-    color: white;
-    text-decoration: none;
-    font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
-    transition: color 1s ease;
-}
-
-.zenith:hover {
-    color: var(--accent);
-}
-
 .nav-links {
     display: flex;
     gap: 35px;
@@ -133,7 +105,7 @@ header nav ul {
 }
 
 .nav-link:hover {
-    color: var(--accent);
+    color: var(--lime);
 }
 
 .nav-buttons {
@@ -162,7 +134,7 @@ header nav ul {
 }
 
 .btn-green:hover {
-    background-color: var(--accent);
+    background-color: var(--lime);
 }
 
 .btn-outline:hover {

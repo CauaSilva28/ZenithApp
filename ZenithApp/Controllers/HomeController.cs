@@ -43,12 +43,17 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Register()
+    public IActionResult Cadastro()
     {
         return View();
     }
 
     public IActionResult Login()
+    {
+        return View();
+    }
+
+    public IActionResult Termos()
     {
         return View();
     }

@@ -1,38 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
-
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    --bg-dark: #151515;
-    --bg-panel: #1c1c1c;
-    --accent: #c8f135;
-    --accent-dim: rgba(200, 241, 53, 0.12);
-    --text-primary: #f0ede8;
-    --text-muted: #7a7a74;
-    --text-hint: #4a4a46;
-    --border: rgba(255,255,255,0.08);
-    --border-focus: rgba(200, 241, 53, 0.5);
-    --input-bg: rgba(255,255,255,0.04);
-    --input-hover: rgba(255,255,255,0.07);
-    --font-display: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --radius: 12px;
-    --radius-sm: 8px;
-}
-
 html, body {
     height: 100%;
     overflow: hidden;
-}
-
-body {
-    font-family: var(--font-body);
-    background: var(--bg-dark);
-    color: var(--text-primary);
 }
 
 .auth-wrapper {
@@ -65,40 +33,6 @@ body {
         rgba(21,21,21,0.1) 50%,
         rgba(21,21,21,0.55) 100%
     );
-}
-
-.auth-logo {
-    position: absolute;
-    top: 36px;
-    left: 36px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.auth-logo__mark {
-    width: 34px;
-    height: 34px;
-    background: var(--accent);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.auth-logo__mark svg {
-    width: 18px;
-    height: 18px;
-    fill: #151515;
-}
-
-.auth-logo__name {
-    font-size: 35px;
-    text-decoration: none;
-    font-family: "Didot", "Bodoni MT", "Times New Roman", serif;
-    color: #fff;
 }
 
 .auth-right {
@@ -222,7 +156,7 @@ body {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
-    accent-color: var(--accent);
+    accent-color: var(--lime);
     cursor: pointer;
 }
 
@@ -233,7 +167,7 @@ body {
 }
 
 .form-check a {
-    color: var(--accent);
+    color: var(--lime);
     text-decoration: none;
 }
 
@@ -244,7 +178,7 @@ body {
     gap: 8px;
     width: 100%;
     height: 50px;
-    background: var(--accent);
+    background: var(--lime);
     color: #151515;
     border: none;
     border-radius: var(--radius-sm);
@@ -303,7 +237,7 @@ body {
 }
 
 .auth-alt-link a {
-    color: var(--accent);
+    color: var(--lime);
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.15s;
@@ -345,7 +279,7 @@ body {
 
 .password-strength__bar.active-weak   { background: #ff6b6b; }
 .password-strength__bar.active-medium { background: #ffd166; }
-.password-strength__bar.active-strong { background: var(--accent); }
+.password-strength__bar.active-strong { background: var(--lime); }
 
 /* Animação de entrada */
 @keyframes slideUp {

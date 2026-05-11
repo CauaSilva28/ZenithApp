@@ -1,15 +1,19 @@
-@model RegisterViewModel
+@model ZenithApp.Models.RegisterViewModel
+
 @{
     ViewData["Title"] = "Criar conta";
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro — @ViewData["Title"]</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="~/css/auth.css" />
+    <link rel="stylesheet" href="~/css/navbar.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
 
@@ -19,14 +23,16 @@
         <div class="auth-left__bg"></div>
         <div class="auth-left__overlay"></div>
 
-        <a href="/" class="auth-logo">
-            <div class="auth-logo__mark">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
+        <div class="nav_complete-logo">
+            <div class="nav-logo">
+                <div class="nav-logo-background">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <a class="zenith" asp-area="" asp-controller="Home" asp-action="Index">Zenith</a>
             </div>
-            <span class="auth-logo__name">Zenith</span>
-        </a>
+        </div>
     </div>
 
     <div class="auth-right">
@@ -47,7 +53,7 @@
                 </div>
             }
 
-            <form asp-action="Register" asp-controller="Account" method="post">
+            <form asp-action="Cadastro" asp-controller="Auth" method="post">
                 @Html.AntiForgeryToken()
 
                 <div class="form-row">
@@ -111,7 +117,7 @@
                 <div class="form-check">
                     <input type="checkbox" id="termsCheck" asp-for="AcceptTerms" required />
                     <label for="termsCheck">
-                        Li e aceito os <a href="/termos">Termos de Uso</a> e a <a href="/privacidade">Política de Privacidade</a>
+                        Li e aceito os <a asp-action="Termos" asp-controller="Home">Termos de Uso</a> e a <a asp-action="Privacy" asp-controller="Home">Política de Privacidade</a>
                     </label>
                 </div>
 
@@ -128,7 +134,7 @@
                 </div>
 
                 <div class="auth-alt-link">
-                    <a asp-action="Login" asp-controller="Home">Entrar na minha conta</a>
+                    <a asp-action="Login" asp-controller="Auth">Entrar na minha conta</a>
                 </div>
 
             </form>

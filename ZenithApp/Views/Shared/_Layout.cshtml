@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ZenithApp.styles.css" asp-append-version="true" />
     @RenderSection("Styles", required: false)
 </head>
@@ -16,7 +17,6 @@
 <body>
     <header>
         <nav class="navbar-custom">
-
             <div class="nav-logo">
                 <div class="nav-logo-background">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -47,8 +47,8 @@
             </ul>
 
             <div class="nav-buttons">
-                <a asp-controller="Home" asp-action="Login" class="btn btn-outline">Entrar</a>
-                <a asp-controller="Home" asp-action="Register" class="btn btn-green">Começar agora</a>
+                <a asp-controller="Auth" asp-action="Login" class="btn btn-outline">Entrar</a>
+                <a asp-controller="Auth" asp-action="Cadastro" class="btn btn-green">Começar agora</a>
             </div>
         </nav>
     </header>
