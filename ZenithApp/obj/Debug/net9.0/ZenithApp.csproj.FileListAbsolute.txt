@@ -391,7 +391,6 @@ C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithAp
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\ref\ZenithApp.dll
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-lj0dbalret.gz
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-pmsmfn30g2.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.json
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\bin\Debug\net9.0\ZenithApp.staticwebassets.runtime.json
@@ -498,4 +497,6 @@ C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compresse
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-oidnw7g31y-oidnw7g31y.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-5kr0imlop9-5kr0imlop9.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-l7m93h67an-l7m93h67an.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-ibweop7jfz-ibweop7jfz.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\xknfjbjie1-{0}-9xbw4wu27a-9xbw4wu27a.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-z3ssergh6z-z3ssergh6z.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-aivl86aqo7-aivl86aqo7.gz
