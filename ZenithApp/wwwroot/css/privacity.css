@@ -1,5 +1,5 @@
 .aside-label {
-    font-size: 10px;
+    font-size: 20px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--muted);
@@ -11,7 +11,7 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0;
-    font-size: 13.5px;
+    font-size: 20px;
 }
 
 .data-table thead tr {
@@ -21,7 +21,7 @@
 
 .data-table th {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -43,14 +43,6 @@
 
 .data-table tbody tr:hover td {
     background: rgba(255,255,255,0.02);
-}
-
-.box {
-      padding: 0.9rem 1.1rem;
-      border-radius: 0 4px 4px 0;
-      margin: 1rem 0;
-      font-size: 14px;
-      color: #ccc;
 }
 
 .box-lime-2 {
@@ -81,7 +73,7 @@
 .right-card strong {
     display: block;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -90,7 +82,7 @@
 }
 
 .right-card p {
-    font-size: 13px;
+    font-size: 20px;
     color: #999;
     margin-bottom: 0 !important;
 }

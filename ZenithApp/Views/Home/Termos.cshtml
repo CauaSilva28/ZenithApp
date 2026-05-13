@@ -12,12 +12,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="~/css/term.css"/>
+  <link rel="stylesheet" href="~/js/term.css"/>
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
   
   <section class="hero">
+    
+    <button class="btn-scroll-bottom" onclick="scrollToggle()">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14"></path>
+        <path d="M19 12l-7 7-7-7"></path>
+      </svg>
+    </button>
+
     <h1>Termos de <em>Uso</em></h1>
     <div class="hero-meta">
       <div><strong>Versão:</strong> 1.0</div>
@@ -131,7 +140,7 @@
         </div>
         <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Para dirimir quaisquer controvérsias, fica eleito o foro da Comarca de São Paulo/SP, com renúncia a qualquer outro, por mais privilegiado que seja.</p>
         <p>A nulidade ou inexequibilidade de qualquer cláusula não afeta as demais disposições. A omissão da Zenith em exercer qualquer direito previsto nestes Termos não constituirá renúncia a esse direito.</p>
-        <p>Dúvidas ou solicitações: <a href="mailto:sac@Zenith@gmail.com">sac@Zenith@gmail.com</a></p>
+        <p>Dúvidas ou solicitações: <a href="mailto:sac.zenithapp@gmail.com" style='color:#c8f135; text-decoration: underline;'>sac.zenithapp@gmail.com</a></p>
       </article>
 
       <div class="cta">
@@ -145,12 +154,6 @@
     </main>
   </div>
 
-<script>
-
-  function aceitarTermos() {
-    localStorage.setItem("termosAceitos", "true");
-  }
-
-</script>
+  <script src="~/js/site.js"></script>
 </body>
 </html>
