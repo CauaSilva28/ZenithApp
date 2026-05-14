@@ -1,13 +1,17 @@
 .home-hero {
     position: relative;
+    z-index:0;
     height: 100vh;
     width: 100%;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/image.png') center/cover no-repeat;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0px;
+    gap:60px;
+    margin-top:0px;
+    padding:40px 100px 0 100px;
 }
 
 .overlay {
@@ -32,7 +36,6 @@
     align-items: center;
     width: 100%;
     margin-left: 1em;
-    padding:0 100px;
     max-width: 1500px;
 }
 
@@ -47,13 +50,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.hero-left h3 {
-    font-size: 18px !important; 
-    font-family: var(--font-body);
-    font-weight: 500;
-
 }
 
 .hero-left h1 {
@@ -121,10 +117,12 @@
 }
 
 .hero-topicos {
+    position: relative;
+    z-index:1;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 80px;
 }
 
@@ -139,8 +137,7 @@
 }
 
 .hero-topicos .topico i {
-    width: 55px;
-    height: 45px;
+    padding:10px;
     display: flex;
     align-items: center;
     justify-content: center;

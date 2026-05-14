@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\navbar.css"
     },
     {
+      "Id": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\wwwroot\\css\\privacity.css",
+      "PackagePath": "staticwebassets\\css\\privacity.css"
+    },
+    {
       "Id": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\wwwroot\\img\\image.png",
       "PackagePath": "staticwebassets\\img\\image.png"
+    },
+    {
+      "Id": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\wwwroot\\img\\imgSobre.png",
+      "PackagePath": "staticwebassets\\img\\imgSobre.png"
     },
     {
       "Id": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\wwwroot\\js\\site.js",
