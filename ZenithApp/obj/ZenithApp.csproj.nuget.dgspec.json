@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\ZenithApp.csproj": {}
+    "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\ZenithApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\ZenithApp.csproj": {
+    "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\ZenithApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\ZenithApp.csproj",
+        "projectUniqueName": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\ZenithApp.csproj",
         "projectName": "ZenithApp",
-        "projectPath": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\ZenithApp.csproj",
-        "packagesPath": "C:\\Users\\Caua\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Caua\\Desktop\\GITHUB\\ZenithApp\\ZenithApp\\obj\\",
+        "projectPath": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\ZenithApp.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Caua\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

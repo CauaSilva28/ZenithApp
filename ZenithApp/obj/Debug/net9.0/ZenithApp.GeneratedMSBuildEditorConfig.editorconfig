@@ -9,69 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ZenithApp
 build_property.RootNamespace = ZenithApp
-build_property.ProjectDir = C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\
+build_property.ProjectDir = E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp
+build_property.MSBuildProjectDirectory = E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Auth/Cadastro.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Auth/Cadastro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxDYWRhc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Auth/Login.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Home/Conteudo.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Home/Conteudo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250ZXVkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Home/Index.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Home/Performance.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Home/Performance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJmb3JtYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Home/Privacy.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Home/Sobre.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Home/Sobre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTb2JyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Home/Termos.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Home/Termos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Home/Treino.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Home/Treino.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUcmVpbm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Shared/Error.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/_ViewImports.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/_ViewStart.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Caua/Desktop/GITHUB/ZenithApp/ZenithApp/Views/Shared/_Layout.cshtml]
+[E:/Área de Trabalho/github meus projetos/ZenithApp/ZenithApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-c5vrcakcgc

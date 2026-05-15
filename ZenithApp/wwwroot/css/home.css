@@ -1,4 +1,4 @@
-.home-hero {
+#home-hero {
     position: relative;
     z-index:0;
     height: 100vh;
@@ -11,7 +11,7 @@
     justify-content: center;
     gap:60px;
     margin-top:0px;
-    padding:40px 100px 0 100px;
+    padding:40px 150px 0 150px;
 }
 
 .overlay {
@@ -35,8 +35,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-left: 1em;
-    max-width: 1500px;
 }
 
 .hero-left,
@@ -55,10 +53,6 @@
 .hero-left h1 {
     font-size: 60px !important;
     font-weight: bolder;
-}
-
-.hero-left p {
-    font-size: 20px !important;
 }
 
 .hero-right {
@@ -124,6 +118,7 @@
     align-items: center;
     justify-content: start;
     gap: 80px;
+    margin-top:80px;
 }
 
 .hero-topicos .topico {
@@ -143,4 +138,59 @@
     justify-content: center;
     background-color: var(--border-focus);
     border-radius: 100%;
+}
+
+/* ----- SOBRE ----- */
+
+#sobre{
+    margin-top:var(--dist-conteudo);
+    padding:0px 150px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.sobre-img{
+    position: relative;
+    width: fit-content;
+}
+
+.sobre-img::after{
+    content: "";
+    width: 250px;
+    height: 250px;
+    background-color: #7a8f0d;
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    border-radius: 30px;
+    z-index: 0;
+}
+
+#sobre img{
+    width:350px;
+    position: relative;
+    z-index: 1;
+}
+#sobre img::after{
+    content: "";
+    background-color: var(--border-focus);
+    width:100px;
+    height:80px;
+    position: absolute;
+}
+
+#sobre .sobre-conteudo{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: end;
+    gap:10px;
+}
+
+/* ------ CONTEUDO ----- */
+#conteudo{
+    margin-top:var(--dist-conteudo);
+    padding:0px 150px;
 }

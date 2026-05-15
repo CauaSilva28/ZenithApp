@@ -211,9 +211,7 @@ E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\Z
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\scopedcss\bundle\ZenithApp.styles.css
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\scopedcss\projectbundle\ZenithApp.bundle.scp.css
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\imv7odndjz-8loq7rqfsn.gz
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uaw9rpp3mn-61n19gt1b8.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\powxni13sv-xtxxf3hu2r.gz
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\vs4olusj0k-t1cqhe9u97.gz
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\vsj43ricb2-c2jlpeoesf.gz
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\9nsnevwzkb-sejl45xvog.gz
@@ -289,8 +287,6 @@ E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\r
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithApp.pdb
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\ZenithApp.genruntimeconfig.cache
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\ref\ZenithApp.dll
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-0crwm7w7za.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-ka79ha1xck.gz
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\bin\Debug\net9.0\appsettings.json
 C:\Users\mathe\OneDrive\Documentos\ZenithApp\ZenithApp\bin\Debug\net9.0\ZenithApp.staticwebassets.runtime.json
@@ -501,3 +497,10 @@ C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4bl
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\powxni13sv-aivl86aqo7.gz
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-k1o5shu8xv.gz
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-frjsjqrsja.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\imv7odndjz-3j5h7qe5yo.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\fe6iz48x7h-5kr0imlop9.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\urlpduaaud-9xbw4wu27a.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4blmpuo9la-z3ssergh6z.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\powxni13sv-aivl86aqo7.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-zf06xfhefb.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-9btzt8odzk.gz

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --font-display: 'Syne', sans-serif;
+    --font-title: "Montserrat";
     --font-body: 'DM Sans', sans-serif;
     --border-focus: rgba(200, 241, 53, 0.5);
     --bg-dark: #151515;
@@ -21,6 +23,7 @@
     --warn-bg:rgba(255,80,80,0.06);
     --warn-border:rgba(255,80,80,0.22);
     --warn-color:#ff6b6b;
+    --dist-conteudo: 100px;
 }
 
 *, *::before, *::after {
@@ -30,7 +33,6 @@
 }
 
 html {
-    font-size: 14px;
     position: relative;
     min-height: 100%;
 }
@@ -55,8 +57,19 @@ body {
 
 }
 
-h1, h2, h4, h5, h6, p {
+h1, h2, h4, h5, h6{
     color: #fff;
+    font-family: var(--font-title);
+}
+
+p{
+    font-size:20px;
+    color: #fff;
+}
+
+h2{
+    font-size:45px;
+    font-weight:bold;
 }
 
 h3{
