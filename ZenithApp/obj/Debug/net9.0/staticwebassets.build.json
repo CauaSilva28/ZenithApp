@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pPAI9RHXzWDj3EIA65Nsc3DgczHUKgHMR6AWRYRuAtM=",
+  "Hash": "73xEbh5otHsg2TxJ0srHeVV4Mw2zw3UytkqGSyu/8hE=",
   "Source": "ZenithApp",
   "BasePath": "_content/ZenithApp",
   "Mode": "Default",
@@ -500,12 +500,12 @@
       "OriginalItemSpec": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-zf06xfhefb.gz",
+      "Identity": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-wjvqdx7kyl.gz",
       "SourceId": "ZenithApp",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ZenithApp",
-      "RelativePath": "css/site#[.{fingerprint=zf06xfhefb}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=wjvqdx7kyl}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -514,8 +514,8 @@
       "RelatedAsset": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rindejrfsn",
-      "Integrity": "UyKP21DJDPZ35n2Oj90/OH9ATJvCBduVlVVU+REpFjo=",
+      "Fingerprint": "vuqc1pwbdn",
+      "Integrity": "CYhLUta2ax2BXnSAmeG0/bXRILZhV7YL1NCpxZdWbpA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\site.css"
@@ -1235,12 +1235,12 @@
       "OriginalItemSpec": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\privacity.css"
     },
     {
-      "Identity": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-9btzt8odzk.gz",
+      "Identity": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-zn86npeoqz.gz",
       "SourceId": "ZenithApp",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ZenithApp",
-      "RelativePath": "css/home#[.{fingerprint=9btzt8odzk}]?.css.gz",
+      "RelativePath": "css/home#[.{fingerprint=zn86npeoqz}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1249,8 +1249,8 @@
       "RelatedAsset": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\home.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "1nhdx5hppn",
-      "Integrity": "cyAKGKGmiZLQ/fNcLghIIQ4P7jHBovt/ssQPgjTh0Y0=",
+      "Fingerprint": "i97ho2hck4",
+      "Integrity": "+lA4fGBSew/et68x6g1xVg5vs+8rcTemi2u/tmmNXss=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\home.css"
@@ -1543,8 +1543,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "9btzt8odzk",
-      "Integrity": "22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w=",
+      "Fingerprint": "zn86npeoqz",
+      "Integrity": "oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\home.css"
@@ -1606,8 +1606,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zf06xfhefb",
-      "Integrity": "vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ=",
+      "Fingerprint": "wjvqdx7kyl",
+      "Integrity": "PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1653,6 +1653,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoMotivacao.jpg",
+      "SourceId": "ZenithApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\",
+      "BasePath": "_content/ZenithApp",
+      "RelativePath": "img/fundoMotivacao#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wcldafhljc",
+      "Integrity": "oByoZiMCNADoARkt5x2i08ciZz5/ZK1rrbyFPzwzuNc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\fundoMotivacao.jpg"
+    },
+    {
+      "Identity": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoObjetivo.jpg",
+      "SourceId": "ZenithApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\",
+      "BasePath": "_content/ZenithApp",
+      "RelativePath": "img/fundoObjetivo#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sehnc52iny",
+      "Integrity": "5BfnMhKhdHxVETy+1mOqlo1gDm0+/SngohueUZua2ZA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\fundoObjetivo.jpg"
     },
     {
       "Identity": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\heroImg.png",
@@ -3299,13 +3341,13 @@
       ]
     },
     {
-      "Route": "css/home.9btzt8odzk.css",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-9btzt8odzk.gz",
+      "Route": "css/home.css",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-zn86npeoqz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001083423619"
+          "Quality": "0.000753579503"
         }
       ],
       "ResponseHeaders": [
@@ -3315,19 +3357,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "922"
+          "Value": "1326"
         },
         {
           "Name": "ETag",
-          "Value": "\"cyAKGKGmiZLQ/fNcLghIIQ4P7jHBovt/ssQPgjTh0Y0=\""
+          "Value": "\"+lA4fGBSew/et68x6g1xVg5vs+8rcTemi2u/tmmNXss=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:50:51 GMT"
+          "Value": "Sun, 17 May 2026 23:19:53 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -3343,26 +3385,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w=\""
+          "Value": "W/\"oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "9btzt8odzk"
-        },
-        {
-          "Name": "label",
-          "Value": "css/home.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w="
+          "Value": "sha256-oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q="
         }
       ]
     },
     {
-      "Route": "css/home.9btzt8odzk.css",
+      "Route": "css/home.css",
       "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\home.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3372,7 +3406,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3510"
+          "Value": "5728"
         },
         {
           "Name": "Content-Type",
@@ -3380,11 +3414,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w=\""
+          "Value": "\"oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:50:51 GMT"
+          "Value": "Sun, 17 May 2026 23:19:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.css.gz",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-zn86npeoqz.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1326"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+lA4fGBSew/et68x6g1xVg5vs+8rcTemi2u/tmmNXss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 23:19:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+lA4fGBSew/et68x6g1xVg5vs+8rcTemi2u/tmmNXss="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.zn86npeoqz.css",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-zn86npeoqz.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000753579503"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1326"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+lA4fGBSew/et68x6g1xVg5vs+8rcTemi2u/tmmNXss=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 23:19:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zn86npeoqz"
+        },
+        {
+          "Name": "label",
+          "Value": "css/home.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q="
+        }
+      ]
+    },
+    {
+      "Route": "css/home.zn86npeoqz.css",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\home.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5728"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 23:19:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3394,7 +3573,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "9btzt8odzk"
+          "Value": "zn86npeoqz"
         },
         {
           "Name": "label",
@@ -3402,13 +3581,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w="
+          "Value": "sha256-oTOlP+2rlHfVQq/eKxQ9G3AwJPs4YdQda1X4dyRxv2Q="
         }
       ]
     },
     {
-      "Route": "css/home.9btzt8odzk.css.gz",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-9btzt8odzk.gz",
+      "Route": "css/home.zn86npeoqz.css.gz",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-zn86npeoqz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3417,7 +3596,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "922"
+          "Value": "1326"
         },
         {
           "Name": "Content-Type",
@@ -3425,11 +3604,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cyAKGKGmiZLQ/fNcLghIIQ4P7jHBovt/ssQPgjTh0Y0=\""
+          "Value": "\"+lA4fGBSew/et68x6g1xVg5vs+8rcTemi2u/tmmNXss=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:50:51 GMT"
+          "Value": "Sun, 17 May 2026 23:19:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3447,7 +3626,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "9btzt8odzk"
+          "Value": "zn86npeoqz"
         },
         {
           "Name": "label",
@@ -3455,144 +3634,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cyAKGKGmiZLQ/fNcLghIIQ4P7jHBovt/ssQPgjTh0Y0="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-9btzt8odzk.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001083423619"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "922"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cyAKGKGmiZLQ/fNcLghIIQ4P7jHBovt/ssQPgjTh0Y0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:50:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\home.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3510"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:50:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-22Okhu6GKXPMNLGDFn7pI2e896Lr4Np/ySQ6SUYds6w="
-        }
-      ]
-    },
-    {
-      "Route": "css/home.css.gz",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\uuzyi40oig-9btzt8odzk.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "922"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cyAKGKGmiZLQ/fNcLghIIQ4P7jHBovt/ssQPgjTh0Y0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:50:51 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-cyAKGKGmiZLQ/fNcLghIIQ4P7jHBovt/ssQPgjTh0Y0="
+          "Value": "sha256-+lA4fGBSew/et68x6g1xVg5vs+8rcTemi2u/tmmNXss="
         }
       ]
     },
@@ -4194,12 +4236,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-zf06xfhefb.gz",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-wjvqdx7kyl.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000993048659"
+          "Quality": "0.000983284169"
         }
       ],
       "ResponseHeaders": [
@@ -4209,15 +4251,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1006"
+          "Value": "1016"
         },
         {
           "Name": "ETag",
-          "Value": "\"UyKP21DJDPZ35n2Oj90/OH9ATJvCBduVlVVU+REpFjo=\""
+          "Value": "\"CYhLUta2ax2BXnSAmeG0/bXRILZhV7YL1NCpxZdWbpA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:43:36 GMT"
+          "Value": "Fri, 15 May 2026 19:00:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4237,13 +4279,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ=\""
+          "Value": "W/\"PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ="
+          "Value": "sha256-PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I="
         }
       ]
     },
@@ -4258,7 +4300,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2938"
+          "Value": "2967"
         },
         {
           "Name": "Content-Type",
@@ -4266,11 +4308,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ=\""
+          "Value": "\"PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:43:36 GMT"
+          "Value": "Fri, 15 May 2026 19:00:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4280,13 +4322,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ="
+          "Value": "sha256-PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-zf06xfhefb.gz",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-wjvqdx7kyl.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4295,7 +4337,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1006"
+          "Value": "1016"
         },
         {
           "Name": "Content-Type",
@@ -4303,11 +4345,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UyKP21DJDPZ35n2Oj90/OH9ATJvCBduVlVVU+REpFjo=\""
+          "Value": "\"CYhLUta2ax2BXnSAmeG0/bXRILZhV7YL1NCpxZdWbpA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:43:36 GMT"
+          "Value": "Fri, 15 May 2026 19:00:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4325,18 +4367,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-UyKP21DJDPZ35n2Oj90/OH9ATJvCBduVlVVU+REpFjo="
+          "Value": "sha256-CYhLUta2ax2BXnSAmeG0/bXRILZhV7YL1NCpxZdWbpA="
         }
       ]
     },
     {
-      "Route": "css/site.zf06xfhefb.css",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-zf06xfhefb.gz",
+      "Route": "css/site.wjvqdx7kyl.css",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-wjvqdx7kyl.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000993048659"
+          "Quality": "0.000983284169"
         }
       ],
       "ResponseHeaders": [
@@ -4346,15 +4388,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1006"
+          "Value": "1016"
         },
         {
           "Name": "ETag",
-          "Value": "\"UyKP21DJDPZ35n2Oj90/OH9ATJvCBduVlVVU+REpFjo=\""
+          "Value": "\"CYhLUta2ax2BXnSAmeG0/bXRILZhV7YL1NCpxZdWbpA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:43:36 GMT"
+          "Value": "Fri, 15 May 2026 19:00:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4374,13 +4416,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ=\""
+          "Value": "W/\"PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zf06xfhefb"
+          "Value": "wjvqdx7kyl"
         },
         {
           "Name": "label",
@@ -4388,12 +4430,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ="
+          "Value": "sha256-PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I="
         }
       ]
     },
     {
-      "Route": "css/site.zf06xfhefb.css",
+      "Route": "css/site.wjvqdx7kyl.css",
       "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4403,7 +4445,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2938"
+          "Value": "2967"
         },
         {
           "Name": "Content-Type",
@@ -4411,11 +4453,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ=\""
+          "Value": "\"PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:43:36 GMT"
+          "Value": "Fri, 15 May 2026 19:00:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4425,7 +4467,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zf06xfhefb"
+          "Value": "wjvqdx7kyl"
         },
         {
           "Name": "label",
@@ -4433,13 +4475,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-vzRkk9rAsqVwF6te9N2KchddIl049XDiWDNnDfHLrlQ="
+          "Value": "sha256-PONrHu1ybU5pWaLL6KrL0xkERuzzE58XcuC0Yy08B3I="
         }
       ]
     },
     {
-      "Route": "css/site.zf06xfhefb.css.gz",
-      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-zf06xfhefb.gz",
+      "Route": "css/site.wjvqdx7kyl.css.gz",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\obj\\Debug\\net9.0\\compressed\\caxumrqphm-wjvqdx7kyl.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4448,7 +4490,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1006"
+          "Value": "1016"
         },
         {
           "Name": "Content-Type",
@@ -4456,11 +4498,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UyKP21DJDPZ35n2Oj90/OH9ATJvCBduVlVVU+REpFjo=\""
+          "Value": "\"CYhLUta2ax2BXnSAmeG0/bXRILZhV7YL1NCpxZdWbpA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 18:43:36 GMT"
+          "Value": "Fri, 15 May 2026 19:00:24 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4478,7 +4520,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "zf06xfhefb"
+          "Value": "wjvqdx7kyl"
         },
         {
           "Name": "label",
@@ -4486,7 +4528,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-UyKP21DJDPZ35n2Oj90/OH9ATJvCBduVlVVU+REpFjo="
+          "Value": "sha256-CYhLUta2ax2BXnSAmeG0/bXRILZhV7YL1NCpxZdWbpA="
         }
       ]
     },
@@ -5083,6 +5125,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-wfFuuYm+Lh6RbCeeiUqxw334b/hIOkp5j9eokGUM1Y0="
+        }
+      ]
+    },
+    {
+      "Route": "img/fundoMotivacao.jpg",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoMotivacao.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4012625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oByoZiMCNADoARkt5x2i08ciZz5/ZK1rrbyFPzwzuNc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 23:11:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oByoZiMCNADoARkt5x2i08ciZz5/ZK1rrbyFPzwzuNc="
+        }
+      ]
+    },
+    {
+      "Route": "img/fundoMotivacao.wcldafhljc.jpg",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoMotivacao.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4012625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oByoZiMCNADoARkt5x2i08ciZz5/ZK1rrbyFPzwzuNc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 23:11:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wcldafhljc"
+        },
+        {
+          "Name": "label",
+          "Value": "img/fundoMotivacao.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oByoZiMCNADoARkt5x2i08ciZz5/ZK1rrbyFPzwzuNc="
+        }
+      ]
+    },
+    {
+      "Route": "img/fundoObjetivo.jpg",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoObjetivo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9339493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5BfnMhKhdHxVETy+1mOqlo1gDm0+/SngohueUZua2ZA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 20:07:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5BfnMhKhdHxVETy+1mOqlo1gDm0+/SngohueUZua2ZA="
+        }
+      ]
+    },
+    {
+      "Route": "img/fundoObjetivo.sehnc52iny.jpg",
+      "AssetFile": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoObjetivo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9339493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5BfnMhKhdHxVETy+1mOqlo1gDm0+/SngohueUZua2ZA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 May 2026 20:07:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sehnc52iny"
+        },
+        {
+          "Name": "label",
+          "Value": "img/fundoObjetivo.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5BfnMhKhdHxVETy+1mOqlo1gDm0+/SngohueUZua2ZA="
         }
       ]
     },

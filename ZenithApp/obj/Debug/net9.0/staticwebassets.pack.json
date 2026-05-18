@@ -33,6 +33,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoMotivacao.jpg",
+      "PackagePath": "staticwebassets\\img\\fundoMotivacao.jpg"
+    },
+    {
+      "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\fundoObjetivo.jpg",
+      "PackagePath": "staticwebassets\\img\\fundoObjetivo.jpg"
+    },
+    {
       "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\img\\heroImg.png",
       "PackagePath": "staticwebassets\\img\\heroImg.png"
     },
