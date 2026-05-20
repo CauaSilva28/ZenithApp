@@ -5,8 +5,6 @@ namespace ZenithApp.Controllers
 {
     public class AuthController : Controller
     {
-        // ================= USUÁRIO TEMPORÁRIO =================
-
         private static RegisterViewModel? usuarioCadastrado;
 
         // ================= LOGIN =================
@@ -14,6 +12,9 @@ namespace ZenithApp.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            if (HttpContext.Session.GetString("UsuarioNome") != null)
+                return RedirectToAction("Index", "Home");
+
             return View();
         }
 
@@ -25,22 +26,20 @@ namespace ZenithApp.Controllers
                 return View(model);
             }
 
-            // Verifica se existe usuário cadastrado
-            if (usuarioCadastrado != null)
+            if (usuarioCadastrado != null &&
+                model.Email == usuarioCadastrado.Email &&
+                model.Password == usuarioCadastrado.Password)
             {
-                if (
-                    model.Email == usuarioCadastrado.Email &&
-                    model.Password == usuarioCadastrado.Password
-                )
-                {
-                    TempData["Success"] = "Login realizado com sucesso!";
+                // Salva nome, email e tipo na sessão
+                HttpContext.Session.SetString("UsuarioNome", usuarioCadastrado.FirstName);
+                HttpContext.Session.SetString("UsuarioEmail", usuarioCadastrado.Email);
+                HttpContext.Session.SetString("UsuarioTipo", usuarioCadastrado.TipoUsuario);
 
-                    return RedirectToAction("Index", "Home");
-                }
+                TempData["Success"] = "Login realizado com sucesso!";
+                return RedirectToAction("Index", "Home");
             }
 
             ModelState.AddModelError("", "E-mail ou senha inválidos");
-
             return View(model);
         }
 
@@ -70,6 +69,13 @@ namespace ZenithApp.Controllers
 
             TempData["Success"] = "Conta criada com sucesso!";
 
+            return RedirectToAction("Login");
+        }
+
+        // ================= LOGOUT ================= 
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
     }

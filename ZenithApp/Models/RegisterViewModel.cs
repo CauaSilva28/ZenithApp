@@ -19,5 +19,8 @@ namespace ZenithApp.Models
         public string Password { get; set; } = string.Empty;
 
         public bool AcceptTerms { get; set; }
+
+        [Required(ErrorMessage = "Selecione o tipo de usuário")]
+        public string TipoUsuario { get; set; } = "Atleta";
     }
 }

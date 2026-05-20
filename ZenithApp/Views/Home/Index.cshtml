@@ -1,5 +1,7 @@
 ﻿@{
     Layout = "_Layout";
+    var logado = Context.Session.GetString("UsuarioNome") != null;
+    var tipo = Context.Session.GetString("UsuarioTipo");
 }
 
 @section Styles {
@@ -14,10 +16,20 @@
             <h3>ALTO RENDIMENTO</h3>
             <h1>Seja sua<br>melhor versão. <br>Todo dia.</h1>
             <p>Conteúdo, treinos e estratégias para atletas que buscam excelência e treinadores que constroem resultados extraordinários.</p>
-            <div class="hero-btns">
-                <a href="#"><button class="hero-btn1">Sou atleta <i class="bi bi-arrow-right"></i></button></a>
-                <a href="#"><button class="hero-btn2">Sou treinador <i class="bi bi-arrow-right"></i></button></a>
-            </div>
+            @if (!logado) {
+                <div class="hero-btns">
+                    <a href="#"><button class="hero-btn1">Sou atleta <i class="bi bi-arrow-right"></i></button></a>
+                    <a href="#"><button class="hero-btn2">Sou treinador <i class="bi bi-arrow-right"></i></button></a>
+                </div>
+            }
+            
+            else {
+                <div class="hero-btns">
+                    <a asp-controller="@(tipo == "Treinador" ? "Treinador" : "Atleta")" asp-action="Index">
+                        <button class="hero-btn1">Minha área <i class="bi bi-arrow-right"></i></button>
+                    </a>
+                </div>
+            }
         </div>
 
         <div class="hero-right">

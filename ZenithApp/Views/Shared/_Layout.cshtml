@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var usuarioNome = Context.Session.GetString("UsuarioNome");
+    var usuarioTipo = Context.Session.GetString("UsuarioTipo");
+    var logado = usuarioNome != null;
+}
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />
@@ -47,8 +53,23 @@
             </ul>
 
             <div class="nav-buttons">
-                <a asp-controller="Auth" asp-action="Login" class="btn btn-outline">Entrar</a>
-                <a asp-controller="Auth" asp-action="Cadastro" class="btn btn-green">Começar agora</a>
+                @if (logado) {
+                    <div class="nav-usuario">
+                        <span class="nav-nome">Olá, @usuarioNome</span>
+                        <a asp-controller="Auth" asp-action="Logout">
+                            <button class="btn-logout">Sair <i class="bi bi-box-arrow-right"></i></button>
+                        </a>
+                    </div>
+                }
+                
+                else {
+                    <a asp-controller="Auth" asp-action="Login">
+                        <button class="btn-entrar">Entrar</button>
+                    </a>
+                    <a asp-controller="Auth" asp-action="Cadastro">
+                        <button class="btn-comecar">Começar agora</button>
+                    </a>
+                }
             </div>
         </nav>
     </header>
