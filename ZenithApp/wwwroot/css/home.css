@@ -344,8 +344,8 @@
 }
 
 #acesso .acesso-container .verde{
-    background-color: var(--lime-dark);
+    background-image: linear-gradient(-90deg, var(--lime-dark), var(--bg-panel));
 }
 #acesso .acesso-container .cinza{
-    background-color: var(--bg-panel);
+    background-image: linear-gradient(90deg, var(--bg-panel), var(--muted));
 }
