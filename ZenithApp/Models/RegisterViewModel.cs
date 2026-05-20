@@ -18,7 +18,7 @@ namespace ZenithApp.Models
         [MinLength(8, ErrorMessage = "A senha deve ter no mínimo 8 caracteres")]
         public string Password { get; set; } = string.Empty;
 
-        public bool AcceptTerms { get; set; }
+        public bool AcceptTerms { get; set; } = false;
 
         [Required(ErrorMessage = "Selecione o tipo de usuário")]
         public string TipoUsuario { get; set; } = "Atleta";

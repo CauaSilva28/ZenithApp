@@ -59,14 +59,14 @@
                     <div class="form-group">
                         <label asp-for="FirstName">Nome</label>
                         <div class="field-wrap">
-                            <input asp-for="FirstName" type="text" placeholder="João" autocomplete="given-name" />
+                            <input asp-for="FirstName" type="text" placeholder="João" autocomplete="new-first-name" />
                         </div>
                         <span asp-validation-for="FirstName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="LastName">Sobrenome</label>
                         <div class="field-wrap">
-                            <input asp-for="LastName" type="text" placeholder="Silva" autocomplete="family-name" />
+                            <input asp-for="LastName" type="text" placeholder="Silva" autocomplete="new-last-name" />
                         </div>
                         <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
@@ -79,8 +79,13 @@
                             <option value="Atleta">Atleta</option>
                             <option value="Treinador">Treinador</option>
                         </select>
+                        
+                        <svg class="field-icon" viewBox="0 0 20 20" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path d="M6 8l4 4 4-4"/>
+                        </svg>
+                        <span asp-validation-for="TipoUsuario" class="text-danger"></span>
                     </div>
-                    <span asp-validation-for="TipoUsuario" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
@@ -89,7 +94,7 @@
                         <input asp-for="Email"
                                type="email"
                                placeholder="voce@exemplo.com"
-                               autocomplete="email" />
+                               autocomplete="new-email" />
                         <svg class="field-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M2.5 6.5l7.5 5 7.5-5M3 5h14a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1z"/>
                         </svg>
@@ -127,15 +132,18 @@
                 <div class="form-check">
                     <input type="checkbox" id="termsCheck" asp-for="AcceptTerms" required />
                     <label for="termsCheck">
-                        Li e aceito os <a asp-action="Termos" asp-controller="Home" onclick="salvarFormulario();">Termos de Uso</a> e a <a asp-action="Privacy" asp-controller="Home">Política de Privacidade</a>
+                        Li e aceito os <a asp-action="Termos" asp-controller="Home" onclick="salvarFormulario();">Termos de Uso</a> e a <a asp-action="Privacy" asp-controller="Home" onclick="salvarFormulario();">Política de Privacidade</a>
                     </label>
                      <script>
                         window.addEventListener("DOMContentLoaded", () => {
+                            document.getElementById("termsCheck").checked = false;
+                            
                             const aceitou = localStorage.getItem("termosAceitos");
 
                             if (aceitou === "true") {
                                 document.getElementById("termsCheck").checked = true;
                             }
+
                         });
                     </script>
                 </div>
