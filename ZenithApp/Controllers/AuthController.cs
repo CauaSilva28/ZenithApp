@@ -46,9 +46,13 @@ namespace ZenithApp.Controllers
         // ================= CADASTRO =================
 
         [HttpGet]
-        public IActionResult Cadastro()
+        public IActionResult Cadastro(string? tipoUsuario)
         {
-            return View();
+            return View(new RegisterViewModel
+        {
+            TipoUsuario = tipoUsuario
+        });
+
         }
 
         [HttpPost]
@@ -76,7 +80,7 @@ namespace ZenithApp.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

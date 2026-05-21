@@ -320,7 +320,6 @@ html, body {
 .password-strength__bar.active-medium { background: #ffd166; }
 .password-strength__bar.active-strong { background: var(--lime); }
 
-/* Animação de entrada */
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -328,4 +327,10 @@ html, body {
 
 .auth-form-box {
     animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.nav-user {
+    display: flex;
+    gap: 12px;
+    padding: 8px 12px;
 }
