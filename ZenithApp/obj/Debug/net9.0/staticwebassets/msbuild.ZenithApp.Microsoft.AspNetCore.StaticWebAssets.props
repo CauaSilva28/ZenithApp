@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>3j5h7qe5yo</Fingerprint>
-      <Integrity>wZrP7QihPDzNGGyNgNlAHe8wLjbwQWe7rWnpNKUsi5I=</Integrity>
+      <Fingerprint>zty0r6pceo</Fingerprint>
+      <Integrity>VxMWIvWwc9pqmokZnLD4e1AKgiEHbFnJiHoYkWUzB2E=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\auth.css'))</OriginalItemSpec>
@@ -30,11 +30,29 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zh95desgm9</Fingerprint>
-      <Integrity>qVvmEUuozu/lCdL0nJ3ynGjl9poJVbjL3BnF1+BIh/4=</Integrity>
+      <Fingerprint>nboxm802sj</Fingerprint>
+      <Integrity>Y2+Fo30R1uFwrzNooszTHyfhuNuEDUyTXlhFP/M21a4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\home.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\homeMobile.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ZenithApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ZenithApp</BasePath>
+      <RelativePath>css/homeMobile.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bn51fk90xw</Fingerprint>
+      <Integrity>16GuQlcQOqwWRJNr+V2CjiBuNNnflY1rF5VjTcSc2WE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\homeMobile.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\navbar.css'))">
       <SourceType>Package</SourceType>
@@ -84,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ndeplp1qrs</Fingerprint>
-      <Integrity>9SEtVgevMcz9L5Y3Md8ut7flR2x8jrPYm0JiME36/W4=</Integrity>
+      <Fingerprint>0qlzxq10w3</Fingerprint>
+      <Integrity>uNEm6ysJBgJLDIPy2XS8iu+wz2IYZbu33WleIi38XEU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -102,8 +120,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>z3ssergh6z</Fingerprint>
-      <Integrity>sShw5jvnpE7Aqx7gfXBICIIjkTJLB6MZZVrSvVpPgu8=</Integrity>
+      <Fingerprint>aic880tqia</Fingerprint>
+      <Integrity>rrbrM1oX8Qjlwep4qaeIE9JpJQwATzqekUumW4x0DDw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\term.css'))</OriginalItemSpec>

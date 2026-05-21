@@ -1,0 +1,360 @@
+/* ===== RESPONSIVIDADE ======= */
+
+/* -------- NOTEBOOKS -------- */
+@media (max-width: 1400px){
+
+    #home-hero{
+        padding:90px 80px 70px 80px;
+    }
+
+    .hero-left{
+        padding-right:120px;
+    }
+
+    .hero-left h1{
+        font-size:45px !important;
+    }
+
+    .hero-right img{
+        width:300px;
+    }
+
+    .hero-topicos{
+        gap:40px;
+        margin-top:0px;
+    }
+
+    #sobre,
+    #conteudo,
+    #ferramenta,
+    #beneficio,
+    #acesso{
+        padding:0 80px;
+    }
+
+    #objetivo{
+        margin:var(--dist-conteudo) 80px 0 80px;
+    }
+
+    #objetivo .objetivo-topicos{
+        width:25%;
+    }
+}
+
+/* -------- TABLETS -------- */
+@media (max-width: 1024px){
+
+    /* HERO */
+    #home-hero{
+        height:auto;
+        padding:120px 50px 80px 50px;
+        gap:50px;
+    }
+
+    .hero-content{
+        flex-direction: column;
+        gap:60px;
+        text-align:center;
+    }
+
+    .hero-left{
+        padding-right:0;
+        align-items:center;
+    }
+
+    .hero-left h1{
+        font-size:48px !important;
+    }
+
+    .hero-right{
+        justify-content:center;
+    }
+
+    .hero-right img{
+        width:280px;
+    }
+
+    .hero-topicos{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:30px;
+        margin-top:20px;
+    }
+
+    .hero-topicos .topico{
+        justify-content:center;
+        width:45%;
+        text-align:center;
+    }
+
+    /* SOBRE */
+    #sobre{
+        flex-direction:column;
+        gap:80px;
+        padding:0 50px;
+        text-align:center;
+    }
+
+    #sobre .sobre-conteudo{
+        width:100%;
+        text-align:center;
+        align-items:center;
+    }
+
+    /* CONTEUDO */
+    #conteudo{
+        padding:0 50px;
+    }
+
+    #conteudo .conteudo-container{
+        flex-wrap:wrap;
+        gap:30px;
+    }
+
+    #conteudo .conteudo-container .conteudo-card{
+        width:48%;
+    }
+
+    /* OBJETIVO */
+    #objetivo{
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:center;
+        gap:50px;
+        height:auto;
+        margin:var(--dist-conteudo) 50px 0 50px;
+    }
+
+    #objetivo .objetivo-conteudo{
+        width:100%;
+    }
+
+    #objetivo .objetivo-topicos{
+        width:100%;
+    }
+
+    /* FERRAMENTAS */
+    #ferramenta{
+        padding:0 50px;
+    }
+
+    #ferramenta .ferramenta-container{
+        flex-wrap:wrap;
+        gap:30px;
+    }
+
+    #ferramenta .ferramenta-container .ferramenta-card{
+        width:48%;
+    }
+
+    /* MOTIVACAO */
+    #motivacao{
+        height:450px;
+        padding:40px;
+    }
+
+    #motivacao h2{
+        font-size:42px;
+    }
+
+    /* BENEFICIOS */
+    #beneficio{
+        padding:0 50px;
+        gap:50px;
+    }
+
+    #beneficio .beneficio-card{
+        width:45%;
+    }
+
+    /* ACESSO */
+    #acesso{
+        padding:0 50px;
+    }
+
+    #acesso .acesso-container{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    #acesso .acesso-container .acesso-card{
+        width:100%;
+    }
+}
+
+/* -------- CELULARES -------- */
+@media (max-width: 768px){
+
+    h2{
+        font-size:32px !important;
+    }
+
+    section{
+        overflow:hidden;
+    }
+
+    /* HERO */
+    #home-hero{
+        padding:120px 25px 60px 25px;
+    }
+
+    .hero-left h1{
+        font-size:38px !important;
+        line-height:1.1;
+    }
+
+    .hero-left p{
+        font-size:15px;
+    }
+
+    .hero-btns{
+        flex-direction:column;
+        width:100%;
+        gap:15px;
+    }
+
+    .hero-btns a{
+        width:100%;
+    }
+
+    .hero-btns button{
+        width:100%;
+        justify-content:center;
+    }
+
+    .hero-right img{
+        width:220px;
+    }
+
+    .hero-topicos{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero-topicos .topico{
+        width:100%;
+        font-size:16px;
+    }
+
+    /* SOBRE */
+    #sobre{
+        padding:0 25px;
+        gap:60px;
+    }
+
+    #sobre img{
+        width:260px;
+    }
+
+    .sobre-img::after{
+        width:180px;
+        height:180px;
+    }
+
+    /* CONTEUDO */
+    #conteudo{
+        padding:0 25px;
+    }
+
+    #conteudo .conteudo-container{
+        flex-direction:column;
+    }
+
+    #conteudo .conteudo-container .conteudo-card{
+        width:100%;
+        height:300px;
+    }
+
+    /* OBJETIVO */
+    #objetivo{
+        margin:var(--dist-conteudo) 25px 0 25px;
+        padding:35px 25px;
+    }
+
+    #objetivo .objetivo-topicos{
+        padding:25px;
+    }
+
+    #objetivo .objetivo-topicos .objetivo-card{
+        align-items:flex-start;
+    }
+
+    /* FERRAMENTAS */
+    #ferramenta{
+        padding:0 25px;
+    }
+
+    #ferramenta .ferramenta-container{
+        flex-direction:column;
+    }
+
+    #ferramenta .ferramenta-container .ferramenta-card{
+        width:100%;
+        height:300px;
+    }
+
+    /* MOTIVACAO */
+    #motivacao{
+        height:350px;
+        padding:20px;
+    }
+
+    #motivacao h2{
+        font-size:30px !important;
+    }
+
+    /* BENEFICIOS */
+    #beneficio{
+        padding:0 25px;
+        flex-direction:column;
+    }
+
+    #beneficio .beneficio-card{
+        width:100%;
+        height:400px;
+    }
+
+    /* ACESSO */
+    #acesso{
+        padding:0 25px;
+    }
+
+    #acesso .acesso-container .acesso-card{
+        height:320px;
+    }
+}
+
+/* -------- CELULARES PEQUENOS -------- */
+@media (max-width: 480px){
+
+    .hero-left h1{
+        font-size:32px !important;
+    }
+
+    h2{
+        font-size:28px !important;
+    }
+
+    .hero-right img{
+        width:180px;
+    }
+
+    #sobre img{
+        width:220px;
+    }
+
+    .sobre-img::after{
+        width:150px;
+        height:150px;
+        right:-20px;
+        bottom:-20px;
+    }
+
+    #motivacao h2{
+        font-size:24px !important;
+    }
+
+    #beneficio .beneficio-card{
+        height:350px;
+    }
+}
