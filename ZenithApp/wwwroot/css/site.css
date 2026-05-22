@@ -216,9 +216,11 @@ footer .col2, footer .col3{
     flex-direction: column;
     gap:15px;
 }
+
 footer .col2 h4, footer .col3 h4{
     font-weight: bold;
 }
+
 footer .col2 a, footer .col3 a{
     text-decoration: none;
     color:#fff;

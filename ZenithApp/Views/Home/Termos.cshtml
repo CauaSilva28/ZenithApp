@@ -12,10 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="~/css/term.css"/>
-  <link rel="stylesheet" href="~/js/term.css"/>
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
 </head>
+
 <body>
   
   <section class="hero">
@@ -148,12 +148,38 @@
           <p><strong>Ao continuar usando a plataforma, você confirma que leu e aceita estes termos.</strong></p>
           <p>Última Revisão: 1º de Maio de 2026 — Versão 1.0</p>
         </div>
-        <a asp-action="Cadastro" asp-controller="Auth" class="btn" onclick="aceitarTermos(event)"> Aceitar termos</a>
+        <a href="#"
+          class="btn"
+          onclick="aceitarTermos(event)">
+          Aceitar termos
+        </a>
       </div>
 
     </main>
   </div>
 
   <script src="~/js/site.js"></script>
+
+<script>
+
+    function aceitarTermos(event) {
+
+        event.preventDefault();
+
+        localStorage.setItem(
+            "termosAceitos",
+            "true"
+        );
+
+        sessionStorage.setItem(
+            "voltouDosTermos",
+            "true"
+        );
+
+        window.location.href =
+            "/Auth/Cadastro";
+    }
+
+</script>
 </body>
 </html>

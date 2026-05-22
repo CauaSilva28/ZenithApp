@@ -135,24 +135,22 @@
                         Li e aceito os <a asp-action="Termos" asp-controller="Home" onclick="salvarFormulario(); marcarRetorno();">Termos de Uso</a> e a <a asp-action="Privacy" asp-controller="Home" onclick="salvarFormulario(); marcarRetorno();">Política de Privacidade</a>
                     </label>
                      <script>
-                        <script>
-                            window.addEventListener("DOMContentLoaded", () => {
+                        window.addEventListener("DOMContentLoaded", () => {
 
-                                const checkbox =
-                                    document.getElementById("termsCheck");
+                            const checkbox =
+                                document.getElementById("termsCheck");
 
-                                if (!checkbox) return;
+                            if (!checkbox) return;
 
-                                const aceitou =
-                                    localStorage.getItem("termosAceitos");
+                            const aceitou =
+                                localStorage.getItem("termosAceitos");
 
-                                // Só marca se realmente aceitou
-                                if (aceitou === "true") {
+                            // Só marca se realmente aceitou
+                            if (aceitou === "true") {
 
-                                    checkbox.checked = true;
-                                }
-                            });
-                            </script>
+                                checkbox.checked = true;
+                            }
+                        });
                     </script>
                 </div>
 
@@ -294,11 +292,15 @@
 
             if (el.type === "checkbox") {
 
-                el.checked =
-                    obj[key] === "on";
+    // Não sobrescreve o checkbox dos termos
+    if (key === "AcceptTerms")
+        return;
 
-                return;
-            }
+        el.checked =
+            obj[key] === "on";
+
+        return;
+    }
 
             el.value = obj[key];
         });

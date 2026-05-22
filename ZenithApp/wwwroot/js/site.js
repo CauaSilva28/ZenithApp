@@ -1,8 +1,4 @@
-﻿function aceitarTermos() {
-    localStorage.setItem("termosAceitos", "true");
-}
-
-function scrollToggle() {
+﻿function scrollToggle() {
     const btn = document.querySelector('.btn-scroll-bottom');
     const flipped = btn.classList.toggle('flipped');
 
@@ -11,4 +7,21 @@ function scrollToggle() {
     } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+}
+
+ function aceitarTermos(event) {
+
+        event.preventDefault();
+
+        localStorage.setItem(
+            "termosAceitos",
+            "true"
+        );
+
+        sessionStorage.setItem(
+            "voltouDosTermos",
+            "true"
+        );
+
+        window.location.href = "/Auth/Cadastro";
 }

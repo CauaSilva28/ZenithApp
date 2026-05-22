@@ -501,8 +501,8 @@ E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\c
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\s29oh4dtsy-bn51fk90xw.gz
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-0qlzxq10w3.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\k6x399u4hx-{0}-syyy8ttus7-syyy8ttus7.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-2puannzfnd-2puannzfnd.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-c26m8o3drt-c26m8o3drt.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-2j3znorwjh-2j3znorwjh.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-9j00pxid6t-9j00pxid6t.gz
-C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-0wot4w5jdz-0wot4w5jdz.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-l38vg8eh9b-l38vg8eh9b.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-7a18zofoge-7a18zofoge.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-caccqe2vem-caccqe2vem.gz
+C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-mcodfei6lb-mcodfei6lb.gz
