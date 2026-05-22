@@ -132,19 +132,27 @@
                 <div class="form-check">
                     <input type="checkbox" id="termsCheck" asp-for="AcceptTerms" required />
                     <label for="termsCheck">
-                        Li e aceito os <a asp-action="Termos" asp-controller="Home" onclick="salvarFormulario();">Termos de Uso</a> e a <a asp-action="Privacy" asp-controller="Home" onclick="salvarFormulario();">Política de Privacidade</a>
+                        Li e aceito os <a asp-action="Termos" asp-controller="Home" onclick="salvarFormulario(); marcarRetorno();">Termos de Uso</a> e a <a asp-action="Privacy" asp-controller="Home" onclick="salvarFormulario(); marcarRetorno();">Política de Privacidade</a>
                     </label>
                      <script>
-                        window.addEventListener("DOMContentLoaded", () => {
-                            document.getElementById("termsCheck").checked = false;
-                            
-                            const aceitou = localStorage.getItem("termosAceitos");
+                        <script>
+                            window.addEventListener("DOMContentLoaded", () => {
 
-                            if (aceitou === "true") {
-                                document.getElementById("termsCheck").checked = true;
-                            }
+                                const checkbox =
+                                    document.getElementById("termsCheck");
 
-                        });
+                                if (!checkbox) return;
+
+                                const aceitou =
+                                    localStorage.getItem("termosAceitos");
+
+                                // Só marca se realmente aceitou
+                                if (aceitou === "true") {
+
+                                    checkbox.checked = true;
+                                }
+                            });
+                            </script>
                     </script>
                 </div>
 
@@ -170,12 +178,21 @@
 </div>
 
 <script>
+
     function togglePassword(id) {
+
         const input = document.getElementById(id);
-        input.type = input.type === 'password' ? 'text' : 'password';
+
+        if (!input) return;
+
+        input.type =
+            input.type === 'password'
+            ? 'text'
+            : 'password';
     }
 
     function checkStrength(val) {
+
         const bars = [
             document.getElementById('bar1'),
             document.getElementById('bar2'),
@@ -183,45 +200,139 @@
             document.getElementById('bar4'),
         ];
 
-        bars.forEach(b => b.className = 'password-strength__bar');
+        bars.forEach(bar => {
+
+            if (bar) {
+                bar.className =
+                    'password-strength__bar';
+            }
+        });
 
         if (!val) return;
 
         let score = 0;
-        if (val.length >= 8)  score++;
+
+        if (val.length >= 8) score++;
         if (/[A-Z]/.test(val)) score++;
         if (/[0-9]/.test(val)) score++;
         if (/[^A-Za-z0-9]/.test(val)) score++;
 
-        const cls = score <= 1 ? 'active-weak' : score <= 2 ? 'active-medium' : 'active-strong';
+        const cls =
+            score <= 1
+            ? 'active-weak'
+            : score <= 2
+            ? 'active-medium'
+            : 'active-strong';
+
         for (let i = 0; i < score; i++) {
-            bars[i].classList.add(cls);
+
+            if (bars[i]) {
+                bars[i].classList.add(cls);
+            }
         }
     }
 
     function salvarFormulario() {
-        const form = document.querySelector("form");
+
+        const form =
+            document.querySelector("form");
+
+        if (!form) return;
 
         const data = new FormData(form);
-        const obj = Object.fromEntries(data.entries());
 
-        sessionStorage.setItem("cadastroForm", JSON.stringify(obj));
+        const obj =
+            Object.fromEntries(data.entries());
+
+        sessionStorage.setItem(
+            "cadastroForm",
+            JSON.stringify(obj)
+        );
     }
-    
+
+    function marcarRetorno() {
+
+        sessionStorage.setItem(
+            "voltouDosTermos",
+            "true"
+        );
+    }
+
     function restaurarFormulario() {
-        const data = sessionStorage.getItem("cadastroForm");
-        if (!data) return;
+
+        const voltou =
+            sessionStorage.getItem(
+                "voltouDosTermos"
+            );
+
+        if (voltou !== "true")
+            return;
+
+        const data =
+            sessionStorage.getItem(
+                "cadastroForm"
+            );
+
+        if (!data)
+            return;
 
         const obj = JSON.parse(data);
 
         Object.keys(obj).forEach(key => {
-            const el = document.querySelector(`[name="${key}"]`);
-            if (el) el.value = obj[key];
+
+            // Não sobrescreve select vindo da URL
+            if (key === "TipoUsuario")
+                return;
+
+            const el =
+                document.querySelector(
+                    `[name="${key}"]`
+                );
+
+            if (!el)
+                return;
+
+            if (el.type === "checkbox") {
+
+                el.checked =
+                    obj[key] === "on";
+
+                return;
+            }
+
+            el.value = obj[key];
         });
+
+        sessionStorage.removeItem(
+            "voltouDosTermos"
+        );
     }
 
-    // Salva os dados do formulário antes de o usuário clicar nos links de termos ou privacidade
-    // window.addEventListener("load", restaurarFormulario);
+    window.addEventListener("load", () => {
+
+    const voltou =
+        sessionStorage.getItem(
+            "voltouDosTermos"
+        );
+
+    if (voltou === "true") {
+
+        restaurarFormulario();
+
+        return;
+    }
+
+    const form =
+        document.querySelector("form");
+
+    if (form) {
+        form.reset();
+    }
+
+    sessionStorage.removeItem(
+        "cadastroForm"
+    );
+});
 
 </script>
 @section Scripts {
