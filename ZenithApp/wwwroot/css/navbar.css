@@ -63,7 +63,7 @@
 .nav-logo svg {
     width: 18px;
     height: 18px;
-    fill: #151515;
+    fill: var(--bg-dark);
     z-index: 10;
 }
 
@@ -78,4 +78,16 @@
 
 .zenith:hover {
     color: var(--lime);
+}
+
+#modalContent {
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.11); 
+    border-radius:12px; 
+    padding: 2rem; 
+    max-width: 360px; 
+    width: 90%; 
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,.2);
 }
