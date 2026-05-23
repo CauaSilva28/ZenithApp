@@ -1,11 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ZenithApp.Data;
 using ZenithApp.Models;
 
 namespace ZenithApp.Controllers
 {
     public class AuthController : Controller
     {
-        private static RegisterViewModel? usuarioCadastrado;
+        private readonly AppDbContext _context;
+
+        public AuthController(AppDbContext context)
+        {
+            _context = context;
+        }
 
         // ================= LOGIN =================
 
@@ -19,28 +26,40 @@ namespace ZenithApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
+                return View(model);
+
+            var login = await _context.Logins
+                .FirstOrDefaultAsync(l => l.Usuario == model.Email);
+
+            if (login == null || !BCrypt.Net.BCrypt.Verify(model.Password, login.Senha))
             {
+                ModelState.AddModelError("", "E-mail ou senha inválidos");
                 return View(model);
             }
 
-            if (usuarioCadastrado != null &&
-                model.Email == usuarioCadastrado.Email &&
-                model.Password == usuarioCadastrado.Password)
-            {
-                // Salva nome, email e tipo na sessão
-                HttpContext.Session.SetString("UsuarioNome", usuarioCadastrado.FirstName);
-                HttpContext.Session.SetString("UsuarioEmail", usuarioCadastrado.Email);
-                HttpContext.Session.SetString("UsuarioTipo", usuarioCadastrado.TipoUsuario);
+            // Busca nome do usuário dependendo do tipo
+            string nomeUsuario = login.Usuario;
 
-                TempData["Success"] = "Login realizado com sucesso!";
-                return RedirectToAction("Index", "Home");
+            if (login.NivelAcesso == "Atleta")
+            {
+                var atleta = await _context.Atletas.FirstOrDefaultAsync(a => a.IdLogin == login.IdLogin);
+                if (atleta != null) nomeUsuario = atleta.Nome;
+            }
+            else if (login.NivelAcesso == "Treinador")
+            {
+                var treinador = await _context.Treinadores.FirstOrDefaultAsync(t => t.IdLogin == login.IdLogin);
+                if (treinador != null) nomeUsuario = treinador.Nome;
             }
 
-            ModelState.AddModelError("", "E-mail ou senha inválidos");
-            return View(model);
+            HttpContext.Session.SetString("UsuarioNome", nomeUsuario);
+            HttpContext.Session.SetString("UsuarioEmail", login.Usuario);
+            HttpContext.Session.SetString("UsuarioTipo", login.NivelAcesso ?? "Atleta");
+
+            TempData["Success"] = "Login realizado com sucesso!";
+            return RedirectToAction("Index", "Home");
         }
 
         // ================= CADASTRO =================
@@ -49,38 +68,69 @@ namespace ZenithApp.Controllers
         public IActionResult Cadastro(string? tipoUsuario)
         {
             return View(new RegisterViewModel
-        {
-            TipoUsuario = tipoUsuario
-        });
-
+            {
+                TipoUsuario = tipoUsuario ?? "Atleta"
+            });
         }
 
         [HttpPost]
-        public IActionResult Cadastro(RegisterViewModel model)
+        public async Task<IActionResult> Cadastro(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
-            {
                 return View(model);
-            }
 
-            if (usuarioCadastrado != null && usuarioCadastrado.Email == model.Email)
+            var emailExistente = await _context.Logins
+                .AnyAsync(l => l.Usuario == model.Email);
+
+            if (emailExistente)
             {
                 ModelState.AddModelError("", "Esse e-mail já está cadastrado");
                 return View(model);
             }
 
-            usuarioCadastrado = model;
+            // Cria o login
+            var login = new Login
+            {
+                Usuario = model.Email,
+                Senha = BCrypt.Net.BCrypt.HashPassword(model.Password),
+                NivelAcesso = model.TipoUsuario
+            };
+
+            _context.Logins.Add(login);
+            await _context.SaveChangesAsync();
+
+            // Cria o perfil conforme o tipo
+            if (model.TipoUsuario == "Atleta")
+            {
+                var atleta = new Atleta
+                {
+                    Nome = $"{model.FirstName} {model.LastName}",
+                    IdLogin = login.IdLogin
+                };
+                _context.Atletas.Add(atleta);
+            }
+            else if (model.TipoUsuario == "Treinador")
+            {
+                var treinador = new Treinador
+                {
+                    Nome = $"{model.FirstName} {model.LastName}",
+                    IdLogin = login.IdLogin
+                };
+                _context.Treinadores.Add(treinador);
+            }
+
+            await _context.SaveChangesAsync();
 
             TempData["Success"] = "Conta criada com sucesso!";
-
             return RedirectToAction("Login");
         }
 
-        // ================= LOGOUT ================= 
+        // ================= LOGOUT =================
+
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login");
         }
     }
 }
