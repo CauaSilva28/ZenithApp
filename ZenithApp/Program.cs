@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using ZenithApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
@@ -9,6 +12,12 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+);
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -17,18 +26,15 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// app.UseHttpsRedirection(); -> Comentei só para testes
+// app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
-
 app.UseSession();
-
 app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Auth}/{action=Login}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();
