@@ -25,7 +25,7 @@
             }
             else {
                 <div class="hero-btns">
-                    <a asp-controller="@(tipo == "Treinador" ? "Treinador" : "Atleta")" asp-action="Index">
+                    <a asp-controller="Home" asp-action="@(tipo == "Treinador" ? "Treinador" : "Atleta")">
                         <button class="hero-btn1"> Área do @tipo <i class="bi bi-arrow-right"></i></button>
                     </a>
                 </div>

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ZenithApp.07ih6b5spm.bundle.scp.css"
     },
     {
+      "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\atleta.css",
+      "PackagePath": "staticwebassets\\css\\atleta.css"
+    },
+    {
       "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\auth.css",
       "PackagePath": "staticwebassets\\css\\auth.css"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\term.css",
       "PackagePath": "staticwebassets\\css\\term.css"
+    },
+    {
+      "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\css\\treinador.css",
+      "PackagePath": "staticwebassets\\css\\treinador.css"
     },
     {
       "Id": "E:\\Área de Trabalho\\github meus projetos\\ZenithApp\\ZenithApp\\wwwroot\\favicon.ico",

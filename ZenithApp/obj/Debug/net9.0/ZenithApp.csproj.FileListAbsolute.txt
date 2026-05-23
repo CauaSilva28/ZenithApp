@@ -491,18 +491,20 @@ C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4bl
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\powxni13sv-aivl86aqo7.gz
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-k1o5shu8xv.gz
 C:\Users\Caua\Desktop\GITHUB\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-frjsjqrsja.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\fe6iz48x7h-5kr0imlop9.gz
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\urlpduaaud-9xbw4wu27a.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\powxni13sv-aivl86aqo7.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4ogrhn9sc0-{0}-aic880tqia-aic880tqia.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\imv7odndjz-zty0r6pceo.gz
 E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\4blmpuo9la-aic880tqia.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-nboxm802sj.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\s29oh4dtsy-bn51fk90xw.gz
-E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-0qlzxq10w3.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\k6x399u4hx-{0}-syyy8ttus7-syyy8ttus7.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\8es6pm9nmy-{0}-c26m8o3drt-c26m8o3drt.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\po08rk717g-{0}-l38vg8eh9b-l38vg8eh9b.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\ilhz2f3huy-{0}-7a18zofoge-7a18zofoge.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\azu4m0ao9x-{0}-caccqe2vem-caccqe2vem.gz
 C:\Users\User\Documents\ZenithApp\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\p0mxy31j79-{0}-mcodfei6lb-mcodfei6lb.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\imv7odndjz-7a18zofoge.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\uuzyi40oig-c26m8o3drt.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\s29oh4dtsy-syyy8ttus7.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\fe6iz48x7h-caccqe2vem.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\caxumrqphm-l38vg8eh9b.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\powxni13sv-mcodfei6lb.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\v1bopj1zn9-h1l77micue.gz
+E:\Área de Trabalho\github meus projetos\ZenithApp\ZenithApp\obj\Debug\net9.0\compressed\z3qpnblywr-1qrlfp6u62.gz
