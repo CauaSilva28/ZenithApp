@@ -1,0 +1,362 @@
+.dashboard-atleta{
+    padding:120px 150px;
+    display:flex;
+    flex-direction:column;
+    gap:120px;
+}
+
+/* HERO */
+
+.dashboard-hero{
+    background: linear-gradient(135deg,#101010,#1a1a1a);
+    border-radius:30px;
+    padding:60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    overflow:hidden;
+    position:relative;
+}
+
+.dashboard-hero::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:var(--border-focus);
+    filter:blur(120px);
+    opacity:.15;
+    right:-100px;
+    top:-100px;
+}
+
+.hero-info{
+    width:50%;
+    z-index:2;
+}
+
+.tag-status{
+    background:var(--border-focus);
+    color:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.hero-info h1{
+    font-size:64px;
+    margin-top:20px;
+}
+
+.hero-info p{
+    color:var(--muted);
+    margin-top:20px;
+    line-height:1.7;
+    width:80%;
+}
+
+.hero-metricas{
+    display:flex;
+    gap:25px;
+    margin-top:40px;
+}
+
+.metrica{
+    background:#151515;
+    border:1px solid #232323;
+    padding:25px;
+    border-radius:20px;
+    min-width:160px;
+}
+
+.metrica h2{
+    color:var(--border-focus);
+    font-size:40px;
+}
+
+.metrica span{
+    color:#bdbdbd;
+    font-size:14px;
+}
+
+.hero-img{
+    width:40%;
+    display:flex;
+    justify-content:end;
+    z-index:2;
+}
+
+.hero-img img{
+    width:450px;
+}
+
+/* TITULO */
+
+.section-title{
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:42px;
+}
+
+.section-title p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* TREINOS */
+
+.treinos-container{
+    display:flex;
+    gap:30px;
+}
+
+.treino-card{
+    width:350px;
+    background:#111;
+    border:1px solid #232323;
+    border-radius:24px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:.4s;
+}
+
+.treino-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--border-focus);
+}
+
+.treino-tipo{
+    color:var(--border-focus);
+    font-weight:700;
+}
+
+.treino-card h3{
+    font-size:30px;
+}
+
+.treino-card ul{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    color:#bdbdbd;
+}
+
+.treino-card button{
+    margin-top:20px;
+    border:none;
+    background:var(--border-focus);
+    color:#fff;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* METAS */
+
+.metas-container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.meta-card{
+    background:#111;
+    border:1px solid #232323;
+    padding:24px;
+    border-radius:18px;
+    font-size:18px;
+}
+
+.meta-card.done{
+    border-color:var(--border-focus);
+}
+
+/* EVOLUÇÃO */
+
+.evolucao-box{
+    display:flex;
+    gap:30px;
+}
+
+.evolucao-card{
+    flex:1;
+    background:#111;
+    border:1px solid #232323;
+    border-radius:24px;
+    padding:40px;
+}
+
+.evolucao-card h3{
+    color:#bdbdbd;
+    margin-bottom:20px;
+}
+
+.evolucao-card span{
+    font-size:48px;
+    color:var(--border-focus);
+    font-weight:bold;
+}
+
+.peso-info{
+    display:flex;
+    align-items:end;
+    gap:8px;
+}
+
+.peso-info small{
+    color:#999;
+    margin-bottom:10px;
+}
+
+.peso-card button{
+    margin-top:25px;
+    border:none;
+    background:var(--border-focus);
+    color:#fff;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* MODAL */
+
+.modal-peso{
+    position:fixed;
+    inset:0;
+    background:#000000a8;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+.modal-content{
+    width:400px;
+    background:#111;
+    border:1px solid #232323;
+    border-radius:24px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.modal-content h2{
+    font-size:30px;
+}
+
+.modal-content input{
+    width:100%;
+    height:55px;
+    border:none;
+    outline:none;
+    background:#1a1a1a;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:0 20px;
+    color:#fff;
+    font-size:18px;
+}
+
+.modal-btns{
+    display:flex;
+    gap:15px;
+}
+
+.modal-btns button{
+    flex:1;
+    height:50px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.salvar{
+    background:var(--border-focus);
+    color:#fff;
+}
+
+.cancelar{
+    background:#222;
+    color:#fff;
+}
+
+/* SOLICITAÇÕES */
+
+.solicitacoes-container{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.solicitacao-card{
+    background:#111;
+    border:1px solid #232323;
+    border-radius:24px;
+    padding:25px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:.4s;
+}
+
+.solicitacao-card:hover{
+    border-color:var(--border-focus);
+    transform:translateY(-4px);
+}
+
+.solicitacao-info{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.solicitacao-info h3{
+    font-size:22px;
+}
+
+.solicitacao-info span{
+    color:#bdbdbd;
+}
+
+.solicitacao-btns{
+    display:flex;
+    gap:15px;
+}
+
+.btn-aceitar,
+.btn-recusar{
+    border:none;
+    padding:12px 24px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-aceitar{
+    background:var(--border-focus);
+    color:#fff;
+}
+
+.btn-aceitar:hover{
+    opacity:.8;
+}
+
+.btn-recusar{
+    background:#1c1c1c;
+    border:1px solid #333;
+    color:#fff;
+}
+
+.btn-recusar:hover{
+    background:#2a2a2a;
+}

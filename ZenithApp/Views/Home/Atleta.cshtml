@@ -1,0 +1,275 @@
+@{
+    ViewData["Title"] = "Atleta";
+    var usuarioNome = Context.Session.GetString("UsuarioNome");
+    var usuarioTipo = Context.Session.GetString("UsuarioTipo");
+    var logado = usuarioNome != null;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/atleta.css" asp-append-version="true" />
+}
+
+@if(usuarioTipo == "Atleta" && logado){
+    <section class="dashboard-atleta">
+
+        <!-- HERO -->
+        <div class="dashboard-hero">
+
+            <div class="hero-info">
+                <span class="tag-status">Atleta</span>
+
+                <h1>Olá, @usuarioNome! 👋</h1>
+
+                <p>
+                    Continue evoluindo. Acesse seus treinos e metas para hoje.
+                </p>
+
+                <div class="hero-metricas">
+                    <div class="metrica">
+                        <h2>12</h2>
+                        <span>Treinos concluídos</span>
+                    </div>
+
+                    <div class="metrica">
+                        <h2>82%</h2>
+                        <span>Meta semanal</span>
+                    </div>
+
+                    <div class="metrica">
+                        <h2>5</h2>
+                        <span>Dias ativos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-img">
+                <img src="/img/atleta.png" alt="">
+            </div>
+
+        </div>
+
+        <!-- TREINOS -->
+        <section class="treinos">
+
+            <div class="section-title">
+                <h2>Treinos do dia</h2>
+                <p>Seus treinos preparados pelo treinador.</p>
+            </div>
+
+            <div class="treinos-container">
+
+                <div class="treino-card">
+                    <span class="treino-tipo">Treino A</span>
+
+                    <h3>Peito e Tríceps</h3>
+
+                    <ul>
+                        <li>Supino reto</li>
+                        <li>Crucifixo</li>
+                        <li>Tríceps corda</li>
+                    </ul>
+
+                    <button>Iniciar treino</button>
+                </div>
+
+                <div class="treino-card">
+                    <span class="treino-tipo">Cardio</span>
+
+                    <h3>Corrida leve</h3>
+
+                    <ul>
+                        <li>30 minutos</li>
+                        <li>Intensidade média</li>
+                    </ul>
+
+                    <button>Iniciar treino</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- METAS -->
+        <section class="metas">
+
+            <div class="section-title">
+                <h2>Metas da semana</h2>
+            </div>
+
+            <div class="metas-container">
+
+                <div class="meta-card">
+                    <span>✔ Treinar 5x na semana</span>
+                </div>
+
+                <div class="meta-card">
+                    <span>✔ Beber 3L de água</span>
+                </div>
+
+                <div class="meta-card">
+                    <span>⏳ Dormir 8h por dia</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- EVOLUÇÃO -->
+        <section class="evolucao">
+
+            <div class="section-title">
+                <h2>Sua evolução</h2>
+                <p>Acompanhe sua performance.</p>
+            </div>
+
+            <div class="evolucao-box">
+
+                <!-- PESO -->
+                <div class="evolucao-card peso-card">
+
+                    <h3>Peso atual</h3>
+
+                    <div class="peso-info">
+                        <span id="pesoAtual">--</span>
+                        <small>kg</small>
+                    </div>
+
+                    <button onclick="abrirModalPeso()">
+                        Alterar peso
+                    </button>
+
+                </div>
+
+                <!-- MASSA -->
+                <div class="evolucao-card">
+
+                    <h3>Massa muscular</h3>
+
+                    <div class="peso-info">
+                        <small>+</small>
+                        <span id="massaMuscular">--</span>
+                    </div>
+
+                </div>
+
+                <!-- FREQUENCIA -->
+                <div class="evolucao-card">
+
+                    <h3>Frequência</h3>
+
+                    <span>92%</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MODAL -->
+        <div class="modal-peso" id="modalPeso">
+
+            <div class="modal-content">
+
+                <h2>Atualizar peso</h2>
+
+                <input
+                    type="number"
+                    id="novoPeso"
+                    placeholder="Digite seu novo peso"
+                >
+
+                <div class="modal-btns">
+                    <button onclick="salvarPeso()" class="salvar">
+                        Salvar
+                    </button>
+
+                    <button onclick="fecharModalPeso()" class="cancelar">
+                        Cancelar
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SOLICITAÇÕES -->
+    <section class="solicitacoes">
+
+        <div class="section-title">
+            <h2>Solicitações de treinadores</h2>
+            <p>Treinadores que desejam ajudar na sua evolução.</p>
+        </div>
+
+        <div class="solicitacoes-container">
+
+            <div class="solicitacao-card">
+
+                <div class="solicitacao-info">
+                    <h3>Lucas Almeida</h3>
+                    <span>Especialista em hipertrofia</span>
+                </div>
+
+                <div class="solicitacao-btns">
+                    <button class="btn-aceitar">Aceitar</button>
+                    <button class="btn-recusar">Recusar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    </section>
+
+    <script>
+
+        let pesoAntigo = null;
+
+        function abrirModalPeso(){
+            document.getElementById("modalPeso").style.display = "flex";
+        }
+
+        function fecharModalPeso(){
+            document.getElementById("modalPeso").style.display = "none";
+        }
+
+        function salvarPeso(){
+
+            let novoPeso = parseFloat(
+                document.getElementById("novoPeso").value
+            );
+
+            if(!novoPeso){
+                alert("Digite um peso válido");
+                return;
+            }
+
+            if(pesoAntigo === null){
+
+                pesoAntigo = novoPeso;
+
+                document.getElementById("pesoAtual").innerText = novoPeso;
+
+                document.getElementById("massaMuscular").innerText = "0%";
+
+                fecharModalPeso();
+
+                return;
+            }
+
+            document.getElementById("pesoAtual").innerText = novoPeso;
+
+            let diferenca =
+                ((novoPeso - pesoAntigo) / pesoAntigo) * 100;
+
+            document.getElementById("massaMuscular").innerText =
+                diferenca.toFixed(1) + "%";
+
+            pesoAntigo = novoPeso;
+
+            fecharModalPeso();
+        }
+
+    </script>
+}
