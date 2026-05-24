@@ -1,0 +1,363 @@
+/* ===== CRIAR TREINO ===== */
+
+.criar-treino {
+    max-width: 760px;
+    margin: 120px auto;
+    padding: 50px;
+    color: #fff;
+    background-color:#000;
+    border-radius:2em;
+}
+
+.criar-treino h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.criar-treino .subtitulo {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+}
+
+/* ===== ALERTA ===== */
+
+.alerta {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.alerta.erro {
+    background: rgba(220, 53, 53, 0.12);
+    border: 1px solid rgba(220, 53, 53, 0.3);
+    color: #f87171;
+}
+
+.alerta.sucesso {
+    background: rgba(122, 184, 0, 0.1);
+    border: 1px solid rgba(122, 184, 0, 0.3);
+    color: #a3d900;
+}
+
+/* ===== FORM ===== */
+
+.criar-treino form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ===== CAMPO ===== */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lime);
+}
+
+.campo input,
+.campo textarea {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    transition: border-color 0.2s;
+    outline: none;
+    resize: none;
+    font-family: inherit;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #555;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--lime);
+}
+
+.campo textarea {
+    min-height: 90px;
+}
+
+/* ===== SEÇÃO TÍTULOS ===== */
+
+.criar-treino h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: -16px;
+}
+
+/* ===== EXERCÍCIOS ===== */
+
+#listaExercicios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.exercicio-item {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px 36px;
+    gap: 10px;
+    align-items: center;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: border-color 0.2s;
+}
+
+.exercicio-item:hover {
+    border-color: #333;
+}
+
+.exercicio-item input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    border-radius: 0;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 6px 4px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.exercicio-item input::placeholder {
+    color: #555;
+}
+
+.exercicio-item input:focus {
+    border-bottom-color: var(--lime);
+}
+
+.exercicio-item input[type="number"] {
+    text-align: center;
+}
+
+/* Botão remover exercício */
+.exercicio-item > button {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #666;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    padding: 0;
+    line-height: 1;
+}
+
+.exercicio-item > button:hover {
+    background: rgba(220, 53, 53, 0.1);
+    border-color: rgba(220, 53, 53, 0.4);
+    color: #f87171;
+}
+
+/* ===== METAS ===== */
+
+#listaMetas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meta-item {
+    display: grid;
+    grid-template-columns: 1fr 36px;
+    gap: 10px;
+    align-items: center;
+}
+
+.meta-item input {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 11px 14px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.meta-item input::placeholder {
+    color: #555;
+}
+
+.meta-item input:focus {
+    border-color: var(--lime);
+}
+
+.meta-item > button {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #666;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    padding: 0;
+    line-height: 1;
+}
+
+.meta-item > button:hover {
+    background: rgba(220, 53, 53, 0.1);
+    border-color: rgba(220, 53, 53, 0.4);
+    color: #f87171;
+}
+
+/* ===== BOTÕES ADICIONAR ===== */
+
+.btn-add {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px dashed #333;
+    border-radius: 8px;
+    color: var(--lime);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 9px 18px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    font-family: inherit;
+}
+
+.btn-add:hover {
+    background: rgba(122, 184, 0, 0.06);
+    border-color: var(--lime);
+}
+
+/* Aplica a classe btn-add nos botões de adicionar inline */
+#listaExercicios + button,
+#listaMetas + button {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px dashed #333;
+    border-radius: 8px;
+    color: var(--lime);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 9px 18px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    font-family: inherit;
+    margin-top: -16px;
+}
+
+#listaExercicios + button:hover,
+#listaMetas + button:hover {
+    background: rgba(122, 184, 0, 0.06);
+    border-color: var(--lime);
+}
+
+/* ===== BOTÕES FINAIS ===== */
+
+.modal-btns {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.modal-btns button[type="submit"] {
+    background: var(--lime);
+    border: none;
+    border-radius: 8px;
+    color: #0f0f0f;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 13px 28px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+}
+
+.modal-btns button[type="submit"]:hover {
+    background: #a3d900;
+}
+
+.modal-btns button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.modal-btns a button[type="button"] {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 13px 24px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    font-family: inherit;
+}
+
+.modal-btns a button[type="button"]:hover {
+    border-color: #555;
+    color: #ccc;
+}
+
+/* ===== DIVISOR VISUAL ===== */
+
+.criar-treino form > h3 {
+    padding-top: 8px;
+    border-top: 1px solid #1e1e1e;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 600px) {
+    .exercicio-item {
+        grid-template-columns: 1fr 36px;
+        grid-template-rows: auto auto;
+    }
+
+    .exercicio-item input[type="number"] {
+        grid-column: span 1;
+    }
+
+    .modal-btns {
+        flex-direction: column;
+    }
+
+    .modal-btns button,
+    .modal-btns a {
+        width: 100%;
+    }
+
+    .modal-btns a button {
+        width: 100%;
+    }
+}

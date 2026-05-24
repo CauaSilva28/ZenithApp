@@ -1,3 +1,5 @@
+@model List<ZenithApp.Models.ConviteTreinador>
+
 @{
     ViewData["Title"] = "Atleta";
     var usuarioNome = Context.Session.GetString("UsuarioNome");
@@ -9,13 +11,15 @@
     <link rel="stylesheet" href="~/css/atleta.css" asp-append-version="true" />
 }
 
-@if(usuarioTipo == "Atleta" && logado){
+@if(usuarioTipo == "Atleta" && logado)
+{
     <section class="dashboard-atleta">
 
         <!-- HERO -->
         <div class="dashboard-hero">
 
             <div class="hero-info">
+
                 <span class="tag-status">Atleta</span>
 
                 <h1>Olá, @usuarioNome! 👋</h1>
@@ -25,21 +29,24 @@
                 </p>
 
                 <div class="hero-metricas">
+
                     <div class="metrica">
-                        <h2>12</h2>
+                        <h2>--</h2>
                         <span>Treinos concluídos</span>
                     </div>
 
                     <div class="metrica">
-                        <h2>82%</h2>
+                        <h2>--%</h2>
                         <span>Meta semanal</span>
                     </div>
 
                     <div class="metrica">
-                        <h2>5</h2>
+                        <h2>--</h2>
                         <span>Dias ativos</span>
                     </div>
+
                 </div>
+
             </div>
 
             <div class="hero-img">
@@ -56,35 +63,30 @@
                 <p>Seus treinos preparados pelo treinador.</p>
             </div>
 
-            <div class="treinos-container">
-
-                <div class="treino-card">
-                    <span class="treino-tipo">Treino A</span>
-
-                    <h3>Peito e Tríceps</h3>
-
-                    <ul>
-                        <li>Supino reto</li>
-                        <li>Crucifixo</li>
-                        <li>Tríceps corda</li>
-                    </ul>
-
-                    <button>Iniciar treino</button>
-                </div>
-
-                <div class="treino-card">
-                    <span class="treino-tipo">Cardio</span>
-
-                    <h3>Corrida leve</h3>
-
-                    <ul>
-                        <li>30 minutos</li>
-                        <li>Intensidade média</li>
-                    </ul>
-
-                    <button>Iniciar treino</button>
-                </div>
-
+           <div class="treinos-container">
+                @if(ViewBag.Treinos != null && ((List<ZenithApp.Models.Treino>)ViewBag.Treinos).Count > 0)
+                {
+                    @foreach(var treino in (List<ZenithApp.Models.Treino>)ViewBag.Treinos)
+                    {
+                        <div class="treino-card">
+                            <span class="treino-tipo">@treino.Nome</span>
+                            @if(!string.IsNullOrEmpty(treino.Observacoes))
+                            {
+                                <p>@treino.Observacoes</p>
+                            }
+                            <ul>
+                                @foreach(var ex in treino.Exercicios)
+                                {
+                                    <li>@ex.Nome — @ex.Series séries x @ex.Repeticoes reps</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>Nenhum treino disponível ainda.</p>
+                }
             </div>
 
         </section>
@@ -97,19 +99,19 @@
             </div>
 
             <div class="metas-container">
-
-                <div class="meta-card">
-                    <span>✔ Treinar 5x na semana</span>
-                </div>
-
-                <div class="meta-card">
-                    <span>✔ Beber 3L de água</span>
-                </div>
-
-                <div class="meta-card">
-                    <span>⏳ Dormir 8h por dia</span>
-                </div>
-
+                @if(ViewBag.Metas != null && ((List<ZenithApp.Models.MetaSemana>)ViewBag.Metas).Count > 0)
+                {
+                    @foreach(var meta in (List<ZenithApp.Models.MetaSemana>)ViewBag.Metas)
+                    {
+                        <div class="meta-card">
+                            <span>@(meta.Concluida ? "✔" : "⏳") @meta.Descricao</span>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>Nenhuma meta definida ainda.</p>
+                }
             </div>
 
         </section>
@@ -157,7 +159,7 @@
 
                     <h3>Frequência</h3>
 
-                    <span>92%</span>
+                    <span>--%</span>
 
                 </div>
 
@@ -179,13 +181,21 @@
                 >
 
                 <div class="modal-btns">
-                    <button onclick="salvarPeso()" class="salvar">
+
+                    <button
+                        onclick="salvarPeso()"
+                        class="salvar"
+                    >
                         Salvar
                     </button>
 
-                    <button onclick="fecharModalPeso()" class="cancelar">
+                    <button
+                        onclick="fecharModalPeso()"
+                        class="cancelar"
+                    >
                         Cancelar
                     </button>
+
                 </div>
 
             </div>
@@ -193,32 +203,106 @@
         </div>
 
         <!-- SOLICITAÇÕES -->
-    <section class="solicitacoes">
+        <section class="solicitacoes">
 
-        <div class="section-title">
-            <h2>Solicitações de treinadores</h2>
-            <p>Treinadores que desejam ajudar na sua evolução.</p>
-        </div>
+            <div class="section-title">
 
-        <div class="solicitacoes-container">
+                <h2>Solicitações de treinadores</h2>
 
-            <div class="solicitacao-card">
-
-                <div class="solicitacao-info">
-                    <h3>Lucas Almeida</h3>
-                    <span>Especialista em hipertrofia</span>
-                </div>
-
-                <div class="solicitacao-btns">
-                    <button class="btn-aceitar">Aceitar</button>
-                    <button class="btn-recusar">Recusar</button>
-                </div>
+                <p>
+                    Treinadores que desejam ajudar na sua evolução.
+                </p>
 
             </div>
 
-        </div>
+            @if(TempData["Sucesso"] != null)
+            {
+                <div class="alerta sucesso">@TempData["Sucesso"]</div>
+            }
+            @if(TempData["Erro"] != null)
+            {
+                <div class="alerta erro">@TempData["Erro"]</div>
+            }
 
-    </section>
+            <div class="solicitacoes-container">
+
+                @if(Model != null && Model.Count > 0)
+                {
+                    @foreach(var convite in Model)
+                    {
+                        <div class="solicitacao-card">
+
+                            <div class="solicitacao-info">
+
+                                <h3>
+                                    @convite.Treinador?.Nome
+                                </h3>
+
+                                <span>
+                                    Convite pendente
+                                </span>
+
+                            </div>
+
+                            <div class="solicitacao-btns">
+
+                                <form asp-controller="Atleta"
+                                      asp-action="AceitarConvite"
+                                      method="post">
+
+                                    <input
+                                        type="hidden"
+                                        name="idConvite"
+                                        value="@convite.Id"
+                                    >
+
+                                    <button
+                                        type="submit"
+                                        class="btn-aceitar"
+                                    >
+                                        Aceitar
+                                    </button>
+
+                                </form>
+
+                                <form asp-controller="Atleta"
+                                      asp-action="RecusarConvite"
+                                      method="post">
+
+                                    <input
+                                        type="hidden"
+                                        name="idConvite"
+                                        value="@convite.Id"
+                                    >
+
+                                    <button
+                                        type="submit"
+                                        class="btn-recusar"
+                                    >
+                                        Recusar
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="sem-convites">
+
+                        <p>
+                            Você não possui solicitações no momento.
+                        </p>
+
+                    </div>
+                }
+
+            </div>
+
+        </section>
 
     </section>
 
@@ -227,11 +311,17 @@
         let pesoAntigo = null;
 
         function abrirModalPeso(){
-            document.getElementById("modalPeso").style.display = "flex";
+
+            document.getElementById("modalPeso")
+                .style.display = "flex";
+
         }
 
         function fecharModalPeso(){
-            document.getElementById("modalPeso").style.display = "none";
+
+            document.getElementById("modalPeso")
+                .style.display = "none";
+
         }
 
         function salvarPeso(){
@@ -241,34 +331,42 @@
             );
 
             if(!novoPeso){
+
                 alert("Digite um peso válido");
+
                 return;
+
             }
 
             if(pesoAntigo === null){
 
                 pesoAntigo = novoPeso;
 
-                document.getElementById("pesoAtual").innerText = novoPeso;
+                document.getElementById("pesoAtual")
+                    .innerText = novoPeso;
 
-                document.getElementById("massaMuscular").innerText = "0%";
+                document.getElementById("massaMuscular")
+                    .innerText = "0%";
 
                 fecharModalPeso();
 
                 return;
+
             }
 
-            document.getElementById("pesoAtual").innerText = novoPeso;
+            document.getElementById("pesoAtual")
+                .innerText = novoPeso;
 
             let diferenca =
                 ((novoPeso - pesoAntigo) / pesoAntigo) * 100;
 
-            document.getElementById("massaMuscular").innerText =
-                diferenca.toFixed(1) + "%";
+            document.getElementById("massaMuscular")
+                .innerText = diferenca.toFixed(1) + "%";
 
             pesoAntigo = novoPeso;
 
             fecharModalPeso();
+
         }
 
     </script>

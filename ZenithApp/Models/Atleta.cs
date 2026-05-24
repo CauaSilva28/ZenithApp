@@ -23,20 +23,10 @@ namespace ZenithApp.Models
         [Column(TypeName = "decimal(5,2)")]
         public decimal? Peso { get; set; }
 
-        [Column(TypeName = "decimal(5,2)")]
-        public decimal? CompCorporal { get; set; }
-
-        [MaxLength(50)]
-        public string? Biotipo { get; set; }
-
         // Chave estrangeira
         public int? IdLogin { get; set; }
 
         [ForeignKey("IdLogin")]
         public Login? Login { get; set; }
-
-        // Navegação
-        public ICollection<RegistroPerformance> Performances { get; set; } = new List<RegistroPerformance>();
-        public ICollection<TreinadorAtleta> TreinadorAtletas { get; set; } = new List<TreinadorAtleta>();
     }
 }

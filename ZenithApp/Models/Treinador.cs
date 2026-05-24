@@ -22,10 +22,5 @@ namespace ZenithApp.Models
 
         [ForeignKey("IdLogin")]
         public Login? Login { get; set; }
-
-        // Navegação
-        public ICollection<TreinadorAtleta> TreinadorAtletas { get; set; } = new List<TreinadorAtleta>();
-        public ICollection<TreinadorAlimento> TreinadorAlimentos { get; set; } = new List<TreinadorAlimento>();
-        public ICollection<Treino> Treinos { get; set; } = new List<Treino>();
     }
 }

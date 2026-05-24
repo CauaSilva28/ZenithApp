@@ -8,18 +8,24 @@ namespace ZenithApp.Models
         [Key]
         public int IdTreino { get; set; }
 
-        [MaxLength(50)]
-        public string? Tipo { get; set; }
+        [Required]
+        public string Nome { get; set; } = string.Empty;
 
-        public int? Duracao { get; set; }
-        public DateOnly? DataTreino { get; set; }
-        public int? Carga { get; set; }
-        public int? IdSistema { get; set; }
+        public string? Observacoes { get; set; }
 
-        // Chave estrangeira
-        public int? IdTreinador { get; set; }
+        public DateTime DataCriacao { get; set; } = DateTime.Now;
 
+        // Quem criou
+        public int IdTreinador { get; set; }
         [ForeignKey("IdTreinador")]
-        public Treinador? Treinador { get; set; }
+        public Treinador Treinador { get; set; } = null!;
+
+        // Para qual atleta
+        public int IdAtleta { get; set; }
+        [ForeignKey("IdAtleta")]
+        public Atleta Atleta { get; set; } = null!;
+
+        // Exercícios do treino
+        public List<Exercicio> Exercicios { get; set; } = new();
     }
 }

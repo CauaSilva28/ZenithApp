@@ -8,571 +8,202 @@
     <link rel="stylesheet" href="~/css/treinador.css" asp-append-version="true" />
 }
 
-@if(usuarioTipo == "Treinador" && logado){
+@if(usuarioTipo == "Treinador" && logado)
+{
     <section class="dashboard-treinador">
 
         <!-- HERO -->
         <section class="treinador-hero">
-
             <div class="hero-texto">
-
                 <span class="tag">Treinador</span>
-
                 <h1>Gerencie seus atletas com inteligência.</h1>
-
-                <p>
-                    Crie treinos personalizados, acompanhe evolução e
-                    desenvolva atletas de alta performance.
-                </p>
-
+                <p>Crie treinos personalizados, acompanhe evolução e desenvolva atletas de alta performance.</p>
             </div>
-
             <div class="hero-cards">
-
                 <div class="hero-card">
-                    <h2>24</h2>
+                    <h2>@ViewBag.TotalAtletas</h2>
                     <span>Atletas ativos</span>
                 </div>
-
                 <div class="hero-card">
-                    <h2>128</h2>
+                    <h2>@ViewBag.TotalTreinos</h2>
                     <span>Treinos enviados</span>
                 </div>
-
                 <div class="hero-card">
-                    <h2>92%</h2>
+                    <h2>--%</h2>
                     <span>Engajamento</span>
                 </div>
-
             </div>
-
         </section>
 
-        <!-- BUSCAR -->
+        <!-- CONVIDAR ATLETA -->
         <section class="buscar-atleta">
-
             <div class="section-title">
                 <h2>Convidar atleta</h2>
-
-                <p>
-                    Busque um atleta pelo e-mail e envie um convite.
-                </p>
+                <p>Busque um atleta pelo e-mail e envie um convite.</p>
             </div>
-
             <div class="buscar-box">
 
-                <input
-                    type="email"
-                    placeholder="Digite o e-mail do atleta"
-                >
+                @if(TempData["Erro"] != null)
+                {
+                    <div class="alerta erro">@TempData["Erro"]</div>
+                }
+                @if(TempData["Sucesso"] != null)
+                {
+                    <div class="alerta sucesso">@TempData["Sucesso"]</div>
+                }
 
-                <button>
-                    Enviar convite
-                </button>
+                <form asp-controller="Treinador" asp-action="EnviarConvite" method="post">
+                    <input type="email" name="emailAtleta" placeholder="Digite o e-mail do atleta" required>
+                    <button type="submit">Enviar convite</button>
+                </form>
 
             </div>
-
         </section>
 
-        <!-- CONVITES -->
+        <!-- CONVITES ENVIADOS -->
         <section class="convites">
-
             <div class="section-title">
                 <h2>Convites enviados</h2>
             </div>
-
             <div class="convites-container">
-
-                <div class="convite-card">
-
-                    <div class="convite-info">
-                        <h3>Cauã Silva</h3>
-                        <span>caua@gmail.com</span>
-                    </div>
-
-                    <div class="status pendente">
-                        Pendente
-                    </div>
-
-                </div>
-
-                <div class="convite-card">
-
-                    <div class="convite-info">
-                        <h3>Lucas Mendes</h3>
-                        <span>lucas@gmail.com</span>
-                    </div>
-
-                    <div class="status aceito">
-                        Aceito
-                    </div>
-
-                </div>
-
+                @if(ViewBag.Convites != null)
+                {
+                    @foreach(var convite in ViewBag.Convites)
+                    {
+                        <div class="convite-card">
+                            <div class="convite-info">
+                                <h3>@convite.Atleta.Nome</h3>
+                                <span>@convite.Atleta.Login.Usuario</span>
+                            </div>
+                            <div class="status @convite.Status.ToLower()">
+                                @if(convite.Status == "Aceito")
+                                {
+                                    <span>✔ Aceito</span>
+                                }
+                                else if(convite.Status == "Recusado")
+                                {
+                                    <span>✖ Recusado</span>
+                                }
+                                else
+                                {
+                                    <span>⏳ Pendente</span>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>Nenhum convite enviado ainda.</p>
+                }
             </div>
-
         </section>
 
-        <!-- ATLETAS -->
+        <!-- SEUS ATLETAS -->
         <section class="atletas">
-
             <div class="section-title">
                 <h2>Seus atletas</h2>
             </div>
-
             <div class="atletas-container">
-
-                <div class="atleta-card">
-
-                    <h3>Cauã Silva</h3>
-
-                    <span>Hipertrofia</span>
-
-                    <div class="atleta-metricas">
-
-                        <div>
-                            <strong>82%</strong>
-                            <small>Frequência</small>
+                @if(ViewBag.Atletas != null)
+                {
+                    @foreach(var atletaRelacao in ViewBag.Atletas)
+                    {
+                        <div class="atleta-card">
+                            <h3>@atletaRelacao.Atleta.Nome</h3>
+                            <span>Atleta conectado</span>
+                            <div class="atleta-metricas">
+                                <div><strong>--%</strong><small>Frequência</small></div>
+                                <div><strong>--%</strong><small>Evolução</small></div>
+                            </div>
+                            <a asp-controller="Treinador"
+                               asp-action="CriarTreino"
+                               asp-route-idAtleta="@atletaRelacao.IdAtleta">
+                                <button>Montar treino</button>
+                            </a>
                         </div>
-
-                        <div>
-                            <strong>+5%</strong>
-                            <small>Evolução</small>
-                        </div>
-
-                    </div>
-
-                    <button onclick="abrirModalTreino()">
-                        Montar treino
-                    </button>
-
-                </div>
-
+                    }
+                }
+                else
+                {
+                    <p>Nenhum atleta vinculado ainda.</p>
+                }
             </div>
-
         </section>
 
-        <!-- TREINOS -->
+        <!-- TREINOS POR ATLETA -->
         <section class="treinos-atleta">
 
             <div class="section-title">
-                <h2>Treinos do atleta</h2>
-
-                <p>
-                    Treinos criados para este atleta.
-                </p>
+                <h2>Treinos enviados</h2>
+                <p>Treinos criados para cada atleta.</p>
             </div>
 
-            <div
-                class="treinos-container"
-                id="treinosContainer"
-            >
+            @if(ViewBag.Treinos != null)
+            {
+                @foreach(var atletaRelacao in ViewBag.Atletas)
+                {
+                    var treinosDoAtleta = ((List<ZenithApp.Models.Treino>)ViewBag.Treinos)
+                        .Where(t => t.IdAtleta == atletaRelacao.IdAtleta)
+                        .ToList();
 
-            </div>
+                    if(treinosDoAtleta.Count > 0)
+                    {
+                        <div class="atleta-treinos-grupo">
+
+                            <h3 class="atleta-treinos-nome">
+                                @atletaRelacao.Atleta.Nome
+                                <span>@treinosDoAtleta.Count treino(s)</span>
+                            </h3>
+
+                            <div class="treinos-lista">
+                                @foreach(var treino in treinosDoAtleta)
+                                {
+                                    <div class="treino-card-treinador">
+
+                                        <div class="treino-card-topo">
+                                            <div>
+                                                <h4>@treino.Nome</h4>
+                                                @if(!string.IsNullOrEmpty(treino.Observacoes))
+                                                {
+                                                    <p>@treino.Observacoes</p>
+                                                }
+                                            </div>
+                                            <form asp-controller="Treinador"
+                                                asp-action="ExcluirTreino"
+                                                method="post"
+                                                onsubmit="return confirm('Excluir este treino?')">
+                                                <input type="hidden" name="idTreino" value="@treino.IdTreino" />
+                                                <button type="submit" class="btn-excluir">
+                                                    Excluir
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                        <ul class="exercicios-lista">
+                                            @foreach(var ex in treino.Exercicios)
+                                            {
+                                                <li>
+                                                    <span class="ex-nome">@ex.Nome</span>
+                                                    <span class="ex-detalhe">@ex.Series séries × @ex.Repeticoes reps</span>
+                                                </li>
+                                            }
+                                        </ul>
+
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    }
+                }
+            }
 
         </section>
 
     </section>
-
-    <!-- MODAL -->
-    <div class="modal-treino" id="modalTreino">
-
-        <div class="modal-content">
-
-            <h2>Criar treino</h2>
-
-            <input
-                type="text"
-                id="nomeTreino"
-                placeholder="Nome do treino"
-            >
-
-            <!-- EXERCICIOS -->
-            <div id="listaExercicios">
-
-                <div class="exercicio-item">
-
-                    <button
-                        class="btn-remover"
-                        onclick="removerExercicio(this)"
-                    >
-                        ×
-                    </button>
-
-                    <input
-                        type="text"
-                        placeholder="Exercício"
-                        class="exercicioNome"
-                    >
-
-                    <div class="linha">
-
-                        <input
-                            type="number"
-                            placeholder="Séries"
-                            class="exercicioSeries"
-                        >
-
-                        <input
-                            type="number"
-                            placeholder="Repetições"
-                            class="exercicioReps"
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <button
-                class="btn-add-exercicio"
-                onclick="adicionarExercicio()"
-            >
-                + Adicionar exercício
-            </button>
-
-            <!-- OBSERVACOES -->
-            <textarea
-                id="observacoesTreino"
-                placeholder="Observações"
-            ></textarea>
-
-            <!-- METAS -->
-            <div class="metas-area">
-
-                <h3>Metas da semana</h3>
-
-                <div id="listaMetas">
-
-                    <div class="meta-item">
-
-                        <input
-                            type="text"
-                            placeholder="Ex: Beber 3L de água"
-                            class="metaInput"
-                        >
-
-                        <button
-                            class="btn-remover-meta"
-                            onclick="removerMeta(this)"
-                        >
-                            ×
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <button
-                    class="btn-add-meta"
-                    onclick="adicionarMeta()"
-                >
-                    + Adicionar meta
-                </button>
-
-            </div>
-
-            <!-- BOTOES -->
-            <div class="modal-btns">
-
-                <button
-                    class="salvar"
-                    onclick="salvarTreino()"
-                >
-                    Salvar treino
-                </button>
-
-                <button
-                    class="cancelar"
-                    onclick="fecharModalTreino()"
-                >
-                    Cancelar
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <script>
-
-        let treinos = [];
-
-        // MODAL
-
-        function abrirModalTreino(){
-
-            document.getElementById("modalTreino")
-                .style.display = "flex";
-
-        }
-
-        function fecharModalTreino(){
-
-            document.getElementById("modalTreino")
-                .style.display = "none";
-
-        }
-
-        // EXERCICIOS
-
-        function adicionarExercicio(){
-
-            const container =
-                document.getElementById("listaExercicios");
-
-            const div = document.createElement("div");
-
-            div.classList.add("exercicio-item");
-
-            div.innerHTML = `
-                <button
-                    class="btn-remover"
-                    onclick="removerExercicio(this)"
-                >
-                    ×
-                </button>
-
-                <input
-                    type="text"
-                    placeholder="Exercício"
-                    class="exercicioNome"
-                >
-
-                <div class="linha">
-
-                    <input
-                        type="number"
-                        placeholder="Séries"
-                        class="exercicioSeries"
-                    >
-
-                    <input
-                        type="number"
-                        placeholder="Repetições"
-                        class="exercicioReps"
-                    >
-
-                </div>
-            `;
-
-            container.appendChild(div);
-
-        }
-
-        function removerExercicio(botao){
-
-            botao.parentElement.remove();
-
-        }
-
-        // METAS
-
-        function adicionarMeta(){
-
-            const container =
-                document.getElementById("listaMetas");
-
-            const div = document.createElement("div");
-
-            div.classList.add("meta-item");
-
-            div.innerHTML = `
-                <input
-                    type="text"
-                    placeholder="Nova meta"
-                    class="metaInput"
-                >
-
-                <button
-                    class="btn-remover-meta"
-                    onclick="removerMeta(this)"
-                >
-                    ×
-                </button>
-            `;
-
-            container.appendChild(div);
-
-        }
-
-        function removerMeta(botao){
-
-            botao.parentElement.remove();
-
-        }
-
-        // SALVAR TREINO
-
-        function salvarTreino(){
-
-            const nomeTreino =
-                document.getElementById("nomeTreino").value;
-
-            const observacoes =
-                document.getElementById("observacoesTreino").value;
-
-            const nomes =
-                document.querySelectorAll(".exercicioNome");
-
-            const series =
-                document.querySelectorAll(".exercicioSeries");
-
-            const reps =
-                document.querySelectorAll(".exercicioReps");
-
-            const metasInputs =
-                document.querySelectorAll(".metaInput");
-
-            let exercicios = [];
-
-            let metasTreino = [];
-
-            for(let i = 0; i < nomes.length; i++){
-
-                exercicios.push({
-                    nome: nomes[i].value,
-                    series: series[i].value,
-                    reps: reps[i].value
-                });
-
-            }
-
-            metasInputs.forEach(meta => {
-
-                if(meta.value.trim() !== ""){
-
-                    metasTreino.push(meta.value);
-
-                }
-
-            });
-
-            treinos.push({
-                nome: nomeTreino,
-                observacoes,
-                exercicios,
-                metas: metasTreino
-            });
-
-            renderizarTreinos();
-
-            fecharModalTreino();
-
-        }
-
-        // RENDERIZAR
-
-        function renderizarTreinos(){
-
-            const container =
-                document.getElementById("treinosContainer");
-
-            container.innerHTML = "";
-
-            if(treinos.length === 0){
-
-                container.innerHTML = `
-                    <div class="sem-treinos">
-                        Nenhum treino criado ainda.
-                    </div>
-                `;
-
-                return;
-
-            }
-
-            treinos.forEach((treino, index) => {
-
-                let exerciciosHTML = "";
-
-                treino.exercicios.forEach(ex => {
-
-                    exerciciosHTML += `
-                        <div class="exercicio-card">
-
-                            <div>
-
-                                <h4>${ex.nome}</h4>
-
-                                <span>
-                                    ${ex.series} séries •
-                                    ${ex.reps} reps
-                                </span>
-
-                            </div>
-
-                        </div>
-                    `;
-
-                });
-
-                let metasHTML = "";
-
-                treino.metas.forEach(meta => {
-
-                    metasHTML += `
-                        <div class="meta-card">
-                            ${meta}
-                        </div>
-                    `;
-
-                });
-
-                container.innerHTML += `
-                    <div class="treino-atleta-card">
-
-                        <div class="treino-topo">
-
-                            <div>
-
-                                <h3>${treino.nome}</h3>
-
-                                <p>${treino.observacoes}</p>
-
-                            </div>
-
-                            <button
-                                class="btn-excluir-treino"
-                                onclick="excluirTreino(${index})"
-                            >
-                                Excluir
-                            </button>
-
-                        </div>
-
-                        <div class="lista-exercicios">
-                            ${exerciciosHTML}
-                        </div>
-
-                        <div class="metas-render">
-
-                            <h4>Metas da semana</h4>
-
-                            <div class="metas-grid">
-                                ${metasHTML}
-                            </div>
-
-                        </div>
-
-                    </div>
-                `;
-
-            });
-
-        }
-
-        // EXCLUIR TREINO
-
-        function excluirTreino(index){
-
-            treinos.splice(index, 1);
-
-            renderizarTreinos();
-
-        }
-
-    </script>
+}
+else
+{
+    <script>window.location.href = '/Auth/Login';</script>
 }

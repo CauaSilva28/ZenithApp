@@ -7,31 +7,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ZenithApp.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class AdicionarTreinos : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterDatabase()
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Alimentos",
-                columns: table => new
-                {
-                    IdAlimento = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Calorias = table.Column<int>(type: "int", nullable: true),
-                    Proteinas = table.Column<int>(type: "int", nullable: true),
-                    Carboidratos = table.Column<int>(type: "int", nullable: true),
-                    IdSistema = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Alimentos", x => x.IdAlimento);
-                })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
@@ -65,9 +46,6 @@ namespace ZenithApp.Migrations
                     Altura = table.Column<decimal>(type: "decimal(4,2)", nullable: true),
                     Largura = table.Column<decimal>(type: "decimal(4,2)", nullable: true),
                     Peso = table.Column<decimal>(type: "decimal(5,2)", nullable: true),
-                    CompCorporal = table.Column<decimal>(type: "decimal(5,2)", nullable: true),
-                    Biotipo = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     IdLogin = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -106,46 +84,58 @@ namespace ZenithApp.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "RegistrosPerformance",
+                name: "ConvitesTreinador",
                 columns: table => new
                 {
-                    IdRegistro = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Forca = table.Column<int>(type: "int", nullable: true),
-                    Velocidade = table.Column<int>(type: "int", nullable: true),
-                    Cardio = table.Column<int>(type: "int", nullable: true),
-                    IdAtleta = table.Column<int>(type: "int", nullable: false)
+                    IdTreinador = table.Column<int>(type: "int", nullable: false),
+                    IdAtleta = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DataEnvio = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RegistrosPerformance", x => x.IdRegistro);
+                    table.PrimaryKey("PK_ConvitesTreinador", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RegistrosPerformance_Atletas_IdAtleta",
+                        name: "FK_ConvitesTreinador_Atletas_IdAtleta",
                         column: x => x.IdAtleta,
                         principalTable: "Atletas",
                         principalColumn: "IdAtleta",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ConvitesTreinador_Treinadores_IdTreinador",
+                        column: x => x.IdTreinador,
+                        principalTable: "Treinadores",
+                        principalColumn: "IdTreinador",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "TreinadorAlimentos",
+                name: "MetasSemana",
                 columns: table => new
                 {
-                    IdTreinador = table.Column<int>(type: "int", nullable: false),
-                    IdAlimento = table.Column<int>(type: "int", nullable: false)
+                    IdMeta = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Descricao = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Concluida = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    IdAtleta = table.Column<int>(type: "int", nullable: false),
+                    IdTreinador = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TreinadorAlimentos", x => new { x.IdTreinador, x.IdAlimento });
+                    table.PrimaryKey("PK_MetasSemana", x => x.IdMeta);
                     table.ForeignKey(
-                        name: "FK_TreinadorAlimentos_Alimentos_IdAlimento",
-                        column: x => x.IdAlimento,
-                        principalTable: "Alimentos",
-                        principalColumn: "IdAlimento",
+                        name: "FK_MetasSemana_Atletas_IdAtleta",
+                        column: x => x.IdAtleta,
+                        principalTable: "Atletas",
+                        principalColumn: "IdAtleta",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_TreinadorAlimentos_Treinadores_IdTreinador",
+                        name: "FK_MetasSemana_Treinadores_IdTreinador",
                         column: x => x.IdTreinador,
                         principalTable: "Treinadores",
                         principalColumn: "IdTreinador",
@@ -184,22 +174,53 @@ namespace ZenithApp.Migrations
                 {
                     IdTreino = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Tipo = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true)
+                    Nome = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Duracao = table.Column<int>(type: "int", nullable: true),
-                    DataTreino = table.Column<DateOnly>(type: "date", nullable: true),
-                    Carga = table.Column<int>(type: "int", nullable: true),
-                    IdSistema = table.Column<int>(type: "int", nullable: true),
-                    IdTreinador = table.Column<int>(type: "int", nullable: true)
+                    Observacoes = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DataCriacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    IdTreinador = table.Column<int>(type: "int", nullable: false),
+                    IdAtleta = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Treinos", x => x.IdTreino);
                     table.ForeignKey(
+                        name: "FK_Treinos_Atletas_IdAtleta",
+                        column: x => x.IdAtleta,
+                        principalTable: "Atletas",
+                        principalColumn: "IdAtleta",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Treinos_Treinadores_IdTreinador",
                         column: x => x.IdTreinador,
                         principalTable: "Treinadores",
-                        principalColumn: "IdTreinador");
+                        principalColumn: "IdTreinador",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Exercicios",
+                columns: table => new
+                {
+                    IdExercicio = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Series = table.Column<int>(type: "int", nullable: false),
+                    Repeticoes = table.Column<int>(type: "int", nullable: false),
+                    IdTreino = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Exercicios", x => x.IdExercicio);
+                    table.ForeignKey(
+                        name: "FK_Exercicios_Treinos_IdTreino",
+                        column: x => x.IdTreino,
+                        principalTable: "Treinos",
+                        principalColumn: "IdTreino",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -210,20 +231,35 @@ namespace ZenithApp.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_ConvitesTreinador_IdAtleta",
+                table: "ConvitesTreinador",
+                column: "IdAtleta");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ConvitesTreinador_IdTreinador",
+                table: "ConvitesTreinador",
+                column: "IdTreinador");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Exercicios_IdTreino",
+                table: "Exercicios",
+                column: "IdTreino");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Logins_Usuario",
                 table: "Logins",
                 column: "Usuario",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_RegistrosPerformance_IdAtleta",
-                table: "RegistrosPerformance",
+                name: "IX_MetasSemana_IdAtleta",
+                table: "MetasSemana",
                 column: "IdAtleta");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TreinadorAlimentos_IdAlimento",
-                table: "TreinadorAlimentos",
-                column: "IdAlimento");
+                name: "IX_MetasSemana_IdTreinador",
+                table: "MetasSemana",
+                column: "IdTreinador");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TreinadorAtletas_IdAtleta",
@@ -237,6 +273,11 @@ namespace ZenithApp.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Treinos_IdAtleta",
+                table: "Treinos",
+                column: "IdAtleta");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Treinos_IdTreinador",
                 table: "Treinos",
                 column: "IdTreinador");
@@ -246,19 +287,19 @@ namespace ZenithApp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RegistrosPerformance");
+                name: "ConvitesTreinador");
 
             migrationBuilder.DropTable(
-                name: "TreinadorAlimentos");
+                name: "Exercicios");
+
+            migrationBuilder.DropTable(
+                name: "MetasSemana");
 
             migrationBuilder.DropTable(
                 name: "TreinadorAtletas");
 
             migrationBuilder.DropTable(
                 name: "Treinos");
-
-            migrationBuilder.DropTable(
-                name: "Alimentos");
 
             migrationBuilder.DropTable(
                 name: "Atletas");
