@@ -10,11 +10,11 @@ namespace ZenithApp.Data
         public DbSet<Login> Logins { get; set; }
         public DbSet<Atleta> Atletas { get; set; }
         public DbSet<Treinador> Treinadores { get; set; }
-        public DbSet<Alimento> Alimentos { get; set; }
-        public DbSet<Treino> Treinos { get; set; }
-        public DbSet<RegistroPerformance> RegistrosPerformance { get; set; }
+        public DbSet<ConviteTreinador> ConvitesTreinador { get; set; }
         public DbSet<TreinadorAtleta> TreinadorAtletas { get; set; }
-        public DbSet<TreinadorAlimento> TreinadorAlimentos { get; set; }
+        public DbSet<Treino> Treinos { get; set; }
+        public DbSet<Exercicio> Exercicios { get; set; }
+        public DbSet<MetaSemana> MetasSemana { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,45 +38,12 @@ namespace ZenithApp.Data
                 .WithOne(l => l.Atleta)
                 .HasForeignKey<Atleta>(a => a.IdLogin);
 
-            // TreinadorAtleta — chave composta (N:N)
             modelBuilder.Entity<TreinadorAtleta>()
-                .HasKey(ta => new { ta.IdTreinador, ta.IdAtleta });
-
-            modelBuilder.Entity<TreinadorAtleta>()
-                .HasOne(ta => ta.Treinador)
-                .WithMany(t => t.TreinadorAtletas)
-                .HasForeignKey(ta => ta.IdTreinador);
-
-            modelBuilder.Entity<TreinadorAtleta>()
-                .HasOne(ta => ta.Atleta)
-                .WithMany(a => a.TreinadorAtletas)
-                .HasForeignKey(ta => ta.IdAtleta);
-
-            // TreinadorAlimento — chave composta (N:N)
-            modelBuilder.Entity<TreinadorAlimento>()
-                .HasKey(ta => new { ta.IdTreinador, ta.IdAlimento });
-
-            modelBuilder.Entity<TreinadorAlimento>()
-                .HasOne(ta => ta.Treinador)
-                .WithMany(t => t.TreinadorAlimentos)
-                .HasForeignKey(ta => ta.IdTreinador);
-
-            modelBuilder.Entity<TreinadorAlimento>()
-                .HasOne(ta => ta.Alimento)
-                .WithMany(a => a.TreinadorAlimentos)
-                .HasForeignKey(ta => ta.IdAlimento);
-
-            // RegistroPerformance → Atleta (N:1)
-            modelBuilder.Entity<RegistroPerformance>()
-                .HasOne(r => r.Atleta)
-                .WithMany(a => a.Performances)
-                .HasForeignKey(r => r.IdAtleta);
-
-            // Treino → Treinador (N:1)
-            modelBuilder.Entity<Treino>()
-                .HasOne(t => t.Treinador)
-                .WithMany(t => t.Treinos)
-                .HasForeignKey(t => t.IdTreinador);
+            .HasKey(x => new
+            {
+                x.IdTreinador,
+                x.IdAtleta
+            });
         }
     }
 }

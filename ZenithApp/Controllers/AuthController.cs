@@ -40,23 +40,37 @@ namespace ZenithApp.Controllers
                 return View(model);
             }
 
-            // Busca nome do usuário dependendo do tipo
+            // Busca nome e ID real do perfil
             string nomeUsuario = login.Usuario;
+            int idPerfil = 0;
 
             if (login.NivelAcesso == "Atleta")
             {
-                var atleta = await _context.Atletas.FirstOrDefaultAsync(a => a.IdLogin == login.IdLogin);
-                if (atleta != null) nomeUsuario = atleta.Nome;
+                var atleta = await _context.Atletas
+                    .FirstOrDefaultAsync(a => a.IdLogin == login.IdLogin);
+
+                if (atleta != null)
+                {
+                    nomeUsuario = atleta.Nome;
+                    idPerfil = atleta.IdAtleta;  // ← ID real do atleta
+                }
             }
             else if (login.NivelAcesso == "Treinador")
             {
-                var treinador = await _context.Treinadores.FirstOrDefaultAsync(t => t.IdLogin == login.IdLogin);
-                if (treinador != null) nomeUsuario = treinador.Nome;
+                var treinador = await _context.Treinadores
+                    .FirstOrDefaultAsync(t => t.IdLogin == login.IdLogin);
+
+                if (treinador != null)
+                {
+                    nomeUsuario = treinador.Nome;
+                    idPerfil = treinador.IdTreinador;  // ← ID real do treinador
+                }
             }
 
             HttpContext.Session.SetString("UsuarioNome", nomeUsuario);
             HttpContext.Session.SetString("UsuarioEmail", login.Usuario);
             HttpContext.Session.SetString("UsuarioTipo", login.NivelAcesso ?? "Atleta");
+            HttpContext.Session.SetString("UsuarioId", idPerfil.ToString());
 
             TempData["Success"] = "Login realizado com sucesso!";
             return RedirectToAction("Index", "Home");

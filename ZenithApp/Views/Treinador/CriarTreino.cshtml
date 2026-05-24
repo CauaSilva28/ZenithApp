@@ -1,0 +1,83 @@
+@{
+    ViewData["Title"] = "Criar Treino";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/criarTreino.css" asp-append-version="true" />
+}
+
+<section class="criar-treino">
+    <h2>Criar treino</h2>
+
+    @if(TempData["Erro"] != null)
+    {
+        <div class="alerta erro">@TempData["Erro"]</div>
+    }
+
+    <form asp-controller="Treinador" asp-action="CriarTreino" method="post">
+
+        <input type="hidden" name="idAtleta" value="@ViewBag.IdAtleta" />
+
+        <div class="campo">
+            <label>Nome do treino</label>
+            <input type="text" name="nomeTreino" placeholder="Ex: Treino A — Peito e Tríceps" required />
+        </div>
+
+        <div class="campo">
+            <label>Observações</label>
+            <textarea name="observacoes" placeholder="Instruções gerais..."></textarea>
+        </div>
+
+        <h3>Exercícios</h3>
+        <div id="listaExercicios">
+            <div class="exercicio-item">
+                <input type="text"    name="exercicioNome"   placeholder="Exercício" required />
+                <input type="number"  name="exercicioSeries" placeholder="Séries" min="1" required />
+                <input type="number"  name="exercicioReps"   placeholder="Repetições" min="1" required />
+                <button type="button" onclick="this.parentElement.remove()">×</button>
+            </div>
+        </div>
+        <button type="button" onclick="adicionarExercicio()">+ Exercício</button>
+
+        <h3>Metas da semana</h3>
+        <div id="listaMetas">
+            <div class="meta-item">
+                <input type="text" name="metas" placeholder="Ex: Beber 3L de água" />
+                <button type="button" onclick="this.parentElement.remove()">×</button>
+            </div>
+        </div>
+        <button type="button" onclick="adicionarMeta()">+ Meta</button>
+
+        <div class="modal-btns">
+            <button type="submit">Salvar treino</button>
+            <a asp-controller="Treinador" asp-action="Index">
+                <button type="button">Cancelar</button>
+            </a>
+        </div>
+
+    </form>
+</section>
+
+<script>
+    function adicionarExercicio() {
+        const div = document.createElement("div");
+        div.classList.add("exercicio-item");
+        div.innerHTML = `
+            <input type="text"   name="exercicioNome"   placeholder="Exercício" required />
+            <input type="number" name="exercicioSeries" placeholder="Séries" min="1" required />
+            <input type="number" name="exercicioReps"   placeholder="Repetições" min="1" required />
+            <button type="button" onclick="this.parentElement.remove()">×</button>
+        `;
+        document.getElementById("listaExercicios").appendChild(div);
+    }
+
+    function adicionarMeta() {
+        const div = document.createElement("div");
+        div.classList.add("meta-item");
+        div.innerHTML = `
+            <input type="text" name="metas" placeholder="Nova meta" />
+            <button type="button" onclick="this.parentElement.remove()">×</button>
+        `;
+        document.getElementById("listaMetas").appendChild(div);
+    }
+</script>

@@ -25,8 +25,8 @@
             }
             else {
                 <div class="hero-btns">
-                    <a asp-controller="Home" asp-action="@(tipo == "Treinador" ? "Treinador" : "Atleta")">
-                        <button class="hero-btn1"> Área do @tipo <i class="bi bi-arrow-right"></i></button>
+                    <a asp-controller="@(tipo == "Treinador" ? "Treinador" : "Atleta")" asp-action="Index">
+                        <button class="hero-btn1">Área do @tipo <i class="bi bi-arrow-right"></i></button>
                     </a>
                 </div>
             }
@@ -134,22 +134,22 @@
 </section>
 
 <section id="beneficio">
-    <div class="beneficio-card">
+    <div class="beneficio-card" style="background-image:url('@Url.Content("~/img/imgBeneficio.png")')">>
         <div class="card-conteudo">
             <p>Crie metas personalizadas para sua evolução física e esportiva.</p>
         </div>
     </div>
-    <div class="beneficio-card">
+    <div class="beneficio-card" style="background-image:url('@Url.Content("~/img/imgBeneficio.png")')">>
         <div class="card-conteudo">
             <p>Crie metas personalizadas para sua evolução física e esportiva.</p>
         </div>
     </div>
-    <div class="beneficio-card">
+    <div class="beneficio-card" style="background-image:url('@Url.Content("~/img/imgBeneficio.png")')">>
         <div class="card-conteudo">
             <p>Crie metas personalizadas para sua evolução física e esportiva.</p>
         </div>
     </div>
-    <div class="beneficio-card">
+    <div class="beneficio-card" style="background-image:url('@Url.Content("~/img/imgBeneficio.png")')">>
         <div class="card-conteudo">
             <p>Crie metas personalizadas para sua evolução física e esportiva.</p>
         </div>

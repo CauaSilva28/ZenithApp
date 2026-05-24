@@ -112,6 +112,22 @@
 }
 
 /* CONVITES */
+.alerta{
+    padding:18px;
+    border-radius:14px;
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+.erro{
+    background:#3a1717;
+    color:#ff8e8e;
+}
+
+.sucesso{
+    background:#16361f;
+    color:#79ff9e;
+}
 
 .convites-container{
     display:flex;
@@ -302,219 +318,111 @@
     background:#111;
 }
 
-/* MODAL */
+/* TREINOS */
+/* TREINOS POR ATLETA */
 
-.modal-treino{
-    position:fixed;
-    inset:0;
-    background:#000000b0;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:999;
-    padding:20px;
+.treinos-atleta {
+    padding: 60px 80px;
 }
 
-.modal-content{
-    width:500px;
-    max-height:85vh;
-    overflow-y:auto;
-    background:#111;
-    border:1px solid #232323;
-    border-radius:24px;
-    padding:30px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+.atleta-treinos-grupo {
+    margin-bottom: 40px;
 }
 
-/* SCROLL */
-
-.modal-content::-webkit-scrollbar{
-    width:8px;
+.atleta-treinos-nome {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.modal-content::-webkit-scrollbar-track{
-    background:#1a1a1a;
-    border-radius:20px;
+.atleta-treinos-nome span {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #7ab800;
+    background: rgba(122, 184, 0, 0.1);
+    padding: 2px 10px;
+    border-radius: 20px;
 }
 
-.modal-content::-webkit-scrollbar-thumb{
-    background:var(--border-focus);
-    border-radius:20px;
+.treinos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-/* INPUTS */
-
-.modal-content h2{
-    font-size:28px;
+.treino-card-treinador {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 20px 24px;
 }
 
-.modal-content input,
-.modal-content textarea{
-    width:100%;
-    background:#1a1a1a;
-    border:1px solid #333;
-    border-radius:14px;
-    padding:14px 16px;
-    color:#fff;
-    outline:none;
-    font-size:15px;
+.treino-card-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
 }
 
-.modal-content textarea{
-    height:90px;
-    resize:none;
+.treino-card-topo h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 4px;
 }
 
-.linha{
-    display:flex;
-    gap:12px;
+.treino-card-topo p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
 }
 
-/* EXERCICIOS */
-
-.exercicio-item{
-    background:#161616;
-    border:1px solid #2a2a2a;
-    border-radius:18px;
-    padding:18px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    position:relative;
+.btn-excluir {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #666;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
 }
 
-.btn-remover{
-    position:absolute;
-    top:12px;
-    right:12px;
-    width:32px;
-    height:32px;
-    border:none;
-    border-radius:10px;
-    background:#2b1111;
-    color:#ff5f5f;
-    cursor:pointer;
-    font-size:18px;
-    transition:.3s;
+.btn-excluir:hover {
+    background: rgba(220, 53, 53, 0.1);
+    border-color: rgba(220, 53, 53, 0.4);
+    color: #f87171;
 }
 
-.btn-remover:hover{
-    background:#3a1515;
+.exercicios-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* ADD EXERCICIO */
-
-.btn-add-exercicio{
-    border:none;
-    background:#1d1d1d;
-    color:#fff;
-    border-radius:14px;
-    cursor:pointer;
-    transition:.3s;
-    font-weight:600;
-    padding:10px 0;
+.exercicios-lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #111;
+    border-radius: 6px;
+    font-size: 0.875rem;
 }
 
-.btn-add-exercicio:hover{
-    background:#252525;
+.ex-nome {
+    color: #ccc;
 }
 
-#observacoesTreino{
-    min-height:100px;
-}
-
-/* BOTOES MODAL */
-
-.modal-btns{
-    display:flex;
-    gap:12px;
-    margin-top:5px;
-}
-
-.modal-btns button{
-    flex:1;
-    height:48px;
-    border:none;
-    border-radius:14px;
-    cursor:pointer;
-    font-weight:600;
-}
-
-.salvar{
-    background:var(--border-focus);
-    color:#fff;
-}
-
-.cancelar{
-    background:#222;
-    color:#fff;
-}
-
-/* METAS */
-
-.metas-area{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.metas-area h3{
-    font-size:22px;
-}
-
-.meta-item{
-    display:flex;
-    gap:10px;
-}
-
-.meta-item input{
-    flex:1;
-}
-
-.btn-remover-meta{
-    width:45px;
-    border:none;
-    border-radius:12px;
-    background:#2b1111;
-    color:#ff6b6b;
-    cursor:pointer;
-    font-size:20px;
-}
-
-.btn-add-meta{
-    height:48px;
-    border:none;
-    border-radius:14px;
-    background:#1d1d1d;
-    color:#fff;
-    cursor:pointer;
-    font-weight:600;
-}
-
-/* RENDER METAS */
-
-.metas-render{
-    margin-top:30px;
-}
-
-.metas-render h4{
-    margin-bottom:15px;
-    color:#fff;
-}
-
-.metas-grid{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.meta-card{
-    background:#1d2b16;
-    color:#9cff7b;
-    padding:12px 18px;
-    border-radius:14px;
-    border:1px solid #355127;
-    font-size:14px;
+.ex-detalhe {
+    color: #7ab800;
+    font-size: 0.8rem;
 }

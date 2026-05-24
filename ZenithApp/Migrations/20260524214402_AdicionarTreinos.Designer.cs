@@ -12,8 +12,8 @@ using ZenithApp.Data;
 namespace ZenithApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260523215642_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260524214402_AdicionarTreinos")]
+    partial class AdicionarTreinos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,36 +25,6 @@ namespace ZenithApp.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("ZenithApp.Models.Alimento", b =>
-                {
-                    b.Property<int>("IdAlimento")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdAlimento"));
-
-                    b.Property<int?>("Calorias")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Carboidratos")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdSistema")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<int?>("Proteinas")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdAlimento");
-
-                    b.ToTable("Alimentos");
-                });
-
             modelBuilder.Entity("ZenithApp.Models.Atleta", b =>
                 {
                     b.Property<int>("IdAtleta")
@@ -65,13 +35,6 @@ namespace ZenithApp.Migrations
 
                     b.Property<decimal?>("Altura")
                         .HasColumnType("decimal(4,2)");
-
-                    b.Property<string>("Biotipo")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<decimal?>("CompCorporal")
-                        .HasColumnType("decimal(5,2)");
 
                     b.Property<int?>("IdLogin")
                         .HasColumnType("int");
@@ -96,6 +59,64 @@ namespace ZenithApp.Migrations
                         .IsUnique();
 
                     b.ToTable("Atletas");
+                });
+
+            modelBuilder.Entity("ZenithApp.Models.ConviteTreinador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataEnvio")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("IdAtleta")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdTreinador")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdAtleta");
+
+                    b.HasIndex("IdTreinador");
+
+                    b.ToTable("ConvitesTreinador");
+                });
+
+            modelBuilder.Entity("ZenithApp.Models.Exercicio", b =>
+                {
+                    b.Property<int>("IdExercicio")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdExercicio"));
+
+                    b.Property<int>("IdTreino")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Repeticoes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Series")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdExercicio");
+
+                    b.HasIndex("IdTreino");
+
+                    b.ToTable("Exercicios");
                 });
 
             modelBuilder.Entity("ZenithApp.Models.Login", b =>
@@ -128,31 +149,34 @@ namespace ZenithApp.Migrations
                     b.ToTable("Logins");
                 });
 
-            modelBuilder.Entity("ZenithApp.Models.RegistroPerformance", b =>
+            modelBuilder.Entity("ZenithApp.Models.MetaSemana", b =>
                 {
-                    b.Property<int>("IdRegistro")
+                    b.Property<int>("IdMeta")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdRegistro"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdMeta"));
 
-                    b.Property<int?>("Cardio")
-                        .HasColumnType("int");
+                    b.Property<bool>("Concluida")
+                        .HasColumnType("tinyint(1)");
 
-                    b.Property<int?>("Forca")
-                        .HasColumnType("int");
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("IdAtleta")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Velocidade")
+                    b.Property<int>("IdTreinador")
                         .HasColumnType("int");
 
-                    b.HasKey("IdRegistro");
+                    b.HasKey("IdMeta");
 
                     b.HasIndex("IdAtleta");
 
-                    b.ToTable("RegistrosPerformance");
+                    b.HasIndex("IdTreinador");
+
+                    b.ToTable("MetasSemana");
                 });
 
             modelBuilder.Entity("ZenithApp.Models.Treinador", b =>
@@ -186,21 +210,6 @@ namespace ZenithApp.Migrations
                     b.ToTable("Treinadores");
                 });
 
-            modelBuilder.Entity("ZenithApp.Models.TreinadorAlimento", b =>
-                {
-                    b.Property<int>("IdTreinador")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdAlimento")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdTreinador", "IdAlimento");
-
-                    b.HasIndex("IdAlimento");
-
-                    b.ToTable("TreinadorAlimentos");
-                });
-
             modelBuilder.Entity("ZenithApp.Models.TreinadorAtleta", b =>
                 {
                     b.Property<int>("IdTreinador")
@@ -224,26 +233,25 @@ namespace ZenithApp.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdTreino"));
 
-                    b.Property<int?>("Carga")
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("IdAtleta")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly?>("DataTreino")
-                        .HasColumnType("date");
-
-                    b.Property<int?>("Duracao")
+                    b.Property<int>("IdTreinador")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdSistema")
-                        .HasColumnType("int");
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<int?>("IdTreinador")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Tipo")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                    b.Property<string>("Observacoes")
+                        .HasColumnType("longtext");
 
                     b.HasKey("IdTreino");
+
+                    b.HasIndex("IdAtleta");
 
                     b.HasIndex("IdTreinador");
 
@@ -259,15 +267,53 @@ namespace ZenithApp.Migrations
                     b.Navigation("Login");
                 });
 
-            modelBuilder.Entity("ZenithApp.Models.RegistroPerformance", b =>
+            modelBuilder.Entity("ZenithApp.Models.ConviteTreinador", b =>
                 {
                     b.HasOne("ZenithApp.Models.Atleta", "Atleta")
-                        .WithMany("Performances")
+                        .WithMany()
                         .HasForeignKey("IdAtleta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ZenithApp.Models.Treinador", "Treinador")
+                        .WithMany()
+                        .HasForeignKey("IdTreinador")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Atleta");
+
+                    b.Navigation("Treinador");
+                });
+
+            modelBuilder.Entity("ZenithApp.Models.Exercicio", b =>
+                {
+                    b.HasOne("ZenithApp.Models.Treino", "Treino")
+                        .WithMany("Exercicios")
+                        .HasForeignKey("IdTreino")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Treino");
+                });
+
+            modelBuilder.Entity("ZenithApp.Models.MetaSemana", b =>
+                {
+                    b.HasOne("ZenithApp.Models.Atleta", "Atleta")
+                        .WithMany()
+                        .HasForeignKey("IdAtleta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ZenithApp.Models.Treinador", "Treinador")
+                        .WithMany()
+                        .HasForeignKey("IdTreinador")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Atleta");
+
+                    b.Navigation("Treinador");
                 });
 
             modelBuilder.Entity("ZenithApp.Models.Treinador", b =>
@@ -279,35 +325,16 @@ namespace ZenithApp.Migrations
                     b.Navigation("Login");
                 });
 
-            modelBuilder.Entity("ZenithApp.Models.TreinadorAlimento", b =>
-                {
-                    b.HasOne("ZenithApp.Models.Alimento", "Alimento")
-                        .WithMany("TreinadorAlimentos")
-                        .HasForeignKey("IdAlimento")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ZenithApp.Models.Treinador", "Treinador")
-                        .WithMany("TreinadorAlimentos")
-                        .HasForeignKey("IdTreinador")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Alimento");
-
-                    b.Navigation("Treinador");
-                });
-
             modelBuilder.Entity("ZenithApp.Models.TreinadorAtleta", b =>
                 {
                     b.HasOne("ZenithApp.Models.Atleta", "Atleta")
-                        .WithMany("TreinadorAtletas")
+                        .WithMany()
                         .HasForeignKey("IdAtleta")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ZenithApp.Models.Treinador", "Treinador")
-                        .WithMany("TreinadorAtletas")
+                        .WithMany()
                         .HasForeignKey("IdTreinador")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -319,23 +346,21 @@ namespace ZenithApp.Migrations
 
             modelBuilder.Entity("ZenithApp.Models.Treino", b =>
                 {
+                    b.HasOne("ZenithApp.Models.Atleta", "Atleta")
+                        .WithMany()
+                        .HasForeignKey("IdAtleta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ZenithApp.Models.Treinador", "Treinador")
-                        .WithMany("Treinos")
-                        .HasForeignKey("IdTreinador");
+                        .WithMany()
+                        .HasForeignKey("IdTreinador")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Atleta");
 
                     b.Navigation("Treinador");
-                });
-
-            modelBuilder.Entity("ZenithApp.Models.Alimento", b =>
-                {
-                    b.Navigation("TreinadorAlimentos");
-                });
-
-            modelBuilder.Entity("ZenithApp.Models.Atleta", b =>
-                {
-                    b.Navigation("Performances");
-
-                    b.Navigation("TreinadorAtletas");
                 });
 
             modelBuilder.Entity("ZenithApp.Models.Login", b =>
@@ -345,13 +370,9 @@ namespace ZenithApp.Migrations
                     b.Navigation("Treinador");
                 });
 
-            modelBuilder.Entity("ZenithApp.Models.Treinador", b =>
+            modelBuilder.Entity("ZenithApp.Models.Treino", b =>
                 {
-                    b.Navigation("TreinadorAlimentos");
-
-                    b.Navigation("TreinadorAtletas");
-
-                    b.Navigation("Treinos");
+                    b.Navigation("Exercicios");
                 });
 #pragma warning restore 612, 618
         }
