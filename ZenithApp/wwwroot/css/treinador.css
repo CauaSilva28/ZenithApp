@@ -1,8 +1,8 @@
 .dashboard-treinador{
-    padding:120px 150px;
-    display:flex;
-    flex-direction:column;
-    gap:100px;
+    padding: 120px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
 
 .treinador-hero{
@@ -45,9 +45,11 @@
 .hero-card{
     width:180px;
     height:180px;
-    background:#151515;
-    border:1px solid #232323;
-    border-radius:24px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-body);
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -66,104 +68,130 @@
 /* TITULOS */
 
 .section-title{
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
 
 .section-title h2{
-    font-size:40px;
+    font-size: 40px;
 }
 
 .section-title p{
-    color:#999;
+    color:  var(--text-muted);
     margin-top:10px;
 }
 
 /* BUSCAR */
 
-.buscar-box{
-    display:flex;
-    gap:20px;
+.buscar-form input:hover {
+    background: var(--input-hover);
+    border-color: rgba(255,255,255,0.14);
 }
 
-.buscar-box input{
-    flex:1;
-    height:60px;
-    background:#111;
-    border:1px solid #232323;
-    border-radius:16px;
-    padding:0 20px;
-    color:#fff;
-    font-size:16px;
+.buscar-form input:focus {
+    border-color: var(--border-focus);
+    background: rgba(200, 241, 53, 0.04);
+    box-shadow: 0 0 0 3px rgba(200, 241, 53, 0.08);
+    outline: none;
 }
 
-.buscar-box button{
-    width:220px;
-    border:none;
-    background:var(--border-focus);
-    color:#fff;
-    border-radius:16px;
-    cursor:pointer;
-    font-weight:600;
-    transition:.3s;
+.buscar-form select option {
+    background: var(--bg-dark);
+    color: var(--text-primary);
 }
 
-.buscar-box button:hover{
-    opacity:.8;
+.buscar-box form {
+    display: flex;
+    gap: 12px;
+}
+
+.buscar-box input {
+    flex: 1;
+    height: 60px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    padding: 0 20px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.buscar-box button {
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 60px;
+    border: none;
+    background: var(--lime);
+    color: var(--bg-dark);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 18px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.buscar-box button:hover {
+    opacity: 0.88;
 }
 
 /* CONVITES */
 .alerta{
-    padding:18px;
-    border-radius:14px;
-    margin-bottom:25px;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 25px;
     font-weight:600;
 }
 
 .erro{
     background:#3a1717;
-    color:#ff8e8e;
+    color: var(--warn-color);
 }
 
 .sucesso{
-    background:#16361f;
+    background:#2d4e37;
     color:#79ff9e;
 }
 
 .convites-container{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .convite-card{
-    background:#111;
-    border:1px solid #232323;
-    border-radius:20px;
-    padding:25px 30px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .convite-info{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .convite-info span{
-    color:#999;
+    color: var(--text-muted);
 }
 
 .status{
-    padding:10px 18px;
-    border-radius:30px;
-    font-size:14px;
-    font-weight:600;
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .pendente{
-    background:#5f4a00;
+    background:#726021;
     color:#ffd24d;
 }
 
@@ -184,7 +212,7 @@
     width:350px;
     background:#111;
     border:1px solid #232323;
-    border-radius:30px;
+    border-radius:var(--radius-sm);
     padding:30px;
 }
 
@@ -193,28 +221,28 @@
 }
 
 .atleta-card span{
-    color:#999;
+    color: var(--text-muted);
 }
 
 .atleta-metricas{
-    display:flex;
-    justify-content:space-between;
-    margin-top:30px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
 .atleta-metricas div{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .atleta-metricas strong{
-    color:var(--border-focus);
-    font-size:28px;
+    color: var(--border-focus);
+    font-size: 28px;
 }
 
 .atleta-metricas small{
-    color:#999;
+    color: var(--text-muted);
 }
 
 .atleta-card button{
@@ -223,7 +251,7 @@
     border:none;
     background:var(--border-focus);
     color:#fff;
-    border-radius:14px;
+    border-radius: var(--radius-sm);
     margin-top:30px;
     cursor:pointer;
     font-weight:600;
@@ -245,7 +273,7 @@
 .treino-atleta-card{
     background:#111;
     border:1px solid #232323;
-    border-radius:24px;
+    border-radius:var(--radius-sm);
     padding:30px;
 }
 
@@ -258,12 +286,12 @@
 }
 
 .treino-topo h3{
-    font-size:30px;
+    font-size: 30px;
     margin-bottom:10px;
 }
 
 .treino-topo p{
-    color:#999;
+    color: var(--text-muted);
     line-height:1.5;
 }
 
@@ -285,7 +313,7 @@
 }
 
 .exercicio-card span{
-    color:#999;
+    color: var(--text-muted);
 }
 
 /* EXCLUIR TREINO */
@@ -294,9 +322,9 @@
     min-width:120px;
     height:45px;
     border:none;
-    border-radius:12px;
+    border-radius:var(--radius-sm);
     background:#2b1111;
-    color:#ff6b6b;
+    color: var(--warn-color);
     cursor:pointer;
     transition:.3s;
     font-weight:600;
@@ -311,7 +339,7 @@
 .sem-treinos{
     width:100%;
     padding:40px;
-    border-radius:20px;
+    border-radius:var(--radius-sm);
     border:1px dashed #333;
     text-align:center;
     color:#777;
@@ -357,7 +385,7 @@
 .treino-card-treinador {
     background: #1a1a1a;
     border: 1px solid #2a2a2a;
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     padding: 20px 24px;
 }
 
@@ -384,7 +412,7 @@
 .btn-excluir {
     background: transparent;
     border: 1px solid #333;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     color: #666;
     font-size: 0.8rem;
     padding: 6px 14px;
@@ -396,7 +424,7 @@
 .btn-excluir:hover {
     background: rgba(220, 53, 53, 0.1);
     border-color: rgba(220, 53, 53, 0.4);
-    color: #f87171;
+    color: var(--warn-color);
 }
 
 .exercicios-lista {

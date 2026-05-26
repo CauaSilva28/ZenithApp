@@ -52,8 +52,8 @@
                     <div class="alerta sucesso">@TempData["Sucesso"]</div>
                 }
 
-                <form asp-controller="Treinador" asp-action="EnviarConvite" method="post">
-                    <input type="email" name="emailAtleta" placeholder="Digite o e-mail do atleta" required>
+                <form asp-controller="Treinador" asp-action="EnviarConvite" method="post" class="buscar-form">
+                    <input type="email" name="emailAtleta" placeholder="voce@exemplo.com" required>
                     <button type="submit">Enviar convite</button>
                 </form>
 

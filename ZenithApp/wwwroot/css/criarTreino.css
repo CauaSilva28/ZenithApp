@@ -1,12 +1,11 @@
-/* ===== CRIAR TREINO ===== */
-
 .criar-treino {
     max-width: 760px;
     margin: 120px auto;
     padding: 50px;
-    color: #fff;
-    background-color:#000;
-    border-radius:2em;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
 }
 
 .criar-treino h2 {
@@ -17,12 +16,10 @@
 }
 
 .criar-treino .subtitulo {
-    color: #888;
+    color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 40px;
 }
-
-/* ===== ALERTA ===== */
 
 .alerta {
     padding: 12px 16px;
@@ -34,7 +31,7 @@
 .alerta.erro {
     background: rgba(220, 53, 53, 0.12);
     border: 1px solid rgba(220, 53, 53, 0.3);
-    color: #f87171;
+    color: var(--warn-color);
 }
 
 .alerta.sucesso {
@@ -69,10 +66,11 @@
 
 .campo input,
 .campo textarea {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
     border-radius: 8px;
-    color: #fff;
     font-size: 0.95rem;
     padding: 12px 16px;
     transition: border-color 0.2s;
@@ -119,9 +117,10 @@
     grid-template-columns: 1fr 100px 100px 36px;
     gap: 10px;
     align-items: center;
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 10px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
     padding: 14px 16px;
     transition: border-color 0.2s;
 }
@@ -176,7 +175,7 @@
 .exercicio-item > button:hover {
     background: rgba(220, 53, 53, 0.1);
     border-color: rgba(220, 53, 53, 0.4);
-    color: #f87171;
+    color: var(--warn-color);
 }
 
 /* ===== METAS ===== */
@@ -233,8 +232,8 @@
 
 .meta-item > button:hover {
     background: rgba(220, 53, 53, 0.1);
-    border-color: rgba(220, 53, 53, 0.4);
-    color: #f87171;
+    border-color: rgba(185, 63, 63, 0.4);
+    color: var(--warn-color);
 }
 
 /* ===== BOTÕES ADICIONAR ===== */
@@ -315,7 +314,7 @@
     background: transparent;
     border: 1px solid #333;
     border-radius: 8px;
-    color: #888;
+    color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 500;
     padding: 13px 24px;
