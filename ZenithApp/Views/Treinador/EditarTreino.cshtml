@@ -1,0 +1,71 @@
+@model ZenithApp.Models.Treino
+
+@{
+    ViewData["Title"] = "Editar Treino";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/criarTreino.css" asp-append-version="true" />
+}
+
+<section class="criar-treino">
+    <h2>Editar treino</h2>
+
+    @if (TempData["Erro"] != null)
+    {
+        <div class="alerta erro">@TempData["Erro"]</div>
+    }
+
+    <form asp-controller="Treinador" asp-action="EditarTreino" method="post">
+
+        <input type="hidden" name="idTreino" value="@Model.IdTreino" />
+
+        <div class="campo">
+            <label>Nome do treino</label>
+            <input type="text" name="nomeTreino" value="@Model.Nome" placeholder="Ex: Treino A — Peito e Tríceps" required />
+        </div>
+
+        <div class="campo">
+            <label>Observações</label>
+            <textarea name="observacoes" placeholder="Instruções gerais...">@Model.Observacoes</textarea>
+        </div>
+
+        <h3>Exercícios</h3>
+        <div id="listaExercicios">
+            @foreach (var ex in Model.Exercicios)
+            {
+                <div class="exercicio-item">
+                    <input type="hidden" name="exercicioId" value="@ex.IdExercicio" />
+                    <input type="text"   name="exercicioNome"   value="@ex.Nome"        placeholder="Exercício" required />
+                    <input type="number" name="exercicioSeries" value="@ex.Series"      placeholder="Séries" min="1" required />
+                    <input type="number" name="exercicioReps"   value="@ex.Repeticoes"  placeholder="Repetições" min="1" required />
+                    <button type="button" onclick="this.parentElement.remove()">×</button>
+                </div>
+            }
+        </div>
+        <button type="button" onclick="adicionarExercicio()">+ Exercício</button>
+
+        <div class="modal-btns">
+            <button type="submit">Salvar alterações</button>
+            <a asp-controller="Treinador" asp-action="Index">
+                <button type="button">Cancelar</button>
+            </a>
+        </div>
+
+    </form>
+</section>
+
+<script>
+    function adicionarExercicio() {
+        const div = document.createElement("div");
+        div.classList.add("exercicio-item");
+        div.innerHTML = `
+            <input type="hidden" name="exercicioId"     value="0" />
+            <input type="text"   name="exercicioNome"   placeholder="Exercício" required />
+            <input type="number" name="exercicioSeries" placeholder="Séries" min="1" required />
+            <input type="number" name="exercicioReps"   placeholder="Repetições" min="1" required />
+            <button type="button" onclick="this.parentElement.remove()">×</button>
+        `;
+        document.getElementById("listaExercicios").appendChild(div);
+    }
+</script>

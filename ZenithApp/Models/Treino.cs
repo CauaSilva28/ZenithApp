@@ -27,5 +27,7 @@ namespace ZenithApp.Models
 
         // Exercícios do treino
         public List<Exercicio> Exercicios { get; set; } = new();
+
+        public bool Concluido { get; set; } = false;
     }
 }

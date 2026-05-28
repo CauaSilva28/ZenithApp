@@ -5,81 +5,87 @@
     var usuarioNome = Context.Session.GetString("UsuarioNome");
     var usuarioTipo = Context.Session.GetString("UsuarioTipo");
     var logado = usuarioNome != null;
+
+    var atleta = ViewBag.Atleta as ZenithApp.Models.Atleta;
+    var treinos = ViewBag.Treinos as List<ZenithApp.Models.Treino> ?? new();
+    var metas   = ViewBag.Metas   as List<ZenithApp.Models.MetaSemana> ?? new();
+
+    int treinosConcluidos = treinos.Count(t => t.Concluido);
+    int totalMetas        = metas.Count;
+    int metasConcluidas   = metas.Count(m => m.Concluida);
+    int pctMeta           = totalMetas > 0 ? (int)((metasConcluidas * 100.0) / totalMetas) : 0;
+    int frequencia        = atleta?.Frequencia ?? 0;
 }
 
 @section Styles {
     <link rel="stylesheet" href="~/css/atleta.css" asp-append-version="true" />
 }
 
-@if(usuarioTipo == "Atleta" && logado)
+@if (usuarioTipo == "Atleta" && logado)
 {
     <section class="dashboard-atleta">
 
         <!-- HERO -->
         <div class="dashboard-hero">
-
             <div class="hero-info">
-
                 <span class="tag-status">Atleta</span>
-
                 <h1>Olá, @usuarioNome! 👋</h1>
-
-                <p>
-                    Continue evoluindo. Acesse seus treinos e metas para hoje.
-                </p>
-
+                <p>Continue evoluindo. Acesse seus treinos e metas para hoje.</p>
                 <div class="hero-metricas">
-
                     <div class="metrica">
-                        <h2>--</h2>
+                        <h2>@treinosConcluidos</h2>
                         <span>Treinos concluídos</span>
                     </div>
-
                     <div class="metrica">
-                        <h2>--%</h2>
+                        <h2>@pctMeta%</h2>
                         <span>Meta semanal</span>
                     </div>
-
                     <div class="metrica">
-                        <h2>--</h2>
+                        <h2>@frequencia</h2>
                         <span>Dias ativos</span>
                     </div>
-
                 </div>
-
             </div>
-
             <div class="hero-img">
                 <img src="/img/atleta.png" alt="">
             </div>
-
         </div>
 
         <!-- TREINOS -->
         <section class="treinos">
-
             <div class="section-title">
                 <h2>Treinos do dia</h2>
                 <p>Seus treinos preparados pelo treinador.</p>
             </div>
-
-           <div class="treinos-container">
-                @if(ViewBag.Treinos != null && ((List<ZenithApp.Models.Treino>)ViewBag.Treinos).Count > 0)
+            <div class="treinos-container">
+                @if (treinos.Count > 0)
                 {
-                    @foreach(var treino in (List<ZenithApp.Models.Treino>)ViewBag.Treinos)
+                    @foreach (var treino in treinos)
                     {
-                        <div class="treino-card">
-                            <span class="treino-tipo">@treino.Nome</span>
-                            @if(!string.IsNullOrEmpty(treino.Observacoes))
+                        <div class="treino-card @(treino.Concluido ? "concluido" : "")">
+                            <div class="treino-card-topo">
+                                <span class="treino-tipo">@treino.Nome</span>
+                                @if (treino.Concluido)
+                                {
+                                    <span class="badge-concluido">✔ Concluído</span>
+                                }
+                            </div>
+                            @if (!string.IsNullOrEmpty(treino.Observacoes))
                             {
                                 <p>@treino.Observacoes</p>
                             }
                             <ul>
-                                @foreach(var ex in treino.Exercicios)
+                                @foreach (var ex in treino.Exercicios)
                                 {
                                     <li>@ex.Nome — @ex.Series séries x @ex.Repeticoes reps</li>
                                 }
                             </ul>
+                            <form asp-controller="Atleta" asp-action="ConcluirTreino" method="post">
+                                <input type="hidden" name="idTreino" value="@treino.IdTreino" />
+                                <button type="submit" class="@(treino.Concluido ? "btn-desconcluir" : "btn-concluir")">
+                                    @(treino.Concluido ? "Desmarcar" : "Marcar como concluído")
+                                </button>
+                            </form>
                         </div>
                     }
                 }
@@ -88,20 +94,17 @@
                     <p>Nenhum treino disponível ainda.</p>
                 }
             </div>
-
         </section>
 
         <!-- METAS -->
         <section class="metas">
-
             <div class="section-title">
                 <h2>Metas da semana</h2>
             </div>
-
             <div class="metas-container">
-                @if(ViewBag.Metas != null && ((List<ZenithApp.Models.MetaSemana>)ViewBag.Metas).Count > 0)
+                @if (metas.Count > 0)
                 {
-                    @foreach(var meta in (List<ZenithApp.Models.MetaSemana>)ViewBag.Metas)
+                    @foreach (var meta in metas)
                     {
                         <div class="meta-card">
                             <span>@(meta.Concluida ? "✔" : "⏳") @meta.Descricao</span>
@@ -113,261 +116,128 @@
                     <p>Nenhuma meta definida ainda.</p>
                 }
             </div>
-
         </section>
 
         <!-- EVOLUÇÃO -->
         <section class="evolucao">
-
             <div class="section-title">
                 <h2>Sua evolução</h2>
                 <p>Acompanhe sua performance.</p>
             </div>
-
             <div class="evolucao-box">
 
                 <!-- PESO -->
                 <div class="evolucao-card peso-card">
-
                     <h3>Peso atual</h3>
-
                     <div class="peso-info">
-                        <span id="pesoAtual">--</span>
+                        <span id="pesoAtual">@(atleta?.Peso.HasValue == true ? atleta.Peso.Value.ToString("F1") : "--")</span>
                         <small>kg</small>
                     </div>
-
-                    <button onclick="abrirModalPeso()" class="btn-alterar">
-                        Alterar peso
-                    </button>
-
+                    <button onclick="abrirModal('modalMetricas')" class="btn-alterar">Alterar</button>
                 </div>
 
                 <!-- MASSA -->
                 <div class="evolucao-card">
-
                     <h3>Massa muscular</h3>
-
                     <div class="peso-info">
-                        <small>+</small>
-                        <span id="massaMuscular">--</span>
+                        <span id="massaAtual">@(atleta?.MassaMuscular.HasValue == true ? atleta.MassaMuscular.Value.ToString("F1") : "--")</span>
+                        <small>kg</small>
                     </div>
-
+                    <button onclick="abrirModal('modalMetricas')" class="btn-alterar">Alterar</button>
                 </div>
 
-                <!-- FREQUENCIA -->
+                <!-- FREQUÊNCIA -->
                 <div class="evolucao-card">
-
                     <h3>Frequência</h3>
-
-                    <span>--%</span>
-
+                    <div class="peso-info">
+                        <span>@frequencia</span>
+                        <small>treinos/semana</small>
+                    </div>
+                    <small class="frequencia-info">Atualizada ao concluir treinos</small>
                 </div>
 
             </div>
-
         </section>
 
-        <!-- MODAL -->
-        <div class="modal-peso" id="modalPeso">
-
+        <!-- MODAL MÉTRICAS -->
+        <div class="modal-peso" id="modalMetricas" style="display:none;">
             <div class="modal-content">
+                <h2>Atualizar métricas</h2>
+                <form asp-controller="Atleta" asp-action="AtualizarMetricas" method="post">
+                    <label>Peso (kg)</label>
+                    <input type="number" name="peso" step="0.1" min="1" max="500"
+                           value="@(atleta?.Peso.HasValue == true ? atleta.Peso.Value.ToString("F1") : "")"
+                           placeholder="Ex: 75.5" />
 
-                <h2>Atualizar peso</h2>
+                    <label>Massa muscular (kg)</label>
+                    <input type="number" name="massaMuscular" step="0.1" min="1" max="200"
+                           value="@(atleta?.MassaMuscular.HasValue == true ? atleta.MassaMuscular.Value.ToString("F1") : "")"
+                           placeholder="Ex: 32.0" />
 
-                <input
-                    type="number"
-                    id="novoPeso"
-                    placeholder="Digite seu novo peso"
-                >
-
-                <div class="modal-btns">
-
-                    <button
-                        onclick="salvarPeso()"
-                        class="salvar"
-                    >
-                        Salvar
-                    </button>
-
-                    <button
-                        onclick="fecharModalPeso()"
-                        class="cancelar"
-                    >
-                        Cancelar
-                    </button>
-
-                </div>
-
+                    <div class="modal-btns">
+                        <button type="submit" class="salvar">Salvar</button>
+                        <button type="button" onclick="fecharModal('modalMetricas')" class="cancelar">Cancelar</button>
+                    </div>
+                </form>
             </div>
-
         </div>
 
         <!-- SOLICITAÇÕES -->
         <section class="solicitacoes">
-
             <div class="section-title">
-
                 <h2>Solicitações de treinadores</h2>
-
-                <p>
-                    Treinadores que desejam ajudar na sua evolução.
-                </p>
-
+                <p>Treinadores que desejam ajudar na sua evolução.</p>
             </div>
 
-            @if(TempData["Sucesso"] != null)
+            @if (TempData["Sucesso"] != null)
             {
                 <div class="alerta sucesso">@TempData["Sucesso"]</div>
             }
-            @if(TempData["Erro"] != null)
+            @if (TempData["Erro"] != null)
             {
                 <div class="alerta erro">@TempData["Erro"]</div>
             }
 
             <div class="solicitacoes-container">
-
-                @if(Model != null && Model.Count > 0)
+                @if (Model != null && Model.Count > 0)
                 {
-                    @foreach(var convite in Model)
+                    @foreach (var convite in Model)
                     {
                         <div class="solicitacao-card">
-
                             <div class="solicitacao-info">
-
-                                <h3>
-                                    @convite.Treinador?.Nome
-                                </h3>
-
-                                <span>
-                                    Convite pendente
-                                </span>
-
+                                <h3>@convite.Treinador?.Nome</h3>
+                                <span>Convite pendente</span>
                             </div>
-
                             <div class="solicitacao-btns">
-
-                                <form asp-controller="Atleta"
-                                      asp-action="AceitarConvite"
-                                      method="post">
-
-                                    <input
-                                        type="hidden"
-                                        name="idConvite"
-                                        value="@convite.Id"
-                                    >
-
-                                    <button
-                                        type="submit"
-                                        class="btn-aceitar"
-                                    >
-                                        Aceitar
-                                    </button>
-
+                                <form asp-controller="Atleta" asp-action="AceitarConvite" method="post">
+                                    <input type="hidden" name="idConvite" value="@convite.Id" />
+                                    <button type="submit" class="btn-aceitar">Aceitar</button>
                                 </form>
-
-                                <form asp-controller="Atleta"
-                                      asp-action="RecusarConvite"
-                                      method="post">
-
-                                    <input
-                                        type="hidden"
-                                        name="idConvite"
-                                        value="@convite.Id"
-                                    >
-
-                                    <button
-                                        type="submit"
-                                        class="btn-recusar"
-                                    >
-                                        Recusar
-                                    </button>
-
+                                <form asp-controller="Atleta" asp-action="RecusarConvite" method="post">
+                                    <input type="hidden" name="idConvite" value="@convite.Id" />
+                                    <button type="submit" class="btn-recusar">Recusar</button>
                                 </form>
-
                             </div>
-
                         </div>
                     }
                 }
                 else
                 {
                     <div class="sem-convites">
-
-                        <p>
-                            Você não possui solicitações no momento.
-                        </p>
-
+                        <p>Você não possui solicitações no momento.</p>
                     </div>
                 }
-
             </div>
-
         </section>
 
     </section>
 
     <script>
-
-        let pesoAntigo = null;
-
-        function abrirModalPeso(){
-
-            document.getElementById("modalPeso")
-                .style.display = "flex";
-
+        function abrirModal(id) {
+            document.getElementById(id).style.display = "flex";
         }
-
-        function fecharModalPeso(){
-
-            document.getElementById("modalPeso")
-                .style.display = "none";
-
+        function fecharModal(id) {
+            document.getElementById(id).style.display = "none";
         }
-
-        function salvarPeso(){
-
-            let novoPeso = parseFloat(
-                document.getElementById("novoPeso").value
-            );
-
-            if(!novoPeso){
-
-                alert("Digite um peso válido");
-
-                return;
-
-            }
-
-            if(pesoAntigo === null){
-
-                pesoAntigo = novoPeso;
-
-                document.getElementById("pesoAtual")
-                    .innerText = novoPeso;
-
-                document.getElementById("massaMuscular")
-                    .innerText = "0%";
-
-                fecharModalPeso();
-
-                return;
-
-            }
-
-            document.getElementById("pesoAtual")
-                .innerText = novoPeso;
-
-            let diferenca =
-                ((novoPeso - pesoAntigo) / pesoAntigo) * 100;
-
-            document.getElementById("massaMuscular")
-                .innerText = diferenca.toFixed(1) + "%";
-
-            pesoAntigo = novoPeso;
-
-            fecharModalPeso();
-
-        }
-
     </script>
 }

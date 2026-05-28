@@ -28,5 +28,11 @@ namespace ZenithApp.Models
 
         [ForeignKey("IdLogin")]
         public Login? Login { get; set; }
+
+        [Column(TypeName = "decimal(5,2)")]
+        public decimal? MassaMuscular { get; set; }
+
+        public int? Frequencia { get; set; }
+    
     }
 }

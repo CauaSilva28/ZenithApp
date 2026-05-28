@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/treinador.css" asp-append-version="true" />
 }
 
-@if(usuarioTipo == "Treinador" && logado)
+@if (usuarioTipo == "Treinador" && logado)
 {
     <section class="dashboard-treinador">
 
@@ -29,7 +29,13 @@
                     <span>Treinos enviados</span>
                 </div>
                 <div class="hero-card">
-                    <h2>--%</h2>
+                    @{
+                        var todosOsTreinos = ViewBag.Treinos as List<ZenithApp.Models.Treino> ?? new();
+                        int totalT    = todosOsTreinos.Count;
+                        int concluidosT = todosOsTreinos.Count(t => t.Concluido);
+                        int engajamento = totalT > 0 ? (int)((concluidosT * 100.0) / totalT) : 0;
+                    }
+                    <h2>@engajamento%</h2>
                     <span>Engajamento</span>
                 </div>
             </div>
@@ -42,21 +48,18 @@
                 <p>Busque um atleta pelo e-mail e envie um convite.</p>
             </div>
             <div class="buscar-box">
-
-                @if(TempData["Erro"] != null)
+                @if (TempData["Erro"] != null)
                 {
                     <div class="alerta erro">@TempData["Erro"]</div>
                 }
-                @if(TempData["Sucesso"] != null)
+                @if (TempData["Sucesso"] != null)
                 {
                     <div class="alerta sucesso">@TempData["Sucesso"]</div>
                 }
-
                 <form asp-controller="Treinador" asp-action="EnviarConvite" method="post" class="buscar-form">
                     <input type="email" name="emailAtleta" placeholder="voce@exemplo.com" required>
                     <button type="submit">Enviar convite</button>
                 </form>
-
             </div>
         </section>
 
@@ -66,9 +69,9 @@
                 <h2>Convites enviados</h2>
             </div>
             <div class="convites-container">
-                @if(ViewBag.Convites != null)
+                @if (ViewBag.Convites != null)
                 {
-                    @foreach(var convite in ViewBag.Convites)
+                    @foreach (var convite in ViewBag.Convites)
                     {
                         <div class="convite-card">
                             <div class="convite-info">
@@ -76,18 +79,9 @@
                                 <span>@convite.Atleta.Login.Usuario</span>
                             </div>
                             <div class="status @convite.Status.ToLower()">
-                                @if(convite.Status == "Aceito")
-                                {
-                                    <span>✔ Aceito</span>
-                                }
-                                else if(convite.Status == "Recusado")
-                                {
-                                    <span>✖ Recusado</span>
-                                }
-                                else
-                                {
-                                    <span>⏳ Pendente</span>
-                                }
+                                @if (convite.Status == "Aceito") { <span>Ativo</span> }
+                                else if (convite.Status == "Recusado") { <span>Recusado</span> }
+                                else { <span>Pendente</span> }
                             </div>
                         </div>
                     }
@@ -105,22 +99,38 @@
                 <h2>Seus atletas</h2>
             </div>
             <div class="atletas-container">
-                @if(ViewBag.Atletas != null)
+                @if (ViewBag.Atletas != null)
                 {
-                    @foreach(var atletaRelacao in ViewBag.Atletas)
+                    @foreach (ZenithApp.Models.TreinadorAtleta rel in ViewBag.Atletas)
                     {
                         <div class="atleta-card">
-                            <h3>@atletaRelacao.Atleta.Nome</h3>
+                            <h3>@rel.Atleta.Nome</h3>
                             <span>Atleta conectado</span>
                             <div class="atleta-metricas">
-                                <div><strong>--%</strong><small>Frequência</small></div>
-                                <div><strong>--%</strong><small>Evolução</small></div>
+                                <div>
+                                    <strong>@(rel.Atleta.MassaMuscular.HasValue ? rel.Atleta.MassaMuscular.Value.ToString("F1") + " kg" : "--")</strong>
+                                    <small>Massa muscular</small>
+                                </div>
+
+                                <div>
+                                    <strong>@(rel.Atleta.Peso.HasValue ? rel.Atleta.Peso.Value.ToString("F1") + " kg" : "--")</strong>
+                                    <small>Peso</small>
+                                </div>
                             </div>
-                            <a asp-controller="Treinador"
-                               asp-action="CriarTreino"
-                               asp-route-idAtleta="@atletaRelacao.IdAtleta">
-                                <button>Montar treino</button>
-                            </a>
+                            <div class="atleta-acoes">
+                                <a asp-controller="Treinador"
+                                   asp-action="CriarTreino"
+                                   asp-route-idAtleta="@rel.IdAtleta">
+                                    <button class="btn-treino">Montar treino</button>
+                                </a>
+                                <form asp-controller="Treinador"
+                                      asp-action="RemoverAtleta"
+                                      method="post"
+                                      onsubmit="return confirm('Remover @rel.Atleta.Nome da sua equipe?')">
+                                    <input type="hidden" name="idAtleta" value="@rel.IdAtleta" />
+                                    <button type="submit" class="btn-remover">Remover</button>
+                                </form>
+                            </div>
                         </div>
                     }
                 }
@@ -133,55 +143,59 @@
 
         <!-- TREINOS POR ATLETA -->
         <section class="treinos-atleta">
-
             <div class="section-title">
                 <h2>Treinos enviados</h2>
                 <p>Treinos criados para cada atleta.</p>
             </div>
 
-            @if(ViewBag.Treinos != null)
+            @if (ViewBag.Atletas != null)
             {
-                @foreach(var atletaRelacao in ViewBag.Atletas)
-                {
-                    var treinosDoAtleta = ((List<ZenithApp.Models.Treino>)ViewBag.Treinos)
-                        .Where(t => t.IdAtleta == atletaRelacao.IdAtleta)
+                @foreach (ZenithApp.Models.TreinadorAtleta rel in ViewBag.Atletas)
+{
+                    var treinosDoAtleta = todosOsTreinos
+                        .Where(t => t.IdAtleta == rel.IdAtleta)
                         .ToList();
 
-                    if(treinosDoAtleta.Count > 0)
+                    if (treinosDoAtleta.Count > 0)
                     {
                         <div class="atleta-treinos-grupo">
-
                             <h3 class="atleta-treinos-nome">
-                                @atletaRelacao.Atleta.Nome
+                                @rel.Atleta.Nome
                                 <span>@treinosDoAtleta.Count treino(s)</span>
                             </h3>
-
                             <div class="treinos-lista">
-                                @foreach(var treino in treinosDoAtleta)
+                                @foreach (var treino in treinosDoAtleta)
                                 {
-                                    <div class="treino-card-treinador">
-
+                                    <div class="treino-card-treinador @(treino.Concluido ? "concluido" : "")">
                                         <div class="treino-card-topo">
                                             <div>
                                                 <h4>@treino.Nome</h4>
-                                                @if(!string.IsNullOrEmpty(treino.Observacoes))
+                                                @if (treino.Concluido)
+                                                {
+                                                    <span class="badge-concluido">✔ Concluído pelo atleta</span>
+                                                }
+                                                @if (!string.IsNullOrEmpty(treino.Observacoes))
                                                 {
                                                     <p>@treino.Observacoes</p>
                                                 }
                                             </div>
-                                            <form asp-controller="Treinador"
-                                                asp-action="ExcluirTreino"
-                                                method="post"
-                                                onsubmit="return confirm('Excluir este treino?')">
-                                                <input type="hidden" name="idTreino" value="@treino.IdTreino" />
-                                                <button type="submit" class="btn-excluir">
-                                                    Excluir
-                                                </button>
-                                            </form>
+                                            <div class="treino-acoes">
+                                                <a asp-controller="Treinador"
+                                                   asp-action="EditarTreino"
+                                                   asp-route-idTreino="@treino.IdTreino">
+                                                    <button type="button" class="btn-editar">Editar</button>
+                                                </a>
+                                                <form asp-controller="Treinador"
+                                                      asp-action="ExcluirTreino"
+                                                      method="post"
+                                                      onsubmit="return confirm('Excluir este treino?')">
+                                                    <input type="hidden" name="idTreino" value="@treino.IdTreino" />
+                                                    <button type="submit" class="btn-excluir">Excluir</button>
+                                                </form>
+                                            </div>
                                         </div>
-
                                         <ul class="exercicios-lista">
-                                            @foreach(var ex in treino.Exercicios)
+                                            @foreach (var ex in treino.Exercicios)
                                             {
                                                 <li>
                                                     <span class="ex-nome">@ex.Nome</span>
@@ -189,16 +203,13 @@
                                                 </li>
                                             }
                                         </ul>
-
                                     </div>
                                 }
                             </div>
-
                         </div>
                     }
                 }
             }
-
         </section>
 
     </section>

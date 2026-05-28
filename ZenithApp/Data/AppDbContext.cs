@@ -44,6 +44,10 @@ namespace ZenithApp.Data
                 x.IdTreinador,
                 x.IdAtleta
             });
+
+            modelBuilder.Entity<ConviteTreinador>()
+                .HasIndex(x => new { x.IdTreinador, x.IdAtleta })
+                .IsUnique();
         }
     }
 }

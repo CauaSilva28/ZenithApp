@@ -172,13 +172,14 @@ header nav ul {
 }
 
 .btn-red {
-    background-color: #d67064;
-    border-color: #d67064;
+    background-color: var(--warn-color);
+    border-color: var(--warn-color);
     color: white;
 }
 
 .btn-red:hover {
-    background-color: var(--warn-color);
+    background-color: #e74c3c;
+    border-color: #e74c3c;
     color: var(--bg-dark);
 }
 

@@ -26,15 +26,15 @@ namespace ZenithApp.Controllers
             var convites = _context.ConvitesTreinador
                 .Include(x => x.Atleta)
                     .ThenInclude(a => a.Login)
-                .Where(x => x.IdTreinador == idTreinador)
+                .Where(x => x.IdTreinador == idTreinador && x.Status != "Removido")
                 .ToList();
 
             var atletas = _context.TreinadorAtletas
                 .Include(x => x.Atleta)
+                    .ThenInclude(a => a.Login)
                 .Where(x => x.IdTreinador == idTreinador)
                 .ToList();
 
-            // Treinos agrupados por atleta, com exercícios incluídos
             var treinos = _context.Treinos
                 .Include(x => x.Atleta)
                 .Include(x => x.Exercicios)
@@ -42,7 +42,7 @@ namespace ZenithApp.Controllers
                 .ToList();
 
             ViewBag.TotalAtletas = atletas.Count;
-            ViewBag.TotalTreinos = treinos.Count;   // ← contador do hero
+            ViewBag.TotalTreinos = treinos.Count;
             ViewBag.Convites = convites;
             ViewBag.Atletas = atletas;
             ViewBag.Treinos = treinos;
@@ -87,7 +87,6 @@ namespace ZenithApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            // Já são parceiros?
             bool jaVinculado = _context.TreinadorAtletas
                 .Any(x => x.IdTreinador == idTreinador && x.IdAtleta == atleta.IdAtleta);
 
@@ -97,16 +96,24 @@ namespace ZenithApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            bool conviteExiste = _context.ConvitesTreinador
-                .Any(x =>
-                    x.IdTreinador == idTreinador &&
-                    x.IdAtleta == atleta.IdAtleta &&
-                    x.Status == "Pendente"
-                );
+            // Já existe qualquer convite entre esse par?
+            var conviteExistente = _context.ConvitesTreinador
+                .FirstOrDefault(x => x.IdTreinador == idTreinador && x.IdAtleta == atleta.IdAtleta);
 
-            if (conviteExiste)
+            if (conviteExistente != null)
             {
-                TempData["Erro"] = "Já existe um convite pendente para esse atleta.";
+                if (conviteExistente.Status == "Pendente")
+                {
+                    TempData["Erro"] = "Já existe um convite pendente para esse atleta.";
+                    return RedirectToAction("Index");
+                }
+
+                // Reutiliza o registro existente em vez de criar um novo
+                conviteExistente.Status = "Pendente";
+                conviteExistente.DataEnvio = DateTime.Now;
+                _context.SaveChanges();
+
+                TempData["Sucesso"] = $"Convite reenviado para {atleta.Nome}!";
                 return RedirectToAction("Index");
             }
 
@@ -125,7 +132,6 @@ namespace ZenithApp.Controllers
             return RedirectToAction("Index");
         }
 
-        // Retorna atletas vinculados ao treinador para popular o select
         [HttpGet]
         public IActionResult CriarTreino(int idAtleta)
         {
@@ -134,7 +140,6 @@ namespace ZenithApp.Controllers
 
             int idTreinador = Convert.ToInt32(usuarioId);
 
-            // Verifica se o atleta pertence a esse treinador
             bool vinculado = _context.TreinadorAtletas
                 .Any(x => x.IdTreinador == idTreinador && x.IdAtleta == idAtleta);
 
@@ -175,7 +180,6 @@ namespace ZenithApp.Controllers
             _context.Treinos.Add(treino);
             _context.SaveChanges();
 
-            // Salva exercícios
             for (int i = 0; i < exercicioNome.Count; i++)
             {
                 if (string.IsNullOrWhiteSpace(exercicioNome[i])) continue;
@@ -189,7 +193,6 @@ namespace ZenithApp.Controllers
                 });
             }
 
-            // Salva metas
             foreach (var meta in metas)
             {
                 if (string.IsNullOrWhiteSpace(meta)) continue;
@@ -226,17 +229,114 @@ namespace ZenithApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            // Remove metas vinculadas ao mesmo atleta/treinador deste treino
-            var metas = _context.MetasSemana
-                .Where(m => m.IdAtleta == treino.IdAtleta && m.IdTreinador == idTreinador)
-                .ToList();
-
-            _context.MetasSemana.RemoveRange(metas);
             _context.Exercicios.RemoveRange(treino.Exercicios);
             _context.Treinos.Remove(treino);
             _context.SaveChanges();
 
             TempData["Sucesso"] = "Treino excluído.";
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult EditarTreino(int idTreino)
+        {
+            string? usuarioId = HttpContext.Session.GetString("UsuarioId");
+            if (usuarioId == null) return RedirectToAction("Login", "Auth");
+
+            int idTreinador = Convert.ToInt32(usuarioId);
+
+            var treino = _context.Treinos
+                .Include(x => x.Exercicios)
+                .FirstOrDefault(x => x.IdTreino == idTreino && x.IdTreinador == idTreinador);
+
+            if (treino == null)
+            {
+                TempData["Erro"] = "Treino não encontrado.";
+                return RedirectToAction("Index");
+            }
+
+            return View("~/Views/Treinador/EditarTreino.cshtml", treino);
+        }
+
+        [HttpPost]
+        public IActionResult EditarTreino(
+            int idTreino,
+            string nomeTreino,
+            string? observacoes,
+            List<int> exercicioId,
+            List<string> exercicioNome,
+            List<int> exercicioSeries,
+            List<int> exercicioReps)
+        {
+            string? usuarioId = HttpContext.Session.GetString("UsuarioId");
+            if (usuarioId == null) return RedirectToAction("Login", "Auth");
+
+            int idTreinador = Convert.ToInt32(usuarioId);
+
+            var treino = _context.Treinos
+                .Include(x => x.Exercicios)
+                .FirstOrDefault(x => x.IdTreino == idTreino && x.IdTreinador == idTreinador);
+
+            if (treino == null)
+            {
+                TempData["Erro"] = "Treino não encontrado.";
+                return RedirectToAction("Index");
+            }
+
+            treino.Nome = nomeTreino;
+            treino.Observacoes = observacoes;
+
+            _context.Exercicios.RemoveRange(treino.Exercicios);
+
+            for (int i = 0; i < exercicioNome.Count; i++)
+            {
+                if (string.IsNullOrWhiteSpace(exercicioNome[i])) continue;
+
+                _context.Exercicios.Add(new Exercicio
+                {
+                    Nome = exercicioNome[i],
+                    Series = exercicioSeries.ElementAtOrDefault(i),
+                    Repeticoes = exercicioReps.ElementAtOrDefault(i),
+                    IdTreino = treino.IdTreino
+                });
+            }
+
+            _context.SaveChanges();
+
+            TempData["Sucesso"] = "Treino atualizado!";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult RemoverAtleta(int idAtleta)
+        {
+            string? usuarioId = HttpContext.Session.GetString("UsuarioId");
+            if (usuarioId == null) return RedirectToAction("Login", "Auth");
+
+            int idTreinador = Convert.ToInt32(usuarioId);
+
+            var vinculo = _context.TreinadorAtletas
+                .FirstOrDefault(x => x.IdTreinador == idTreinador && x.IdAtleta == idAtleta);
+
+            if (vinculo == null)
+            {
+                TempData["Erro"] = "Atleta não encontrado na sua equipe.";
+                return RedirectToAction("Index");
+            }
+
+            _context.TreinadorAtletas.Remove(vinculo);
+
+            // Atualiza todos os convites desse par para "Removido"
+            var convitesDoAtleta = _context.ConvitesTreinador
+                .Where(x => x.IdTreinador == idTreinador && x.IdAtleta == idAtleta)
+                .ToList();
+
+            foreach (var c in convitesDoAtleta)
+                c.Status = "Removido";
+
+            _context.SaveChanges();
+
+            TempData["Sucesso"] = "Atleta removido da equipe.";
             return RedirectToAction("Index");
         }
     }
