@@ -228,7 +228,7 @@
     margin-bottom: 10px;
 }
 
-.peso-card button{
+.btn-alterar {
     margin-top: 25px;
     background: var(--input-bg);
     border: 1px solid var(--border);
@@ -265,6 +265,17 @@
 
 .modal-content h2{
     font-size: 30px;
+}
+
+.modal-content form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.modal-content label{
+    margin-bottom: -10px;
+    font-weight: 600;
 }
 
 .modal-content input{
@@ -326,22 +337,22 @@
 
 .cancelar {
     transition: 1s;
-    background: transparent;
-    border: 1px solid #333;
-    color: var(--text-muted);
+    background-color: var(--warn-color);
+    border-color: var(--warn-color);
+    color: white;
 }
 
 .cancelar:hover {
-    background: rgba(220, 53, 53, 0.1);
-    border-color: rgba(185, 63, 63, 0.4);
-    border: 1px solid #333;
-    color: var(--warn-color);
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: var(--bg-dark);
 }
 
 .cancelar:not(:hover) {
-    background: transparent;
-    border: 1px solid #333;
-    color: var(--text-muted);
+    transition: 1s;
+    background-color: var(--warn-color);
+    border-color: var(--warn-color);
+    color: white;
 }
 /* SOLICITAÇÕES */
 
@@ -424,4 +435,41 @@
     transition: 1s;
     background: #e74c3c;
     color: var(--bg-dark);
+}
+
+.btn-concluir{
+    padding: 12px 30px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: 1s;
+    font-size: 18px;
+    background: var(--border-focus);
+    color: #fff;
+}
+
+.btn-concluir:hover{
+    background: var(--lime);
+    color: var(--bg-dark);
+}
+
+.btn-desconcluir{
+    padding: 12px 30px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: 1s;
+    font-size: 18px;
+    background: transparent;
+    border: 1px solid var(--border-focus);
+    color: var(--text-muted);
+}
+
+.btn-desconcluir:hover{
+    background: #e74c3c;
+    color: var(--bg-dark);
+}
+
+.btn-desconcluir:not(:hover){
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
 }

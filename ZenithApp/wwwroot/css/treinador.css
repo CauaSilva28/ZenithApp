@@ -254,7 +254,7 @@
     color: var(--text-muted);
 }
 
-.atleta-card button{
+.btn-treino {
     width: 100%;
     height: 55px;
     border: none;
@@ -267,8 +267,28 @@
     font-size: 18px;
 }
 
-.atleta-card button:hover {
+.btn-treino:hover {
     background: var(--lime);
+    color: var(--bg-dark);
+}
+
+.btn-remover {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: var(--radius-sm);
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 1s;
+    font-size: 18px;
+    background-color: var(--warn-color);
+    border-color: var(--warn-color);
+    color: white;
+}
+
+.btn-remover:hover {
+    background: #e74c3c;
+    border-color: #e74c3c;
     color: var(--bg-dark);
 }
 
@@ -363,6 +383,16 @@
     padding: 60px 80px;
 }
 
+.treino-acoes {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.treino-acoes button {
+    width: 100%;
+}
+
 .atleta-treinos-grupo {
     margin-bottom: 40px;
 }
@@ -382,7 +412,7 @@
     font-weight: 400;
     color: var(--lime);
     background: var(--bg-panel);
-    padding: 10px 18px;
+    padding: 12px 24px;
     border-radius: 20px;
 }
 
@@ -426,10 +456,10 @@
 }
 
 .btn-excluir {
-    background: transparent;
-    border: 1px solid #333;
+    background-color: var(--warn-color);
+    border-color: var(--warn-color);
+    color: white;
     border-radius: var(--radius-sm);
-    color: #555;
     font-size: 1.15rem;
     padding: 10px 14px;
     cursor: pointer;
@@ -438,9 +468,26 @@
 }
 
 .btn-excluir:hover {
-    background: rgba(220, 53, 53, 0.1);
-    border-color: rgba(220, 53, 53, 0.4);
-    color: var(--warn-color);
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: var(--bg-dark);
+}
+
+.btn-editar {
+    background: var(--border-focus);
+    border: 1px solid #333;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: 1s;
+    white-space: nowrap;
+}
+
+.btn-editar:hover {
+    background: var(--lime);
+    color: var(--bg-dark);
 }
 
 .exercicios-lista {
