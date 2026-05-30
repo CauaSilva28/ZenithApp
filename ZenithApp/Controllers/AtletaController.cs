@@ -130,19 +130,17 @@ namespace ZenithApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            // Toggle: permite desmarcar também
             treino.Concluido = !treino.Concluido;
+            treino.DataConclusao = treino.Concluido ? DateTime.Now : null;
 
-            // Recalcula frequência: treinos concluídos nos últimos 7 dias
+            // Frequência = treinos concluídos nos últimos 7 dias
             var inicioSemana = DateTime.Today.AddDays(-6);
+
             int frequencia = _context.Treinos
                 .Count(x => x.IdAtleta == idAtleta
-                          && x.Concluido
-                          && x.DataCriacao >= inicioSemana);
-
-            // Inclui o treino atual caso esteja sendo marcado agora
-            if (treino.Concluido && treino.DataCriacao < inicioSemana)
-                frequencia += 1;
+                        && x.Concluido
+                        && x.DataConclusao.HasValue
+                        && x.DataConclusao.Value >= inicioSemana);
 
             var atleta = _context.Atletas.FirstOrDefault(x => x.IdAtleta == idAtleta);
             if (atleta != null)
@@ -181,6 +179,30 @@ namespace ZenithApp.Controllers
             _context.SaveChanges();
 
             TempData["Sucesso"] = "Métricas atualizadas!";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult ConcluirMeta(int idMeta)
+        {
+            string? usuarioId = HttpContext.Session.GetString("UsuarioId");
+            if (usuarioId == null) return RedirectToAction("Login", "Auth");
+
+            int idAtleta = Convert.ToInt32(usuarioId);
+
+            var meta = _context.MetasSemana
+                .FirstOrDefault(x => x.IdMeta == idMeta && x.IdAtleta == idAtleta);
+
+            if (meta == null)
+            {
+                TempData["Erro"] = "Meta não encontrada.";
+                return RedirectToAction("Index");
+            }
+
+            meta.Concluida = !meta.Concluida;
+            _context.SaveChanges();
+
+            TempData["Sucesso"] = meta.Concluida ? "Meta concluída!" : "Meta desmarcada.";
             return RedirectToAction("Index");
         }
     }

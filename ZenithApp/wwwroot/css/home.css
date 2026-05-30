@@ -143,10 +143,10 @@
 
 /* ----- SOBRE ----- */
 #sobre {
-    margin-top:var(--dist-conteudo);
-    padding:0px 150px;
-    display:flex;
-    align-items:center;
+    margin-top: var(--dist-conteudo);
+    padding: 0px 150px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -172,6 +172,7 @@
     position: relative;
     z-index: 1;
 }
+
 #sobre img::after {
     content: "";
     background-color: var(--border-focus);
@@ -181,96 +182,110 @@
 }
 
 #sobre .sobre-conteudo {
-    width:50%;
-    display:flex;
+    width: 50%;
+    display: flex;
     flex-direction: column;
     justify-content: end;
-    text-align: end;
-    gap:10px;
+    text-align: justify;
+    gap: 15px;
 }
 
 /* ------ CONTEUDO ----- */
 #conteudo {
-    margin-top:var(--dist-conteudo);
-    padding:0px 150px;
+    margin-top: var(--dist-conteudo);
+    padding: 0px 150px;
 }
 
 #conteudo .conteudo-container {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     align-items: center;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 #conteudo .conteudo-container .conteudo-card {
     background-color: var(--bg-panel);
-    width:30%;
-    border-radius:1em;
-    padding-bottom:10px;
-    border:none;
+    width: 30%;
+    border-radius: var(--radius-sm);
+    padding-bottom: 10px;
+    border: none;
+    transition: 1s;
+    border: 2px solid var(--border);
 }
+
+#conteudo .conteudo-container .conteudo-card:hover {
+    border: 2px solid var(--border-focus);
+    transform: translateY(-8px);
+}
+
 #conteudo .conteudo-blur{
-    width:40%;
-    height:3px;
+    width:  40%;
+    height: 3px;
     background-color: var(--lime);
     color: var(--lime);
     opacity: 1;
-    padding:0 !important;
-    margin:0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
+
 #conteudo .conteudo-container .conteudo-card .conteudo-img {
-    width:100%;
-    height:300px;
+    width: 100%;
+    height: 300px;
     overflow: hidden;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }
+
 #conteudo .conteudo-container .conteudo-card .conteudo-img img {
-    width:100%;
+    width: 100%;
 }
 
 #conteudo .conteudo-container .conteudo-card .conteudo-texto{
-    margin-top:10px;
-    padding:30px;
-    display:flex;
+    margin-top: 10px;
+    padding: 30px;
+    display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 } 
+
 #conteudo .conteudo-container .conteudo-card .conteudo-texto h3{
-    font-size:16px !important;
+    font-size: 16px !important;
 }
+
 #conteudo .conteudo-container .conteudo-card .conteudo-texto h2{
-    font-size:30px !important;
+    font-size: 30px !important;
 }
+
 #conteudo .conteudo-container .conteudo-card .conteudo-texto a{
-    font-size:25px;
-    color:#fff;
+    font-size: 25px;
+    color: #fff;
     text-align: end;
 }
 
 /* ------ OBJETIVO ----- */
 #objetivo {
-    margin:var(--dist-conteudo) 150px 0 150px;
+    margin: var(--dist-conteudo) 150px 0 150px;
     height:500px;
     background-image: url("/img/fundoObjetivo.jpg");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
-    border-radius:1em;
-    padding:70px;
-    display:flex;
-    align-items:center;
+    border-radius: 1em;
+    padding: 70px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 #objetivo .objetivo-conteudo {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    gap:10px;
-    width:30%;
+    gap: 10px;
+    width: 30%;
 }
 
 #objetivo .objetivo-topicos {
-    width:18%;
+    width: 18%;
     background-image:linear-gradient(0deg, #00000060, #0000000e);
     padding:20px;
     border-radius:1em;
@@ -350,13 +365,20 @@
 #beneficio .beneficio-card {
     width: 30%;
     height: 500px;
-    border: 3px solid var(--muted);
+    border: 3px solid var(--border);    
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    transition: 1s;
+    border-radius: var(--radius-sm);
+}
+
+#beneficio .beneficio-card:hover {
+    border-color: var(--border-focus);
+    transform: translateY(-8px);
 }
 
 #beneficio .beneficio-card .card-conteudo {
@@ -365,6 +387,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+    border-radius: var(--radius-sm);
 }
 
 /* ----- ACESSO ----- */
@@ -399,4 +422,66 @@
 
 #acesso .acesso-container .cinza {
     background-image: linear-gradient(90deg, var(--bg-panel), var(--muted));
+}
+
+.acesso-frase {
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 1.25rem;
+    margin: 2rem;
+    line-height: 1.4;
+}
+
+.acesso-tag {
+    background-color: var(--border-focus);
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.acesso-comparativo {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.acesso-comparativo h3 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+#acesso-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.comparativo-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.comparativo-col {
+    flex: 1;
+    max-width: 320px;
+    text-align: left;
+}
+
+.comparativo-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }

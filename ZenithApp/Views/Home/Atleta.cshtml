@@ -96,6 +96,7 @@
             </div>
         </section>
 
+        
         <!-- METAS -->
         <section class="metas">
             <div class="section-title">
@@ -106,8 +107,14 @@
                 {
                     @foreach (var meta in metas)
                     {
-                        <div class="meta-card">
+                        <div class="meta-card @(meta.Concluida ? "concluida" : "")">
                             <span>@(meta.Concluida ? "✔" : "⏳") @meta.Descricao</span>
+                            <form asp-controller="Atleta" asp-action="ConcluirMeta" method="post">
+                                <input type="hidden" name="idMeta" value="@meta.IdMeta" />
+                                <button type="submit" class="@(meta.Concluida ? "btn-desconcluir" : "btn-concluir")">
+                                    @(meta.Concluida ? "Desmarcar" : "Concluir")
+                                </button>
+                            </form>
                         </div>
                     }
                 }

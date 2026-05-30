@@ -29,5 +29,7 @@ namespace ZenithApp.Models
         public List<Exercicio> Exercicios { get; set; } = new();
 
         public bool Concluido { get; set; } = false;
+
+        public DateTime? DataConclusao { get; set; }
     }
 }
