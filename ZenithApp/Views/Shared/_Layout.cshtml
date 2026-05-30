@@ -22,7 +22,6 @@
 
 <body>
     <header>
-        <nav class="navbar-custom">
             <div class="nav-logo">
                 <div class="nav-logo-background">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +33,11 @@
 
 
             </div>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="bi bi-list"></i>
+            </button>
+
             <ul class="nav-links">
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Home" asp-action="Index">Início</a>
@@ -87,7 +91,6 @@
                 <a asp-controller="Auth" asp-action="Cadastro" class="btn btn-green">Começar agora</a>
             }
             </div>
-        </nav>
     </header>
 
     <main role="main" class="p-0">
@@ -133,6 +136,32 @@
 <script>
     document.getElementById('modalSair')?.addEventListener('click', function (e) {
         if (e.target === this) this.style.display = 'none';
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navButtons = document.querySelector(".nav-buttons");
+    const icone = menuToggle.querySelector("i");
+
+    menuToggle.addEventListener("click", () => {
+
+        if(navLinks.classList.contains("active"))
+        {
+            navLinks.classList.remove("active");
+            navButtons.classList.remove("active");
+
+            icone.classList.remove("bi-x");
+            icone.classList.add("bi-list");
+        }
+        else
+        {
+            navLinks.classList.add("active");
+            navButtons.classList.add("active");
+
+            icone.classList.remove("bi-list");
+            icone.classList.add("bi-x");
+        }
+
     });
 </script>
 

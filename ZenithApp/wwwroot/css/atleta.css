@@ -477,3 +477,225 @@
     border: 1px solid var(--border);
     color: var(--text-muted);
 }
+
+/* =========================
+   RESPONSIVO MOBILE
+========================= */
+@media (max-width: 1024px){
+
+    .dashboard-atleta{
+        padding: 100px 20px 60px;
+        gap: 70px;
+    }
+
+    /* HERO */
+
+    .dashboard-hero{
+        flex-direction: column;
+        padding: 35px 25px;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-info{
+        width: 100%;
+    }
+
+    .hero-info h1{
+        font-size: 2.2rem;
+    }
+
+    .hero-info p{
+        width: 100%;
+        font-size: .95rem;
+    }
+
+    .hero-metricas{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .metrica{
+        width: 100%;
+        min-width: unset;
+        padding: 20px;
+    }
+
+    .metrica h2{
+        font-size: 2rem;
+    }
+
+    .hero-img{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-img img{
+        width: 250px;
+    }
+
+    /* TITULOS */
+
+    .section-title{
+        margin-bottom: 25px;
+    }
+
+    .section-title h2{
+        font-size: 2rem;
+    }
+
+    .section-title p{
+        font-size: .95rem;
+    }
+
+    /* TREINOS */
+
+    .treinos-container{
+        flex-direction: column;
+    }
+
+    .treino-card{
+        width: 100%;
+        padding: 25px;
+    }
+
+    .treino-tipo{
+        font-size: 2rem;
+    }
+
+    .treino-card h3{
+        font-size: 1.5rem;
+    }
+
+    .treino-card button{
+        width: 100%;
+    }
+
+    /* METAS */
+
+    .meta-card{
+        padding: 18px;
+        font-size: 1rem;
+    }
+
+    /* EVOLUÇÃO */
+
+    .evolucao-box{
+        flex-direction: column;
+    }
+
+    .evolucao-card{
+        padding: 25px;
+    }
+
+    .evolucao-card span{
+        font-size: 2rem;
+    }
+
+    .btn-alterar{
+        width: 100%;
+    }
+
+    /* MODAL */
+
+    .modal-content{
+        width: calc(100% - 30px);
+        padding: 25px;
+    }
+
+    .modal-content h2{
+        font-size: 1.6rem;
+    }
+
+    .modal-btns{
+        flex-direction: column;
+    }
+
+    .modal-btns button{
+        width: 100%;
+    }
+
+    /* SOLICITAÇÕES */
+
+    .solicitacao-card{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .solicitacao-info{
+        width: 100%;
+    }
+
+    .solicitacao-info h3{
+        font-size: 1.2rem;
+    }
+
+    .solicitacao-btns{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .solicitacao-btns form{
+        width: 100%;
+    }
+
+    .btn-aceitar,
+    .btn-recusar{
+        width: 100%;
+    }
+
+    /* BOTÕES DE METAS */
+
+    .btn-concluir,
+    .btn-desconcluir{
+        width: 100%;
+    }
+
+}
+
+/* CELULARES MUITO PEQUENOS */
+@media (max-width: 480px){
+
+    .dashboard-atleta{
+        padding: 90px 15px 40px;
+    }
+
+    .dashboard-hero{
+        padding: 25px 20px;
+    }
+
+    .hero-info h1{
+        font-size: 1.8rem;
+    }
+
+    .hero-img img{
+        width: 200px;
+    }
+
+    .treino-card{
+        padding: 20px;
+    }
+
+    .treino-tipo{
+        font-size: 1.6rem;
+    }
+
+    .treino-card h3{
+        font-size: 1.25rem;
+    }
+
+    .evolucao-card{
+        padding: 20px;
+    }
+
+    .evolucao-card span{
+        font-size: 1.7rem;
+    }
+
+    .section-title h2{
+        font-size: 1.7rem;
+    }
+
+}

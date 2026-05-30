@@ -140,6 +140,7 @@
 
     #ferramenta .ferramenta-container{
         flex-wrap:wrap;
+        justify-content: center;
         gap:30px;
     }
 
@@ -318,8 +319,8 @@
         padding:0 25px;
     }
 
-    #acesso .acesso-container .acesso-card{
-        height:320px;
+    .acesso-conteudo{
+        flex-direction: column;
     }
 }
 
